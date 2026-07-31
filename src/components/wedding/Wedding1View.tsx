@@ -1147,12 +1147,13 @@ export default function Wedding1View({
             </ScrollReveal>
           </section>
 
-          {/* 12. FOOTER */}
-          <footer className="pb-8 pt-4 text-center relative z-10 bg-transparent">
-            <p className="text-[10px] font-sans text-zinc-500 tracking-[0.2em] uppercase">
-              bintarti
-            </p>
-          </footer>
+          {/* FOOTER */}
+<footer className="pb-8 pt-4 flex flex-col items-center justify-center relative z-10 bg-transparent opacity-80">
+  <img src="/logo.png" alt="Bintarti" className="w-6 h-6 mb-1.5" />
+  <p className="text-[10px] font-sans text-zinc-500 tracking-[0.2em] uppercase">
+    bintarti
+  </p>
+</footer>
 
           {/* QR Code Fullscreen Modal */}
           {showQrModal && (
