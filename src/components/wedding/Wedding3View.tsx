@@ -1114,6 +1114,13 @@ export default function Wedding3View({
           </footer>
         </section>
 
+        {/* FOOTER */}
+        <footer className="pb-8 pt-4 text-center relative z-10 bg-transparent">
+          <p className="text-[10px] font-sans text-zinc-500 tracking-[0.2em] uppercase">
+            bintarti
+          </p>
+        </footer>
+
         {/* QR Code Fullscreen Modal */}
         {showQrModal && (
           <div 
