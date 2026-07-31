@@ -311,28 +311,90 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // ── Data ──
+  const weddingNotes = (() => {
+    try {
+      if (invitationData?.notes) {
+        const parsed = typeof invitationData.notes === "string" ? JSON.parse(invitationData.notes) : invitationData.notes;
+        if (parsed && typeof parsed === "object") return parsed;
+      }
+    } catch {}
+    return null;
+  })();
+
   const data = invitationData || {};
-  const groom = data.groomName || "Raka Ananda";
-  const bride = data.brideName || "Sinta Maharani";
-  const groomShort = groom.split(" ")[0];
-  const brideShort = bride.split(" ")[0];
-  const akadDate = data.akadDate || "2025-09-20";
-  const akadTime = data.akadTime || "08.00 WIB";
-  const akadVenue = data.akadVenue || "Masjid Al-Ikhlas, Jakarta Selatan";
-  const resepsiDate = data.resepsiDate || "2025-09-20";
-  const resepsiTime = data.resepsiTime || "11.00 – 14.00 WIB";
-  const resepsiVenue = data.resepsiVenue || "Gedung Sasana Budaya, Jakarta";
+  const coupleNames = invitationData?.full_name || "Raka & Sinta";
+  const nameParts = coupleNames.split("&").map((s: string) => s.trim());
+  const groom = weddingNotes?.groomName || data.groomName || nameParts[0] || "Raka Ananda";
+  const bride = weddingNotes?.brideName || data.brideName || nameParts[1] || "Sinta Maharani";
+  const groomShort = weddingNotes?.groomNickname || groom.split(" ")[0];
+  const brideShort = weddingNotes?.brideNickname || bride.split(" ")[0];
+  
+  const akadDate = weddingNotes?.akadDate || data.akadDate || "2025-09-20";
+  const akadTime = weddingNotes?.akadTime || data.akadTime || "08.00 WIB";
+  const akadVenue = weddingNotes?.akadLocation || data.akadVenue || "Masjid Al-Ikhlas, Jakarta Selatan";
+  
+  const resepsiDate = weddingNotes?.resepsiDate || data.resepsiDate || "2025-09-20";
+  const resepsiTime = weddingNotes?.resepsiTime || data.resepsiTime || "11.00 – 14.00 WIB";
+  const resepsiVenue = weddingNotes?.resepsiLocation || data.resepsiVenue || "Gedung Sasana Budaya, Jakarta";
+  
   const musicUrl = data.musicUrl || data.music_url || "https://assets.mixkit.co/music/preview/mixkit-romantic-wedding-462.mp3";
 
   const guest = guestName ? safeDecodeGuestName(guestName) : "";
 
-  const galleryPhotos = (data.galleryPhotos && data.galleryPhotos.length > 0)
-    ? data.galleryPhotos
-    : [
-        data.coverPhoto || "/wedding8-couple-casual.jpg",
-        "/wedding8-groom-casual.jpg",
-        "/wedding8-bride-casual.jpg"
-      ];
+  const coverPhotoUrl = weddingNotes?.heroPhotoUrl || data.coverPhoto || "/wedding8-couple-casual.jpg";
+  const groomPhotoUrl = weddingNotes?.groomPhotoUrl || "/wedding8-groom-casual.jpg";
+  const bridePhotoUrl = weddingNotes?.bridePhotoUrl || "/wedding8-bride-casual.jpg";
+
+  const galleryPhotos = (() => {
+    const imgs = invitationData?.gallery_images || data.galleryPhotos;
+    if (Array.isArray(imgs) && imgs.length > 0) return imgs;
+    if (typeof imgs === "string" && imgs.length > 0) {
+      try {
+        const parsed = JSON.parse(imgs);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      } catch {}
+      return imgs.split(",").filter((s: string) => s.trim() !== "");
+    }
+    return [
+      coverPhotoUrl,
+      groomPhotoUrl,
+      bridePhotoUrl
+    ];
+  })();
+
+  const loveStory = (() => {
+    try {
+      if (weddingNotes?.loveStory && Array.isArray(weddingNotes.loveStory) && weddingNotes.loveStory.length > 0) {
+        return weddingNotes.loveStory.map((s: any) => ({
+          year: s.year || "",
+          title: s.title || "",
+          desc: s.description || s.desc || ""
+        }));
+      }
+    } catch {}
+    return [
+      {
+        year: "2018",
+        title: "Pertama Bertemu",
+        desc: "Takdir mempertemukan kami di sebuah acara yang tak terduga. Senyum pertamamu tak pernah terlupakan.",
+      },
+      {
+        year: "2020",
+        title: "Mulai Bersama",
+        desc: "Dengan memberanikan diri, kami memulai perjalanan baru. Setiap langkah terasa lebih ringan berdua.",
+      },
+      {
+        year: "2023",
+        title: "Lamaran",
+        desc: "Di bawah langit sore yang jingga, sebuah janji diucapkan. Sebuah 'iya' yang mengubah segalanya.",
+      },
+      {
+        year: "2025",
+        title: "Hari Bahagia",
+        desc: "Hari yang dinantikan. Bersama, kami melangkah menuju babak baru kehidupan yang penuh berkah.",
+      },
+    ];
+  })();
 
   // ── Audio ──
   useEffect(() => {
@@ -562,7 +624,7 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
           style={{ transform: `translateY(${scrollY * 0.15}px)` }}
         >
           <Image
-            src="/wedding8-couple-casual.jpg"
+            src={coverPhotoUrl}
             alt="Hero"
             fill
             className="object-cover object-center object-center"
@@ -683,7 +745,7 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
                   }}
                 >
                   <Image
-                    src="/wedding8-groom-casual.jpg"
+                    src={groomPhotoUrl}
                     alt={groom}
                     fill
                     className="object-cover object-center object-top"
@@ -735,7 +797,7 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
                   }}
                 >
                   <Image
-                    src="/wedding8-bride-casual.jpg"
+                    src={bridePhotoUrl}
                     alt={bride}
                     fill
                     className="object-cover object-center object-top"
@@ -939,28 +1001,7 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
               style={{ background: "linear-gradient(to bottom, #8B4513, transparent)" }}
             />
 
-            {[
-              {
-                year: "2018",
-                title: "Pertama Bertemu",
-                desc: "Takdir mempertemukan kami di sebuah acara yang tak terduga. Senyum pertamamu tak pernah terlupakan.",
-              },
-              {
-                year: "2020",
-                title: "Mulai Bersama",
-                desc: "Dengan memberanikan diri, kami memulai perjalanan baru. Setiap langkah terasa lebih ringan berdua.",
-              },
-              {
-                year: "2023",
-                title: "Lamaran",
-                desc: "Di bawah langit sore yang jingga, sebuah janji diucapkan. Sebuah 'iya' yang mengubah segalanya.",
-              },
-              {
-                year: "2025",
-                title: "Hari Bahagia",
-                desc: "Hari yang dinantikan. Bersama, kami melangkah menuju babak baru kehidupan yang penuh berkah.",
-              },
-            ].map((item, i) => (
+            {loveStory.map((item: any, i: number) => (
               <Reveal key={i} delay={i * 100}>
                 <div className="relative flex gap-4 items-start">
                   <div
