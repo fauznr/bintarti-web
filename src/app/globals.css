@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Better Saturday';
+  src: url('/fonts/bettersaturday.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-primary: #1967D2;
+  --color-primary-light: #8AB4F8;
+  --color-neutral-soft: #F8F9FA;
+
+  --font-sans: var(--font-inter), sans-serif;
+  --font-heading: var(--font-poppins), sans-serif;
+  --font-accent: var(--font-poppins), sans-serif;
+  --font-atma: var(--font-atma), cursive;
+  --font-averia: var(--font-averia), sans-serif;
+  --font-aref-ruqaa: var(--font-aref-ruqaa), serif;
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+/* Custom animated background gradient */
+.animated-bg {
+  background: #ffffff;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(66, 133, 244, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(66, 133, 244, 0.4);
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(3deg);
+  }
+}
+
+.float-slow {
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-delayed {
+  animation: float 8s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Mobile menu slide animation */
+.mobile-menu-enter {
+  animation: slideDown 0.25s ease-out forwards;
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* FAQ accordion animation */
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease-out, opacity 0.3s ease-out;
+  opacity: 0;
+}
+.accordion-content.open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.accordion-inner {
+  overflow: hidden;
+}
+
+/* Fade-in animation */
+.fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scale-in animation for cards */
+.scale-in {
+  animation: scaleIn 0.3s ease-out forwards;
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Custom animation classes for sandbox templates */
+.animate-float {
+  animation: floatUp 15s linear infinite;
+}
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-20vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-idle-float {
+  animation: idleFloat 4s ease-in-out infinite;
+}
+@keyframes idleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.animate-fall {
+  animation: fallDown 4s linear forwards;
+}
+@keyframes fallDown {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(105vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInSlow 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes fadeInSlow {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUpNav {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 30px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUpNav 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 8s linear infinite;
+}

@@ -1,0 +1,1920 @@
+{
+  "templates/birthday-1": [
+    {
+      "id": "local-bg-cover.jpg",
+      "name": "bg-cover.jpg",
+      "created_at": "2026-07-07T09:21:44.965Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-1/bg-cover.jpg",
+      "folderPath": "templates/birthday-1"
+    },
+    {
+      "id": "local-bg-event.jpg",
+      "name": "bg-event.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-1/bg-event.jpg",
+      "folderPath": "templates/birthday-1"
+    },
+    {
+      "id": "local-bg-profile.jpg",
+      "name": "bg-profile.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-1/bg-profile.jpg",
+      "folderPath": "templates/birthday-1"
+    },
+    {
+      "id": "local-kid-1.jpg",
+      "name": "kid-1.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-1/kid-1.jpg",
+      "folderPath": "templates/birthday-1"
+    },
+    {
+      "id": "local-kid-2.jpg",
+      "name": "kid-2.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-1/kid-2.jpg",
+      "folderPath": "templates/birthday-1"
+    },
+    {
+      "id": "local-kid-3.jpg",
+      "name": "kid-3.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-1/kid-3.jpg",
+      "folderPath": "templates/birthday-1"
+    }
+  ],
+  "templates/birthday-2": [
+    {
+      "id": "local-bg-activities.jpg",
+      "name": "bg-activities.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-2/bg-activities.jpg",
+      "folderPath": "templates/birthday-2"
+    },
+    {
+      "id": "local-bg-checkin.jpg",
+      "name": "bg-checkin.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-2/bg-checkin.jpg",
+      "folderPath": "templates/birthday-2"
+    },
+    {
+      "id": "local-bg-closing.jpg",
+      "name": "bg-closing.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-2/bg-closing.jpg",
+      "folderPath": "templates/birthday-2"
+    },
+    {
+      "id": "local-bg-cover.jpg",
+      "name": "bg-cover.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-2/bg-cover.jpg",
+      "folderPath": "templates/birthday-2"
+    },
+    {
+      "id": "local-bg-envelope.jpg",
+      "name": "bg-envelope.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-2/bg-envelope.jpg",
+      "folderPath": "templates/birthday-2"
+    },
+    {
+      "id": "local-bg-event.jpg",
+      "name": "bg-event.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-2/bg-event.jpg",
+      "folderPath": "templates/birthday-2"
+    },
+    {
+      "id": "local-bg-gallery.jpg",
+      "name": "bg-gallery.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-2/bg-gallery.jpg",
+      "folderPath": "templates/birthday-2"
+    },
+    {
+      "id": "local-bg-maps.jpg",
+      "name": "bg-maps.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-2/bg-maps.jpg",
+      "folderPath": "templates/birthday-2"
+    },
+    {
+      "id": "local-bg-plain.jpg",
+      "name": "bg-plain.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-2/bg-plain.jpg",
+      "folderPath": "templates/birthday-2"
+    },
+    {
+      "id": "local-bg-profile.jpg",
+      "name": "bg-profile.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-2/bg-profile.jpg",
+      "folderPath": "templates/birthday-2"
+    },
+    {
+      "id": "local-bg-rsvp.jpg",
+      "name": "bg-rsvp.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-2/bg-rsvp.jpg",
+      "folderPath": "templates/birthday-2"
+    },
+    {
+      "id": "local-bg-turut.jpg",
+      "name": "bg-turut.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-2/bg-turut.jpg",
+      "folderPath": "templates/birthday-2"
+    },
+    {
+      "id": "local-kid-1.jpg",
+      "name": "kid-1.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-2/kid-1.jpg",
+      "folderPath": "templates/birthday-2"
+    },
+    {
+      "id": "local-kid-2.jpg",
+      "name": "kid-2.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-2/kid-2.jpg",
+      "folderPath": "templates/birthday-2"
+    },
+    {
+      "id": "local-kid-3.jpg",
+      "name": "kid-3.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-2/kid-3.jpg",
+      "folderPath": "templates/birthday-2"
+    }
+  ],
+  "templates/birthday-3": [
+    {
+      "id": "local-bg-activities.jpg",
+      "name": "bg-activities.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-3/bg-activities.jpg",
+      "folderPath": "templates/birthday-3"
+    },
+    {
+      "id": "local-bg-checkin.jpg",
+      "name": "bg-checkin.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-3/bg-checkin.jpg",
+      "folderPath": "templates/birthday-3"
+    },
+    {
+      "id": "local-bg-closing.jpg",
+      "name": "bg-closing.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-3/bg-closing.jpg",
+      "folderPath": "templates/birthday-3"
+    },
+    {
+      "id": "local-bg-cover.jpg",
+      "name": "bg-cover.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-3/bg-cover.jpg",
+      "folderPath": "templates/birthday-3"
+    },
+    {
+      "id": "local-bg-envelope.jpg",
+      "name": "bg-envelope.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-3/bg-envelope.jpg",
+      "folderPath": "templates/birthday-3"
+    },
+    {
+      "id": "local-bg-event.jpg",
+      "name": "bg-event.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-3/bg-event.jpg",
+      "folderPath": "templates/birthday-3"
+    },
+    {
+      "id": "local-bg-gallery.jpg",
+      "name": "bg-gallery.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-3/bg-gallery.jpg",
+      "folderPath": "templates/birthday-3"
+    },
+    {
+      "id": "local-bg-maps.jpg",
+      "name": "bg-maps.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-3/bg-maps.jpg",
+      "folderPath": "templates/birthday-3"
+    },
+    {
+      "id": "local-bg-plain.jpg",
+      "name": "bg-plain.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-3/bg-plain.jpg",
+      "folderPath": "templates/birthday-3"
+    },
+    {
+      "id": "local-bg-profile.jpg",
+      "name": "bg-profile.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-3/bg-profile.jpg",
+      "folderPath": "templates/birthday-3"
+    },
+    {
+      "id": "local-bg-rsvp.jpg",
+      "name": "bg-rsvp.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-3/bg-rsvp.jpg",
+      "folderPath": "templates/birthday-3"
+    },
+    {
+      "id": "local-bg-turut.jpg",
+      "name": "bg-turut.jpg",
+      "created_at": "2026-07-07T09:21:44.967Z",
+      "updated_at": "2026-07-07T09:21:44.967Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-3/bg-turut.jpg",
+      "folderPath": "templates/birthday-3"
+    }
+  ],
+  "templates/birthday-4": [
+    {
+      "id": "local-bg-activities.jpg",
+      "name": "bg-activities.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-4/bg-activities.jpg",
+      "folderPath": "templates/birthday-4"
+    },
+    {
+      "id": "local-bg-checkin.jpg",
+      "name": "bg-checkin.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-4/bg-checkin.jpg",
+      "folderPath": "templates/birthday-4"
+    },
+    {
+      "id": "local-bg-closing.jpg",
+      "name": "bg-closing.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-4/bg-closing.jpg",
+      "folderPath": "templates/birthday-4"
+    },
+    {
+      "id": "local-bg-cover.jpg",
+      "name": "bg-cover.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-4/bg-cover.jpg",
+      "folderPath": "templates/birthday-4"
+    },
+    {
+      "id": "local-bg-envelope.jpg",
+      "name": "bg-envelope.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-4/bg-envelope.jpg",
+      "folderPath": "templates/birthday-4"
+    },
+    {
+      "id": "local-bg-event.jpg",
+      "name": "bg-event.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-4/bg-event.jpg",
+      "folderPath": "templates/birthday-4"
+    },
+    {
+      "id": "local-bg-gallery.jpg",
+      "name": "bg-gallery.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-4/bg-gallery.jpg",
+      "folderPath": "templates/birthday-4"
+    },
+    {
+      "id": "local-bg-maps.jpg",
+      "name": "bg-maps.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-4/bg-maps.jpg",
+      "folderPath": "templates/birthday-4"
+    },
+    {
+      "id": "local-bg-plain.jpg",
+      "name": "bg-plain.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-4/bg-plain.jpg",
+      "folderPath": "templates/birthday-4"
+    },
+    {
+      "id": "local-bg-profile.jpg",
+      "name": "bg-profile.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-4/bg-profile.jpg",
+      "folderPath": "templates/birthday-4"
+    },
+    {
+      "id": "local-bg-rsvp.jpg",
+      "name": "bg-rsvp.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-4/bg-rsvp.jpg",
+      "folderPath": "templates/birthday-4"
+    },
+    {
+      "id": "local-bg-turut.jpg",
+      "name": "bg-turut.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-4/bg-turut.jpg",
+      "folderPath": "templates/birthday-4"
+    }
+  ],
+  "templates/birthday-5": [
+    {
+      "id": "local-bg-cover.jpg",
+      "name": "bg-cover.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-5/bg-cover.jpg",
+      "folderPath": "templates/birthday-5"
+    },
+    {
+      "id": "local-bg-plain.jpg",
+      "name": "bg-plain.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-5/bg-plain.jpg",
+      "folderPath": "templates/birthday-5"
+    },
+    {
+      "id": "local-bg-profile.jpg",
+      "name": "bg-profile.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-5/bg-profile.jpg",
+      "folderPath": "templates/birthday-5"
+    },
+    {
+      "id": "local-kid-1.jpg",
+      "name": "kid-1.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-5/kid-1.jpg",
+      "folderPath": "templates/birthday-5"
+    },
+    {
+      "id": "local-kid-2.jpg",
+      "name": "kid-2.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-5/kid-2.jpg",
+      "folderPath": "templates/birthday-5"
+    },
+    {
+      "id": "local-kid-3.jpg",
+      "name": "kid-3.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-5/kid-3.jpg",
+      "folderPath": "templates/birthday-5"
+    }
+  ],
+  "templates/birthday-6": [
+    {
+      "id": "local-bg-cover.jpg",
+      "name": "bg-cover.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-6/bg-cover.jpg",
+      "folderPath": "templates/birthday-6"
+    },
+    {
+      "id": "local-bg-plain.jpg",
+      "name": "bg-plain.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-6/bg-plain.jpg",
+      "folderPath": "templates/birthday-6"
+    },
+    {
+      "id": "local-bg-profile.jpg",
+      "name": "bg-profile.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-6/bg-profile.jpg",
+      "folderPath": "templates/birthday-6"
+    },
+    {
+      "id": "local-kid-1.jpg",
+      "name": "kid-1.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-6/kid-1.jpg",
+      "folderPath": "templates/birthday-6"
+    },
+    {
+      "id": "local-kid-2.jpg",
+      "name": "kid-2.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-6/kid-2.jpg",
+      "folderPath": "templates/birthday-6"
+    },
+    {
+      "id": "local-kid-3.jpg",
+      "name": "kid-3.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-6/kid-3.jpg",
+      "folderPath": "templates/birthday-6"
+    }
+  ],
+  "templates/birthday-7": [
+    {
+      "id": "local-bg-activities.jpg",
+      "name": "bg-activities.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-7/bg-activities.jpg",
+      "folderPath": "templates/birthday-7"
+    },
+    {
+      "id": "local-bg-cover.jpg",
+      "name": "bg-cover.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-7/bg-cover.jpg",
+      "folderPath": "templates/birthday-7"
+    },
+    {
+      "id": "local-bg-frame.jpg",
+      "name": "bg-frame.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-7/bg-frame.jpg",
+      "folderPath": "templates/birthday-7"
+    },
+    {
+      "id": "local-bg-plain.jpg",
+      "name": "bg-plain.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-7/bg-plain.jpg",
+      "folderPath": "templates/birthday-7"
+    },
+    {
+      "id": "local-bg-profile.jpg",
+      "name": "bg-profile.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-7/bg-profile.jpg",
+      "folderPath": "templates/birthday-7"
+    },
+    {
+      "id": "local-kid-1.jpg",
+      "name": "kid-1.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-7/kid-1.jpg",
+      "folderPath": "templates/birthday-7"
+    },
+    {
+      "id": "local-kid-2.jpg",
+      "name": "kid-2.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-7/kid-2.jpg",
+      "folderPath": "templates/birthday-7"
+    },
+    {
+      "id": "local-kid-3.jpg",
+      "name": "kid-3.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-7/kid-3.jpg",
+      "folderPath": "templates/birthday-7"
+    }
+  ],
+  "templates/birthday-8": [
+    {
+      "id": "local-bg-cover.jpg",
+      "name": "bg-cover.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-8/bg-cover.jpg",
+      "folderPath": "templates/birthday-8"
+    },
+    {
+      "id": "local-bg-plain.jpg",
+      "name": "bg-plain.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-8/bg-plain.jpg",
+      "folderPath": "templates/birthday-8"
+    },
+    {
+      "id": "local-bg-profile.jpg",
+      "name": "bg-profile.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-8/bg-profile.jpg",
+      "folderPath": "templates/birthday-8"
+    },
+    {
+      "id": "local-kid-1.jpg",
+      "name": "kid-1.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-8/kid-1.jpg",
+      "folderPath": "templates/birthday-8"
+    },
+    {
+      "id": "local-kid-2.jpg",
+      "name": "kid-2.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/birthday-8/kid-2.jpg",
+      "folderPath": "templates/birthday-8"
+    }
+  ],
+  "templates/khitan-1": [
+    {
+      "id": "local-bg-children.jpg",
+      "name": "bg-children.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-1/bg-children.jpg",
+      "folderPath": "templates/khitan-1"
+    },
+    {
+      "id": "local-bg-leaves.jpg",
+      "name": "bg-leaves.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-1/bg-leaves.jpg",
+      "folderPath": "templates/khitan-1"
+    },
+    {
+      "id": "local-bg-pattern.jpg",
+      "name": "bg-pattern.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-1/bg-pattern.jpg",
+      "folderPath": "templates/khitan-1"
+    },
+    {
+      "id": "local-bg.png",
+      "name": "bg.png",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-1/bg.png",
+      "folderPath": "templates/khitan-1"
+    },
+    {
+      "id": "local-gallery-1.jpg",
+      "name": "gallery-1.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-1/gallery-1.jpg",
+      "folderPath": "templates/khitan-1"
+    },
+    {
+      "id": "local-gallery-2.jpg",
+      "name": "gallery-2.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-1/gallery-2.jpg",
+      "folderPath": "templates/khitan-1"
+    },
+    {
+      "id": "local-gallery-3.jpg",
+      "name": "gallery-3.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-1/gallery-3.jpg",
+      "folderPath": "templates/khitan-1"
+    },
+    {
+      "id": "local-gallery-4.jpg",
+      "name": "gallery-4.jpg",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-1/gallery-4.jpg",
+      "folderPath": "templates/khitan-1"
+    },
+    {
+      "id": "local-gunungan.png",
+      "name": "gunungan.png",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-1/gunungan.png",
+      "folderPath": "templates/khitan-1"
+    },
+    {
+      "id": "local-kid.png",
+      "name": "kid.png",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-1/kid.png",
+      "folderPath": "templates/khitan-1"
+    },
+    {
+      "id": "local-kid2.png",
+      "name": "kid2.png",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-1/kid2.png",
+      "folderPath": "templates/khitan-1"
+    },
+    {
+      "id": "local-wayang.png",
+      "name": "wayang.png",
+      "created_at": "2026-07-07T09:21:44.968Z",
+      "updated_at": "2026-07-07T09:21:44.968Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-1/wayang.png",
+      "folderPath": "templates/khitan-1"
+    }
+  ],
+  "templates/khitan-2": [
+    {
+      "id": "local-bg-corners.jpg",
+      "name": "bg-corners.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-2/bg-corners.jpg",
+      "folderPath": "templates/khitan-2"
+    },
+    {
+      "id": "local-bg-cover.jpg",
+      "name": "bg-cover.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-2/bg-cover.jpg",
+      "folderPath": "templates/khitan-2"
+    },
+    {
+      "id": "local-bg-sections.jpg",
+      "name": "bg-sections.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-2/bg-sections.jpg",
+      "folderPath": "templates/khitan-2"
+    },
+    {
+      "id": "local-gallery-1.jpg",
+      "name": "gallery-1.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-2/gallery-1.jpg",
+      "folderPath": "templates/khitan-2"
+    },
+    {
+      "id": "local-gallery-2.jpg",
+      "name": "gallery-2.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-2/gallery-2.jpg",
+      "folderPath": "templates/khitan-2"
+    },
+    {
+      "id": "local-gallery-3.jpg",
+      "name": "gallery-3.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-2/gallery-3.jpg",
+      "folderPath": "templates/khitan-2"
+    },
+    {
+      "id": "local-gallery-4.jpg",
+      "name": "gallery-4.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-2/gallery-4.jpg",
+      "folderPath": "templates/khitan-2"
+    },
+    {
+      "id": "local-gunungan.png",
+      "name": "gunungan.png",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-2/gunungan.png",
+      "folderPath": "templates/khitan-2"
+    },
+    {
+      "id": "local-kid.png",
+      "name": "kid.png",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-2/kid.png",
+      "folderPath": "templates/khitan-2"
+    },
+    {
+      "id": "local-kid2.png",
+      "name": "kid2.png",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-2/kid2.png",
+      "folderPath": "templates/khitan-2"
+    },
+    {
+      "id": "local-wayang.png",
+      "name": "wayang.png",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-2/wayang.png",
+      "folderPath": "templates/khitan-2"
+    }
+  ],
+  "templates/khitan-3": [
+    {
+      "id": "local-bg-bottom-border.jpg",
+      "name": "bg-bottom-border.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-3/bg-bottom-border.jpg",
+      "folderPath": "templates/khitan-3"
+    },
+    {
+      "id": "local-bg-corners.jpg",
+      "name": "bg-corners.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-3/bg-corners.jpg",
+      "folderPath": "templates/khitan-3"
+    },
+    {
+      "id": "local-bg-cover.jpg",
+      "name": "bg-cover.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-3/bg-cover.jpg",
+      "folderPath": "templates/khitan-3"
+    },
+    {
+      "id": "local-bg-sections.jpg",
+      "name": "bg-sections.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-3/bg-sections.jpg",
+      "folderPath": "templates/khitan-3"
+    },
+    {
+      "id": "local-bg-top-border.jpg",
+      "name": "bg-top-border.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-3/bg-top-border.jpg",
+      "folderPath": "templates/khitan-3"
+    },
+    {
+      "id": "local-gallery-1.jpg",
+      "name": "gallery-1.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-3/gallery-1.jpg",
+      "folderPath": "templates/khitan-3"
+    },
+    {
+      "id": "local-gallery-2.jpg",
+      "name": "gallery-2.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-3/gallery-2.jpg",
+      "folderPath": "templates/khitan-3"
+    },
+    {
+      "id": "local-gallery-3.jpg",
+      "name": "gallery-3.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-3/gallery-3.jpg",
+      "folderPath": "templates/khitan-3"
+    },
+    {
+      "id": "local-gallery-4.jpg",
+      "name": "gallery-4.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-3/gallery-4.jpg",
+      "folderPath": "templates/khitan-3"
+    },
+    {
+      "id": "local-gunungan.png",
+      "name": "gunungan.png",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-3/gunungan.png",
+      "folderPath": "templates/khitan-3"
+    },
+    {
+      "id": "local-kid.png",
+      "name": "kid.png",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-3/kid.png",
+      "folderPath": "templates/khitan-3"
+    },
+    {
+      "id": "local-kid2.png",
+      "name": "kid2.png",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-3/kid2.png",
+      "folderPath": "templates/khitan-3"
+    },
+    {
+      "id": "local-wayang.png",
+      "name": "wayang.png",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-3/wayang.png",
+      "folderPath": "templates/khitan-3"
+    }
+  ],
+  "templates/khitan-4": [
+    {
+      "id": "local-bg-corners.jpg",
+      "name": "bg-corners.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-4/bg-corners.jpg",
+      "folderPath": "templates/khitan-4"
+    },
+    {
+      "id": "local-bg-cover.jpg",
+      "name": "bg-cover.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-4/bg-cover.jpg",
+      "folderPath": "templates/khitan-4"
+    },
+    {
+      "id": "local-bg-sections.jpg",
+      "name": "bg-sections.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-4/bg-sections.jpg",
+      "folderPath": "templates/khitan-4"
+    },
+    {
+      "id": "local-gallery-1.jpg",
+      "name": "gallery-1.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-4/gallery-1.jpg",
+      "folderPath": "templates/khitan-4"
+    },
+    {
+      "id": "local-gallery-2.jpg",
+      "name": "gallery-2.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-4/gallery-2.jpg",
+      "folderPath": "templates/khitan-4"
+    },
+    {
+      "id": "local-gallery-3.jpg",
+      "name": "gallery-3.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-4/gallery-3.jpg",
+      "folderPath": "templates/khitan-4"
+    },
+    {
+      "id": "local-gallery-4.jpg",
+      "name": "gallery-4.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-4/gallery-4.jpg",
+      "folderPath": "templates/khitan-4"
+    },
+    {
+      "id": "local-kid.png",
+      "name": "kid.png",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-4/kid.png",
+      "folderPath": "templates/khitan-4"
+    },
+    {
+      "id": "local-kid2.png",
+      "name": "kid2.png",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-4/kid2.png",
+      "folderPath": "templates/khitan-4"
+    }
+  ],
+  "templates/khitan-5": [
+    {
+      "id": "local-bg-corners.jpg",
+      "name": "bg-corners.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-5/bg-corners.jpg",
+      "folderPath": "templates/khitan-5"
+    },
+    {
+      "id": "local-bg-cover.jpg",
+      "name": "bg-cover.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-5/bg-cover.jpg",
+      "folderPath": "templates/khitan-5"
+    },
+    {
+      "id": "local-bg-sections.jpg",
+      "name": "bg-sections.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-5/bg-sections.jpg",
+      "folderPath": "templates/khitan-5"
+    },
+    {
+      "id": "local-gallery-1.jpg",
+      "name": "gallery-1.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-5/gallery-1.jpg",
+      "folderPath": "templates/khitan-5"
+    },
+    {
+      "id": "local-gallery-2.jpg",
+      "name": "gallery-2.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-5/gallery-2.jpg",
+      "folderPath": "templates/khitan-5"
+    },
+    {
+      "id": "local-gallery-3.jpg",
+      "name": "gallery-3.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-5/gallery-3.jpg",
+      "folderPath": "templates/khitan-5"
+    },
+    {
+      "id": "local-gallery-4.jpg",
+      "name": "gallery-4.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-5/gallery-4.jpg",
+      "folderPath": "templates/khitan-5"
+    },
+    {
+      "id": "local-kid.png",
+      "name": "kid.png",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-5/kid.png",
+      "folderPath": "templates/khitan-5"
+    },
+    {
+      "id": "local-kid2.png",
+      "name": "kid2.png",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-5/kid2.png",
+      "folderPath": "templates/khitan-5"
+    }
+  ],
+  "templates/khitan-6": [
+    {
+      "id": "local-bg-corners.jpg",
+      "name": "bg-corners.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-6/bg-corners.jpg",
+      "folderPath": "templates/khitan-6"
+    },
+    {
+      "id": "local-bg-cover.jpg",
+      "name": "bg-cover.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-6/bg-cover.jpg",
+      "folderPath": "templates/khitan-6"
+    },
+    {
+      "id": "local-bg-sections.jpg",
+      "name": "bg-sections.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-6/bg-sections.jpg",
+      "folderPath": "templates/khitan-6"
+    },
+    {
+      "id": "local-gallery-1.jpg",
+      "name": "gallery-1.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-6/gallery-1.jpg",
+      "folderPath": "templates/khitan-6"
+    },
+    {
+      "id": "local-gallery-2.jpg",
+      "name": "gallery-2.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-6/gallery-2.jpg",
+      "folderPath": "templates/khitan-6"
+    },
+    {
+      "id": "local-gallery-3.jpg",
+      "name": "gallery-3.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-6/gallery-3.jpg",
+      "folderPath": "templates/khitan-6"
+    },
+    {
+      "id": "local-gallery-4.jpg",
+      "name": "gallery-4.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-6/gallery-4.jpg",
+      "folderPath": "templates/khitan-6"
+    },
+    {
+      "id": "local-kid.png",
+      "name": "kid.png",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-6/kid.png",
+      "folderPath": "templates/khitan-6"
+    },
+    {
+      "id": "local-kid2.png",
+      "name": "kid2.png",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-6/kid2.png",
+      "folderPath": "templates/khitan-6"
+    }
+  ],
+  "templates/khitan-7": [
+    {
+      "id": "local-bg-corners.jpg",
+      "name": "bg-corners.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-7/bg-corners.jpg",
+      "folderPath": "templates/khitan-7"
+    },
+    {
+      "id": "local-bg-cover.jpg",
+      "name": "bg-cover.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-7/bg-cover.jpg",
+      "folderPath": "templates/khitan-7"
+    },
+    {
+      "id": "local-bg-sections.jpg",
+      "name": "bg-sections.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-7/bg-sections.jpg",
+      "folderPath": "templates/khitan-7"
+    },
+    {
+      "id": "local-gallery-1.jpg",
+      "name": "gallery-1.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-7/gallery-1.jpg",
+      "folderPath": "templates/khitan-7"
+    },
+    {
+      "id": "local-gallery-2.jpg",
+      "name": "gallery-2.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-7/gallery-2.jpg",
+      "folderPath": "templates/khitan-7"
+    },
+    {
+      "id": "local-gallery-3.jpg",
+      "name": "gallery-3.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-7/gallery-3.jpg",
+      "folderPath": "templates/khitan-7"
+    },
+    {
+      "id": "local-gallery-4.jpg",
+      "name": "gallery-4.jpg",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-7/gallery-4.jpg",
+      "folderPath": "templates/khitan-7"
+    },
+    {
+      "id": "local-kid.png",
+      "name": "kid.png",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-7/kid.png",
+      "folderPath": "templates/khitan-7"
+    },
+    {
+      "id": "local-kid2.png",
+      "name": "kid2.png",
+      "created_at": "2026-07-07T09:21:44.969Z",
+      "updated_at": "2026-07-07T09:21:44.969Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-7/kid2.png",
+      "folderPath": "templates/khitan-7"
+    }
+  ],
+  "templates/khitan-8": [
+    {
+      "id": "local-bg-corners.jpg",
+      "name": "bg-corners.jpg",
+      "created_at": "2026-07-07T09:21:44.970Z",
+      "updated_at": "2026-07-07T09:21:44.970Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-8/bg-corners.jpg",
+      "folderPath": "templates/khitan-8"
+    },
+    {
+      "id": "local-bg-cover.jpg",
+      "name": "bg-cover.jpg",
+      "created_at": "2026-07-07T09:21:44.970Z",
+      "updated_at": "2026-07-07T09:21:44.970Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-8/bg-cover.jpg",
+      "folderPath": "templates/khitan-8"
+    },
+    {
+      "id": "local-bg-sections.jpg",
+      "name": "bg-sections.jpg",
+      "created_at": "2026-07-07T09:21:44.970Z",
+      "updated_at": "2026-07-07T09:21:44.970Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-8/bg-sections.jpg",
+      "folderPath": "templates/khitan-8"
+    },
+    {
+      "id": "local-gallery-1.jpg",
+      "name": "gallery-1.jpg",
+      "created_at": "2026-07-07T09:21:44.970Z",
+      "updated_at": "2026-07-07T09:21:44.970Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-8/gallery-1.jpg",
+      "folderPath": "templates/khitan-8"
+    },
+    {
+      "id": "local-gallery-2.jpg",
+      "name": "gallery-2.jpg",
+      "created_at": "2026-07-07T09:21:44.970Z",
+      "updated_at": "2026-07-07T09:21:44.970Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-8/gallery-2.jpg",
+      "folderPath": "templates/khitan-8"
+    },
+    {
+      "id": "local-gallery-3.jpg",
+      "name": "gallery-3.jpg",
+      "created_at": "2026-07-07T09:21:44.970Z",
+      "updated_at": "2026-07-07T09:21:44.970Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-8/gallery-3.jpg",
+      "folderPath": "templates/khitan-8"
+    },
+    {
+      "id": "local-gallery-4.jpg",
+      "name": "gallery-4.jpg",
+      "created_at": "2026-07-07T09:21:44.970Z",
+      "updated_at": "2026-07-07T09:21:44.970Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-8/gallery-4.jpg",
+      "folderPath": "templates/khitan-8"
+    },
+    {
+      "id": "local-kid.png",
+      "name": "kid.png",
+      "created_at": "2026-07-07T09:21:44.970Z",
+      "updated_at": "2026-07-07T09:21:44.970Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-8/kid.png",
+      "folderPath": "templates/khitan-8"
+    },
+    {
+      "id": "local-kid2.png",
+      "name": "kid2.png",
+      "created_at": "2026-07-07T09:21:44.970Z",
+      "updated_at": "2026-07-07T09:21:44.970Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-8/kid2.png",
+      "folderPath": "templates/khitan-8"
+    }
+  ],
+  "templates/khitan-9": [
+    {
+      "id": "local-bg-corners.jpg",
+      "name": "bg-corners.jpg",
+      "created_at": "2026-07-07T09:21:44.970Z",
+      "updated_at": "2026-07-07T09:21:44.970Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-9/bg-corners.jpg",
+      "folderPath": "templates/khitan-9"
+    },
+    {
+      "id": "local-bg-cover.jpg",
+      "name": "bg-cover.jpg",
+      "created_at": "2026-07-07T09:21:44.970Z",
+      "updated_at": "2026-07-07T09:21:44.970Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-9/bg-cover.jpg",
+      "folderPath": "templates/khitan-9"
+    },
+    {
+      "id": "local-bg-sections.jpg",
+      "name": "bg-sections.jpg",
+      "created_at": "2026-07-07T09:21:44.970Z",
+      "updated_at": "2026-07-07T09:21:44.970Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/jpeg"
+      },
+      "publicUrl": "/templates/khitan-9/bg-sections.jpg",
+      "folderPath": "templates/khitan-9"
+    },
+    {
+      "id": "local-ornament-astronaut.png",
+      "name": "ornament-astronaut.png",
+      "created_at": "2026-07-07T09:21:44.970Z",
+      "updated_at": "2026-07-07T09:21:44.970Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-9/ornament-astronaut.png",
+      "folderPath": "templates/khitan-9"
+    },
+    {
+      "id": "local-ornament-planet.png",
+      "name": "ornament-planet.png",
+      "created_at": "2026-07-07T09:21:44.970Z",
+      "updated_at": "2026-07-07T09:21:44.970Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-9/ornament-planet.png",
+      "folderPath": "templates/khitan-9"
+    },
+    {
+      "id": "local-ornament-rocket.png",
+      "name": "ornament-rocket.png",
+      "created_at": "2026-07-07T09:21:44.970Z",
+      "updated_at": "2026-07-07T09:21:44.970Z",
+      "metadata": {
+        "size": 102400,
+        "mimetype": "image/png"
+      },
+      "publicUrl": "/templates/khitan-9/ornament-rocket.png",
+      "folderPath": "templates/khitan-9"
+    }
+  ]
+}
