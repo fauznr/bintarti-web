@@ -1147,6 +1147,14 @@ export default function Wedding1View({
             </ScrollReveal>
           </section>
 
+          {/* FOOTER */}
+<footer className="pb-8 pt-4 flex flex-col items-center justify-center relative z-10 bg-transparent opacity-80">
+  <img src="/logo.png" alt="Bintarti" className="w-6 h-6 mb-1.5 opacity-80" />
+  <p className="text-[10px] font-sans text-zinc-500 mt-1">
+    © 2026 Bintarti. All rights reserved.
+  </p>
+</footer>
+
           {/* QR Code Fullscreen Modal */}
           {showQrModal && (
             <div 
