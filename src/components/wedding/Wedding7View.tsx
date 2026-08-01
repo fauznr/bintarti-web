@@ -308,7 +308,7 @@ export default function Wedding7View({
   const fallbackHero = "/indo_prewed_simple_1_1785092558852.jpg";
   const fallbackGroom = "/indo_prewed_groom_1_1785092582755.jpg";
   const fallbackBride = "/indo_prewed_bride_1_1785092571671.jpg";
-  const bankAccounts = weddingNotes.bankAccount ? JSON.parse(weddingNotes.bankAccount) : [];
+  const bankAccounts = weddingNotes.bankAccount ? JSON.parse(weddingNotes.bankAccount) : [{ bankName: "BANK BCA", accountNumber: "1234567890", recipientName: "Aditya" }, { bankName: "OVO / E-WALLET", accountNumber: "081234567890", recipientName: "Kirana" }];
 
   // Dynamic Data Extraction with Defaults
   const groomName = invitationData?.groom_nickname || invitationData?.groom_name || "Aditya";

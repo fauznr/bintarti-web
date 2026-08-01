@@ -84,10 +84,10 @@ export default function Wedding5View({
   const weddingNotes = invitationData?.notes ? (typeof invitationData.notes === "string" ? JSON.parse(invitationData.notes) : invitationData.notes) : {};
   const isPro = !!invitationData?.is_pro || !!weddingNotes?.isPro;
   
-  const youtubeVideo = weddingNotes?.youtubeVideo || null;
+  const youtubeVideo = weddingNotes?.youtubeVideo || "https://www.youtube.com/watch?v=u_FvAolXhI0";
   const videoLink = typeof isDemo !== "undefined" && isDemo ? "https://www.youtube.com/embed/5qap5aO4i9A?rel=0" : (invitationData?.video_link || "");
 
-  let bankAccounts: any[] = [];
+  let bankAccounts: any[] = [{ bankName: "BANK BCA", accountNumber: "1234567890", recipientName: "Farhan" }, { bankName: "OVO / E-WALLET", accountNumber: "081234567890", recipientName: "Nabila" }];
   try {
     if (weddingNotes?.bankAccounts && Array.isArray(weddingNotes.bankAccounts)) {
       bankAccounts = weddingNotes.bankAccounts;

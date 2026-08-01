@@ -169,7 +169,7 @@ export default function Wedding3View({
   const bridePhoto     = weddingNotes?.bridePhotoUrl     || invitationData?.bride_photo_url || "/saferia_bride_portrait.jpg";
 
   const isPro          = !!invitationData?.is_pro || !!weddingNotes?.isPro;
-  const youtubeVideo   = weddingNotes?.youtubeVideo || null;
+  const youtubeVideo   = weddingNotes?.youtubeVideo || "https://www.youtube.com/watch?v=u_FvAolXhI0";
 
   const eventTypeLabel = invitationData?.theme === "Wedding 3" ? "Pemberkatan" : "Akad Nikah";
   const akadDate       = formatDateIndonesian(weddingNotes?.akadDate || invitationData?.event_date || "2026-12-24");
@@ -196,7 +196,10 @@ export default function Wedding3View({
         if (Array.isArray(parsed) && parsed.length > 0) return parsed;
       }
     } catch (e) {}
-    return [];
+    return [
+      { bankName: "BANK BCA", accountNumber: "1234567890", recipientName: groomName },
+      { bankName: "OVO / E-WALLET", accountNumber: "081234567890", recipientName: brideName }
+    ];
   })();
 
   const loveStory = (() => {

@@ -209,7 +209,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
             <h2 className="text-xs uppercase tracking-widest text-blue-700 font-bold mb-3 font-accent">Format Momen Anda</h2>
-            <p className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
+            <p className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">
               Layanan Undangan Premium
             </p>
             <p className="text-base text-slate-700 leading-relaxed font-sans">
@@ -249,7 +249,7 @@ export default function Home() {
             {/* Left Content Column */}
             <div className="lg:col-span-5 flex flex-col text-center lg:text-left items-center lg:items-start">
               <h2 className="text-xs uppercase tracking-widest text-blue-700 font-bold mb-3 font-accent">Fitur Melimpah</h2>
-              <p className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+              <p className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-6">
                 Teknologi &amp; Fitur Unggulan Terbaik
               </p>
               <p className="text-base text-slate-700 leading-relaxed mb-8 font-sans">
@@ -302,7 +302,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-xs uppercase tracking-widest text-blue-700 font-bold mb-3 font-accent">Kisah Bahagia</h2>
-            <p className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
+            <p className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">
               Apa Kata Klien Kami?
             </p>
             <p className="text-base text-slate-700 font-sans">
@@ -360,7 +360,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-xs uppercase tracking-widest text-blue-700 font-bold mb-3 font-accent">FAQ</h2>
-            <p className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
+            <p className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">
               Pertanyaan yang Sering Diajukan
             </p>
             <p className="text-base text-slate-700 font-sans">

@@ -1,7 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Poppins, Inter, Atma, Averia_Gruesa_Libre, Bree_Serif, Cookie, Beth_Ellen, Bungee, Bungee_Inline, Karla, Playfair_Display, Aref_Ruqaa } from "next/font/google";
+import { Poppins, Inter, Atma, Averia_Gruesa_Libre, Bree_Serif, Cookie, Beth_Ellen, Bungee, Bungee_Inline, Karla, Playfair_Display, Aref_Ruqaa, Cormorant_Garamond, Raleway } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-cormorant-garamond",
+  display: "swap",
+});
+
+const raleway = Raleway({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-raleway",
+  display: "swap",
+});
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -134,7 +148,7 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`${poppins.variable} ${inter.variable} ${atma.variable} ${averia.variable} ${breeSerif.variable} ${cookie.variable} ${bethEllen.variable} ${bungee.variable} ${bungeeInline.variable} ${karla.variable} ${playfairDisplay.variable} ${arefRuqaa.variable} h-full antialiased`}
+      className={`${poppins.variable} ${inter.variable} ${atma.variable} ${averia.variable} ${breeSerif.variable} ${cookie.variable} ${bethEllen.variable} ${bungee.variable} ${bungeeInline.variable} ${karla.variable} ${playfairDisplay.variable} ${arefRuqaa.variable} ${cormorantGaramond.variable} ${raleway.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans bg-white text-slate-900 overflow-x-hidden">
         {children}

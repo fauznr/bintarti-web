@@ -131,20 +131,20 @@ export default function Wedding4View({
   })();
 
   const nameParts = (invitationData?.full_name || "").split("&").map((n: string) => n.trim());
-  const groomFullName  = weddingNotes?.groomName         || nameParts[0] || "{groomFullName}";
+  const groomFullName  = weddingNotes?.groomName         || nameParts[0] || "Dimas Anggara";
   const groomName      = weddingNotes?.groomNickname     || nameParts[0]?.split(" ")[0] || "Dimas";
-  const groomParents   = weddingNotes?.groomParents      || "{groomParents}";
+  const groomParents   = weddingNotes?.groomParents      || "Bapak Budi & Ibu Siti";
   const groomPhoto     = weddingNotes?.groomPhotoUrl     || invitationData?.groom_photo_url || "/wedding4-groom.jpg";
   const groomIg        = weddingNotes?.groomInstagram           || "";
   
-  const brideFullName  = weddingNotes?.brideName         || nameParts[1] || "{brideFullName}";
+  const brideFullName  = weddingNotes?.brideName         || nameParts[1] || "Annisa Larasati";
   const brideName      = weddingNotes?.brideNickname     || nameParts[1]?.split(" ")[0] || "Annisa";
-  const brideParents   = weddingNotes?.brideParents      || "{brideParents}";
+  const brideParents   = weddingNotes?.brideParents      || "Bapak Ahmad & Ibu Rini";
   const bridePhoto     = weddingNotes?.bridePhotoUrl     || invitationData?.bride_photo_url || "/wedding4-bride.jpg";
   const brideIg        = weddingNotes?.brideInstagram           || "";
 
   const isPro          = !!invitationData?.is_pro || !!weddingNotes?.isPro;
-  const youtubeVideo   = weddingNotes?.youtubeVideo || null;
+  const youtubeVideo   = weddingNotes?.youtubeVideo || "https://www.youtube.com/watch?v=u_FvAolXhI0";
   const eventTypeLabel = weddingNotes?.akadLabel || (invitationData?.theme === "Wedding 4" ? "{eventTypeLabel}" : "Pemberkatan");
   const akadDate       = formatDateIndonesian(weddingNotes?.akadDate || invitationData?.event_date || "2026-08-18");
   const akadTime       = weddingNotes?.akadTime          || invitationData?.event_time    || "08.00 WIB";
@@ -253,7 +253,7 @@ export default function Wedding4View({
 
   const bankAccounts = parsedBanks.length > 0 
     ? parsedBanks 
-    : (weddingNotes?.bankAccounts || weddingNotes?.giftAccounts || []);
+    : (weddingNotes?.bankAccounts || weddingNotes?.giftAccounts || [{ bankName: "BANK BCA", accountNumber: "1234567890", recipientName: groomName }, { bankName: "OVO / E-WALLET", accountNumber: "081234567890", recipientName: brideName }]);
       
   // For standard Bintarti Gallery mapping
   const galleryImages = Array.isArray(invitationData?.gallery_images) && invitationData.gallery_images.length > 0 
@@ -616,7 +616,7 @@ export default function Wedding4View({
                 <div className="relative w-44 h-52 rounded-2xl overflow-hidden border-2 border-slate-100 shadow-md">
                   <Image 
                     src={groomPhoto}
-                    alt="{groomFullName}"
+                    alt={groomFullName}
                     fill
                     className="object-cover object-center"
                   />
@@ -654,7 +654,7 @@ export default function Wedding4View({
                 <div className="relative w-44 h-52 rounded-2xl overflow-hidden border-2 border-slate-100 shadow-md">
                   <Image 
                     src={bridePhoto}
-                    alt="{brideFullName}"
+                    alt={brideFullName}
                     fill
                     className="object-cover object-center"
                   />

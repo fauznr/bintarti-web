@@ -142,7 +142,7 @@ export default function Wedding2View({
   const bridePhoto     = weddingNotes?.bridePhotoUrl     || invitationData?.bride_photo_url || "/wedding-moody-bg3.jpg";
   const lockscreenNames= `${groomNickname} & ${brideNickname}`;
   const isPro          = !!invitationData?.is_pro || !!weddingNotes?.isPro;
-  const youtubeVideo   = weddingNotes?.youtubeVideo || null;
+  const youtubeVideo   = weddingNotes?.youtubeVideo || "https://www.youtube.com/watch?v=u_FvAolXhI0";
 
   const akadDate       = weddingNotes?.akadDate          || invitationData?.event_date    || "2026-10-25";
   const akadTime       = weddingNotes?.akadTime          || invitationData?.event_time    || "10:00 WIB - Selesai";
