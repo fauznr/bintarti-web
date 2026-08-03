@@ -308,18 +308,29 @@ export default function Wedding7View({
   const fallbackHero = "/indo_prewed_simple_1_1785092558852.jpg";
   const fallbackGroom = "/indo_prewed_groom_1_1785092582755.jpg";
   const fallbackBride = "/indo_prewed_bride_1_1785092571671.jpg";
-  const bankAccounts = weddingNotes.bankAccount ? JSON.parse(weddingNotes.bankAccount) : [{ bankName: "BANK BCA", accountNumber: "1234567890", recipientName: "Aditya" }, { bankName: "OVO / E-WALLET", accountNumber: "081234567890", recipientName: "Kirana" }];
+  let parsedBanks = [];
+  try {
+    if (invitationData?.bank_account && typeof invitationData.bank_account === "string") {
+      parsedBanks = JSON.parse(invitationData.bank_account);
+    } else if (Array.isArray(invitationData?.bank_accounts)) {
+      parsedBanks = invitationData.bank_accounts;
+    }
+  } catch (e) {}
+
+  const bankAccounts = parsedBanks.length > 0 
+    ? parsedBanks 
+    : (weddingNotes?.bankAccounts || weddingNotes?.giftAccounts || [{ bankName: "BANK BCA", accountNumber: "1234567890", recipientName: "Aditya" }, { bankName: "OVO / E-WALLET", accountNumber: "081234567890", recipientName: "Kirana" }]);
 
   // Dynamic Data Extraction with Defaults
-  const groomName = invitationData?.groom_nickname || invitationData?.groom_name || "Aditya";
-  const groomFullName = invitationData?.groom_full_name || "Aditya Bayu, S.Par.";
-  const groomParents = invitationData?.groom_parents || "Putra Pertama dari Bapak H. Achmad & Ibu Hj. Nurul";
-  const groomIg = invitationData?.groom_instagram || "@aditya_bayu";
+  const groomName = weddingNotes.groomNickname || invitationData?.groom_nickname || invitationData?.groom_name || "Aditya";
+  const groomFullName = weddingNotes.groomName || invitationData?.groom_full_name || "Aditya Bayu, S.Par.";
+  const groomParents = weddingNotes.groomParents || invitationData?.groom_parents || "Putra Pertama dari Bapak H. Achmad & Ibu Hj. Nurul";
+  const groomIg = weddingNotes.groomInstagram || invitationData?.groom_instagram || "@aditya_bayu";
 
-  const brideName = invitationData?.bride_nickname || invitationData?.bride_name || "Kirana";
-  const brideFullName = invitationData?.bride_full_name || "Kirana Larasati, A.Md.Ak.";
-  const brideParents = invitationData?.bride_parents || "Putri Pertama dari Bapak H. Syamsul & Ibu Hj. Dewati";
-  const brideIg = invitationData?.bride_instagram || "@kirana_larasati";
+  const brideName = weddingNotes.brideNickname || invitationData?.bride_nickname || invitationData?.bride_name || "Kirana";
+  const brideFullName = weddingNotes.brideName || invitationData?.bride_full_name || "Kirana Larasati, A.Md.Ak.";
+  const brideParents = weddingNotes.brideParents || invitationData?.bride_parents || "Putri Pertama dari Bapak H. Syamsul & Ibu Hj. Dewati";
+  const brideIg = weddingNotes.brideInstagram || invitationData?.bride_instagram || "@kirana_larasati";
 
   
   const formatEventDate = (dateStr: string) => {
@@ -484,7 +495,7 @@ export default function Wedding7View({
           {/* Light Prewedding Background with Soft White Overlay */}
           <div className="absolute inset-0 z-0 select-none overflow-hidden">
             <Image
-              src={weddingNotes.photoHero || fallbackHero}
+              src={weddingNotes.photoHero || weddingNotes.heroPhotoUrl || fallbackHero}
               alt="Cover Background"
               fill
               className="object-cover object-center object-center brightness-95 scale-105 animate-pulse duration-[10000ms]"
@@ -546,7 +557,7 @@ export default function Wedding7View({
           {/* Full Page Prewedding Background */}
           <div className="absolute inset-0 z-0">
             <Image
-              src={weddingNotes.photoHero || fallbackHero}
+              src={weddingNotes.photoHero || weddingNotes.heroPhotoUrl || fallbackHero}
               alt="Hero Background"
               fill
               className="object-cover object-center object-center brightness-95"
@@ -610,7 +621,7 @@ export default function Wedding7View({
             <div className="space-y-4">
               <div className="relative w-48 h-64 mx-auto rounded-3xl overflow-hidden border-2 border-[#6a8f7f]/50 shadow-2xl group">
                 <Image
-                  src={weddingNotes.photoGroom || weddingNotes.photoHero || fallbackGroom}
+                  src={weddingNotes.photoGroom || weddingNotes.groomPhotoUrl || weddingNotes.photoHero || weddingNotes.heroPhotoUrl || fallbackGroom}
                   alt="Groom Photo"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
@@ -644,7 +655,7 @@ export default function Wedding7View({
             <div className="space-y-4">
               <div className="relative w-48 h-64 mx-auto rounded-3xl overflow-hidden border-2 border-[#6a8f7f]/50 shadow-2xl group">
                 <Image
-                  src={weddingNotes.photoBride || weddingNotes.photoHero || fallbackBride}
+                  src={weddingNotes.photoBride || weddingNotes.bridePhotoUrl || weddingNotes.photoHero || weddingNotes.heroPhotoUrl || fallbackBride}
                   alt="Bride Photo"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
