@@ -304,7 +304,7 @@ export default function Wedding7View({
   // Audio Reference
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const weddingNotes = invitationData?.wedding_notes ? JSON.parse(invitationData.wedding_notes) : {};
+  const weddingNotes = invitationData?.notes ? (typeof invitationData.notes === "string" ? JSON.parse(invitationData.notes) : invitationData.notes) : {};
   const fallbackHero = "/indo_prewed_simple_1_1785092558852.jpg";
   const fallbackGroom = "/indo_prewed_groom_1_1785092582755.jpg";
   const fallbackBride = "/indo_prewed_bride_1_1785092571671.jpg";
