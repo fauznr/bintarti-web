@@ -747,7 +747,7 @@ const fallbackHero = "/indo_prewed_simple_1_1785092558852.jpg";
               </h2>
               <div className="h-0.5 w-12 bg-white/40 mx-auto my-2" />
               <p className="font-lora text-xs text-white/90 italic">
-                Foto &amp; Video Prewedding Disa &amp; Trio
+                Foto &amp; Video Prewedding {brideName} &amp; {groomName}
               </p>
             </div>
           </ScrollReveal>
