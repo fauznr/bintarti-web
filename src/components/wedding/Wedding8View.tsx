@@ -367,7 +367,20 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
 
   const guest = guestName ? safeDecodeGuestName(guestName) : "";
 
-  const coverPhotoUrl = weddingNotes?.heroPhotoUrl || data.coverPhoto || "/wedding8-couple-casual.jpg";
+  const parsedGallery = (() => {
+    const imgs = invitationData?.gallery_images;
+    if (Array.isArray(imgs) && imgs.length > 0) return imgs;
+    if (typeof imgs === "string" && imgs.length > 0) {
+      try {
+        const parsed = JSON.parse(imgs);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      } catch {}
+      return imgs.split(",").filter((s: string) => s.trim() !== "");
+    }
+    return [];
+  })();
+
+  const coverPhotoUrl = weddingNotes?.heroPhotoUrl || data.coverPhoto || parsedGallery[0] || weddingNotes?.galleryPhotos?.[0] || "/wedding8-couple-casual.jpg";
   const groomPhotoUrl = weddingNotes?.groomPhotoUrl || "/wedding8-groom-casual.jpg";
   const bridePhotoUrl = weddingNotes?.bridePhotoUrl || "/wedding8-bride-casual.jpg";
 
