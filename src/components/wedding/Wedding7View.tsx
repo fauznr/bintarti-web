@@ -240,26 +240,31 @@ export default function Wedding7View({
   });
 
   // Form State for Guestbook / Wishes
-  const [wishes, setWishes] = useState([
-    {
-      name: "Budi & Keluarga",
-      status: "Hadir",
-      message: "Selamat atas pernikahannya Kirana & Aditya! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah.",
-      time: "2 jam yang lalu"
-    },
-    {
-      name: "Siti Rahma",
-      status: "Hadir",
-      message: "Barakallahu lakuma wa baraka 'alaikuma wa jama'a bainakuma fii khair. Aamiin yaa Rabbal 'alaamiin.",
-      time: "5 jam yang lalu"
-    },
-    {
-      name: "Rian & Partner",
-      status: "Hadir",
-      message: "Happy Wedding Kirana & Aditya! Lancar-lancar sampai hari H dan bahagia selamanya!",
-      time: "1 hari yang lalu"
+  const [wishes, setWishes] = useState<Array<any>>([]);
+
+  useEffect(() => {
+    async function fetchComments() {
+      if (!themeId) return;
+      try {
+        const res = await fetch(`/api/comments?invitationId=${encodeURIComponent(themeId)}`);
+        if (res.ok) {
+          const data = await res.json();
+          if (Array.isArray(data)) {
+            const mapped = data.map((d: any) => ({
+              name: d.name,
+              status: d.rsvp_status || "Hadir",
+              message: d.comment,
+              time: d.created_at ? new Date(d.created_at).toLocaleDateString("id-ID") : "Baru saja"
+            }));
+            setWishes(mapped);
+          }
+        }
+      } catch (e) {
+        console.error("Error loading comments:", e);
+      }
     }
-  ]);
+    fetchComments();
+  }, [themeId]);
   const [formName, setFormName] = useState("");
   const [formStatus, setFormStatus] = useState("Hadir");
   const [formPax, setFormPax] = useState("1");
@@ -305,7 +310,10 @@ export default function Wedding7View({
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const weddingNotes = invitationData?.notes ? (typeof invitationData.notes === "string" ? JSON.parse(invitationData.notes) : invitationData.notes) : {};
-  const fallbackHero = "/indo_prewed_simple_1_1785092558852.jpg";
+  
+  const coverPhotoUrl = invitationData?.child_photo_url || invitationData?.childPhotoUrl || weddingNotes?.heroPhotoUrl || weddingNotes?.photoHero || "/indo_prewed_simple_1_1785092558852.jpg";
+  const heroPhotoUrl = weddingNotes?.heroPhotoUrl || weddingNotes?.photoHero || coverPhotoUrl || "/indo_prewed_simple_1_1785092558852.jpg";
+const fallbackHero = "/indo_prewed_simple_1_1785092558852.jpg";
   const fallbackGroom = "/indo_prewed_groom_1_1785092582755.jpg";
   const fallbackBride = "/indo_prewed_bride_1_1785092571671.jpg";
   let parsedBanks = [];
@@ -358,7 +366,7 @@ export default function Wedding7View({
 
   // Gallery Photos
   const galleryPhotos = invitationData?.gallery_images && Array.isArray(invitationData.gallery_images) && invitationData.gallery_images.length > 0
-    ? invitationData.gallery_images.map((g: any) => g.image_url)
+    ? invitationData.gallery_images.map((g: any) => typeof g === "string" ? g : (g.image_url || g))
     : [
         "/indo_prewed_simple_1_1785092558852.jpg",
         "/indo_prewed_couple_2_1785092595152.jpg",
@@ -495,7 +503,7 @@ export default function Wedding7View({
           {/* Light Prewedding Background with Soft White Overlay */}
           <div className="absolute inset-0 z-0 select-none overflow-hidden">
             <Image
-              src={weddingNotes.photoHero || weddingNotes.heroPhotoUrl || fallbackHero}
+              src={coverPhotoUrl}
               alt="Cover Background"
               fill
               className="object-cover object-center object-center brightness-95 scale-105 animate-pulse duration-[10000ms]"
@@ -557,7 +565,7 @@ export default function Wedding7View({
           {/* Full Page Prewedding Background */}
           <div className="absolute inset-0 z-0">
             <Image
-              src={weddingNotes.photoHero || weddingNotes.heroPhotoUrl || fallbackHero}
+              src={heroPhotoUrl}
               alt="Hero Background"
               fill
               className="object-cover object-center object-center brightness-95"
@@ -621,7 +629,7 @@ export default function Wedding7View({
             <div className="space-y-4">
               <div className="relative w-48 h-64 mx-auto rounded-3xl overflow-hidden border-2 border-[#6a8f7f]/50 shadow-2xl group">
                 <Image
-                  src={weddingNotes.photoGroom || weddingNotes.groomPhotoUrl || weddingNotes.photoHero || weddingNotes.heroPhotoUrl || fallbackGroom}
+                  src={weddingNotes.photoGroom || weddingNotes.groomPhotoUrl || heroPhotoUrl || fallbackGroom}
                   alt="Groom Photo"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
@@ -655,7 +663,7 @@ export default function Wedding7View({
             <div className="space-y-4">
               <div className="relative w-48 h-64 mx-auto rounded-3xl overflow-hidden border-2 border-[#6a8f7f]/50 shadow-2xl group">
                 <Image
-                  src={weddingNotes.photoBride || weddingNotes.bridePhotoUrl || weddingNotes.photoHero || weddingNotes.heroPhotoUrl || fallbackBride}
+                  src={weddingNotes.photoBride || weddingNotes.bridePhotoUrl || heroPhotoUrl || fallbackBride}
                   alt="Bride Photo"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
@@ -889,7 +897,7 @@ export default function Wedding7View({
                       BANK {bank.bankName}
                     </span>
                     <p className="font-cinzel text-lg font-bold text-[#1A202C] tracking-wider">{bank.accountNumber}</p>
-                    <p className="font-montserrat text-xs text-[#718096] font-light">a.n. {bank.accountHolder || bank.bankName}</p>
+                    <p className="font-montserrat text-xs text-[#718096] font-light">a.n. {bank.recipientName || bank.accountName || bank.accountHolder || bank.bankName}</p>
                     <button
                       onClick={() => copyToClipboard(bank.accountNumber, bank.bankName)}
                       className="px-5 py-2 rounded-full border border-[#6a8f7f] bg-white hover:bg-[#6a8f7f] hover:text-white text-[#6a8f7f] text-[9px] font-cinzel tracking-widest font-bold transition-all flex items-center justify-center gap-1.5 mx-auto cursor-pointer shadow-sm"
