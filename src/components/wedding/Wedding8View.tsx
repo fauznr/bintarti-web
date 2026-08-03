@@ -380,9 +380,12 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
     return [];
   })();
 
-  const coverPhotoUrl = weddingNotes?.heroPhotoUrl || data.coverPhoto || parsedGallery[0] || weddingNotes?.galleryPhotos?.[0] || "/wedding8-couple-casual.jpg";
+  const coverPhotoUrl = invitationData?.child_photo_url || invitationData?.childPhotoUrl || weddingNotes?.heroPhotoUrl || data.coverPhoto || parsedGallery[0] || weddingNotes?.galleryPhotos?.[0] || "/wedding8-couple-casual.jpg";
   const groomPhotoUrl = weddingNotes?.groomPhotoUrl || "/wedding8-groom-casual.jpg";
   const bridePhotoUrl = weddingNotes?.bridePhotoUrl || "/wedding8-bride-casual.jpg";
+  
+  const groomParents = weddingNotes?.groomParents || invitationData?.groom_parents || "Bapak & Ibu Suharto";
+  const brideParents = weddingNotes?.brideParents || invitationData?.bride_parents || "Bapak & Ibu Wardhana";
 
   const galleryPhotos = (() => {
     const imgs = invitationData?.gallery_images || data.galleryPhotos;
@@ -827,7 +830,7 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
                   <p className="text-xs font-black text-amber-800/60 uppercase tracking-[0.25em]">Mempelai Pria</p>
                   <h3 className="text-2xl sm:text-3xl font-black text-amber-950 tracking-tight">{groom}</h3>
                   <p className="text-sm text-amber-900/80 italic font-semibold pt-1">
-                    Putra dari Bapak &amp; Ibu Suharto
+                    Putra dari {groomParents}
                   </p>
                   <div className="flex justify-center gap-1.5 pt-2">
                     {[...Array(5)].map((_, i) => (
@@ -879,7 +882,7 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
                   <p className="text-xs font-black text-amber-800/60 uppercase tracking-[0.25em]">Mempelai Wanita</p>
                   <h3 className="text-2xl sm:text-3xl font-black text-amber-950 tracking-tight">{bride}</h3>
                   <p className="text-sm text-amber-900/80 italic font-semibold pt-1">
-                    Putri dari Bapak &amp; Ibu Wardhana
+                    Putri dari {brideParents}
                   </p>
                   <div className="flex justify-center gap-1.5 pt-2">
                     {[...Array(5)].map((_, i) => (
