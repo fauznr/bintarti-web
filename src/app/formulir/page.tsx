@@ -729,7 +729,7 @@ export default function Formulir() {
       }
       const galleryLabel = (formData.theme === "Wedding 1" || formData.theme === "Wedding 4" || formData.theme === "Wedding 5") 
         ? "Foto C (Galeri & Background Slideshow)" 
-        : (formData.theme === "Wedding 7" ? "Foto B (Galeri Foto)" : "Foto C (Galeri Album)");
+        : (["Wedding 6", "Wedding 7", "Wedding 8"].includes(formData.theme) ? "Foto B (Galeri Foto)" : "Foto C (Galeri Album)");
       text += `• ${galleryLabel}: ${galleryBase64.length} foto terunggah\n\n`;
     } else {
       text += `*BAGIAN 2: DATA UTAMA ${isBirthday ? "ULANG TAHUN" : isAqiqah ? "AQIQAH" : "KHITAN"}*\n`;
@@ -2305,7 +2305,7 @@ export default function Formulir() {
                               </div>
                             </div>
 
-                            {(formData.theme !== "Wedding 1" && formData.theme !== "Wedding 4" && formData.theme !== "Wedding 5" && formData.theme !== "Wedding 6" && formData.theme !== "Wedding 7") && (<>
+                            {(formData.theme !== "Wedding 1" && formData.theme !== "Wedding 4" && formData.theme !== "Wedding 5" && formData.theme !== "Wedding 6" && formData.theme !== "Wedding 7" && formData.theme !== "Wedding 8") && (<>
                             {/* FOTO OUR STORY */}
                             <div className="p-5 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
                               <span className="px-3 py-1 rounded-lg bg-amber-100 text-amber-800 text-[11px] font-extrabold uppercase tracking-wide inline-block">
@@ -2747,7 +2747,7 @@ export default function Formulir() {
                             <div className="p-5 rounded-2xl bg-emerald-50/60 border border-emerald-200/80 space-y-3">
                               <div className="flex flex-wrap items-center justify-between gap-2">
                                 <span className="px-3 py-1 rounded-lg bg-emerald-100 text-emerald-700 text-[11px] font-extrabold uppercase tracking-wide flex items-center gap-1.5">
-                                  {(formData.theme === "Wedding 1" || formData.theme === "Wedding 4" || formData.theme === "Wedding 5") ? "🎞️ Foto C: Galeri Foto & background Undangan slideshow" : (formData.theme === "Wedding 7" ? "🎞️ Foto B: Galeri Foto" : "🎞️ Foto C: Galeri Foto")}
+                                  {(formData.theme === "Wedding 1" || formData.theme === "Wedding 4" || formData.theme === "Wedding 5") ? "🎞️ Foto C: Galeri Foto & background Undangan slideshow" : (["Wedding 6", "Wedding 7", "Wedding 8"].includes(formData.theme) ? "🎞️ Foto B: Galeri Foto" : "🎞️ Foto C: Galeri Foto")}
                                 </span>
                                 <span className="text-[10px] text-emerald-600 font-black bg-emerald-100 px-2 py-0.5 rounded-full">Bisa banyak foto · Maks 10</span>
                               </div>
@@ -2755,7 +2755,7 @@ export default function Formulir() {
                                 <p className="text-xs text-emerald-800 leading-relaxed font-medium">
                                   {(formData.theme === "Wedding 1" || formData.theme === "Wedding 4" || formData.theme === "Wedding 5") 
                                     ? <>Unggah foto-foto prewedding Anda di sini. Foto-foto ini akan ditampilkan di galeri undangan. dan akan dijadika background slideshow</>
-                                    : <>Unggah foto-foto prewedding Anda di sini. Khusus Wedding 7, foto pertama dari galeri ini akan menjadi foto utama (highlight).</>
+                                    : <>Unggah foto-foto prewedding Anda di sini. Khusus Wedding 7 dan Wedding 8, foto pertama dari galeri ini akan menjadi foto utama (highlight) jika tidak ada foto cover.</>
                                   }
                                 </p>
                               </div>

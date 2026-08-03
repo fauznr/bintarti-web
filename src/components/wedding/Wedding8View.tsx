@@ -299,14 +299,40 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [showQrModal, setShowQrModal] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [wishes, setWishes] = useState<{ name: string; msg: string; time: string }[]>([
-    { name: "Budi Santoso", msg: "Semoga langgeng hingga akhir hayat 💕", time: "2 jam lalu" },
-    { name: "Rina Wulandari", msg: "Bahagia selalu, moga rumah tangganya penuh berkah!", time: "5 jam lalu" },
-    { name: "Joko & Dewi", msg: "Selamat menempuh hidup baru! 🎊", time: "1 hari lalu" },
-  ]);
-  const [wishName, setWishName] = useState("");
-  const [wishMsg, setWishMsg] = useState("");
-  const [wishSent, setWishSent] = useState(false);
+  const [comments, setComments] = useState<Array<{ name: string; attendance?: string; message?: string; rsvp_status?: string; comment?: string; created_at?: string; time?: string; }>>(() => {
+    if (invitationData && invitationData.id && !invitationData.id.startsWith("wedding-")) {
+      return [];
+    }
+    return [
+      { name: "Budi Santoso", attendance: "Hadir", message: "Semoga langgeng hingga akhir hayat 💕", created_at: "2 jam lalu" },
+      { name: "Rina Wulandari", attendance: "Hadir", message: "Bahagia selalu, moga rumah tangganya penuh berkah!", created_at: "5 jam lalu" },
+      { name: "Joko & Dewi", attendance: "Hadir", message: "Selamat menempuh hidup baru! 🎊", created_at: "1 hari lalu" },
+    ];
+  });
+  const [rsvpName, setRsvpName] = useState("");
+  const [rsvpCount, setRsvpCount] = useState("1");
+  const [rsvpStatus, setRsvpStatus] = useState("Hadir");
+  const [rsvpMessage, setRsvpMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  // Load live comments
+  useEffect(() => {
+    async function fetchComments() {
+      try {
+        const res = await fetch(`/api/comments?invitationId=${encodeURIComponent(themeId)}`);
+        if (res.ok) {
+          const data = await res.json();
+          if (Array.isArray(data)) {
+            setComments(data);
+          }
+        }
+      } catch (e) {
+        console.error("Error loading comments:", e);
+      }
+    }
+    fetchComments();
+  }, [themeId]);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -439,14 +465,46 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
     }
   };
 
-  // ── Wish submit ──
-  const handleWish = () => {
-    if (!wishName.trim() || !wishMsg.trim()) return;
-    setWishes((p) => [{ name: wishName, msg: wishMsg, time: "Baru saja" }, ...p]);
-    setWishName("");
-    setWishMsg("");
-    setWishSent(true);
-    setTimeout(() => setWishSent(false), 3000);
+  // ── RSVP submit ──
+  const handleSubmitRSVP = async () => {
+    if (!rsvpName.trim() || !rsvpMessage.trim()) return;
+    setIsSubmitting(true);
+    const newComment = {
+      name: rsvpName,
+      attendance: rsvpStatus,
+      rsvp_status: rsvpStatus,
+      guest_count: parseInt(rsvpCount),
+      message: rsvpMessage,
+      comment: rsvpMessage,
+      created_at: "Baru saja",
+    };
+
+    try {
+      await fetch("/api/comments", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          invitation_id: themeId,
+          name: rsvpName,
+          attendance: rsvpStatus,
+          rsvp_status: rsvpStatus,
+          guest_count: parseInt(rsvpCount),
+          message: rsvpMessage,
+          comment: rsvpMessage,
+        }),
+      });
+      setComments([newComment, ...comments]);
+      setRsvpMessage("");
+      setSubmitSuccess(true);
+      setTimeout(() => setSubmitSuccess(false), 4000);
+    } catch (err) {
+      setComments([newComment, ...comments]);
+      setRsvpMessage("");
+      setSubmitSuccess(true);
+      setTimeout(() => setSubmitSuccess(false), 4000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // ── Copy bank ──
@@ -1324,13 +1382,13 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
               }}
             >
               <PaperTexture />
-              <div className="relative z-10 space-y-3">
-                <p className="text-xs font-black text-amber-900/60 uppercase tracking-widest">Tulis Ucapan Anda</p>
+              <div className="relative z-10 space-y-3 text-left">
+                <p className="text-xs font-black text-amber-900/60 uppercase tracking-widest text-center">RSVP & Tulis Ucapan</p>
                 <input
                   type="text"
                   placeholder="Nama Anda..."
-                  value={wishName}
-                  onChange={(e) => setWishName(e.target.value)}
+                  value={rsvpName}
+                  onChange={(e) => setRsvpName(e.target.value)}
                   className="w-full px-3 py-2.5 text-sm outline-none font-bold text-amber-950 placeholder-amber-900/40"
                   style={{
                     background: "rgba(245,237,214,0.6)",
@@ -1339,11 +1397,42 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
                     fontFamily: "Georgia, serif",
                   }}
                 />
+                
+                <div className="flex gap-2">
+                  <select 
+                    value={rsvpCount}
+                    onChange={(e) => setRsvpCount(e.target.value)}
+                    className="w-1/2 px-3 py-2.5 text-xs outline-none font-bold text-amber-950"
+                    style={{
+                      background: "rgba(245,237,214,0.6)",
+                      border: "none",
+                      borderBottom: "1.5px solid rgba(139,90,43,0.4)",
+                    }}
+                  >
+                    <option value="1">1 Orang</option>
+                    <option value="2">2 Orang</option>
+                  </select>
+                  
+                  <select 
+                    value={rsvpStatus}
+                    onChange={(e) => setRsvpStatus(e.target.value)}
+                    className="w-1/2 px-3 py-2.5 text-xs outline-none font-bold text-amber-950"
+                    style={{
+                      background: "rgba(245,237,214,0.6)",
+                      border: "none",
+                      borderBottom: "1.5px solid rgba(139,90,43,0.4)",
+                    }}
+                  >
+                    <option value="Hadir">Hadir</option>
+                    <option value="Tidak Hadir">Tidak Hadir</option>
+                  </select>
+                </div>
+
                 <textarea
                   placeholder="Tulis ucapan & doa tulus Anda di sini..."
                   rows={3}
-                  value={wishMsg}
-                  onChange={(e) => setWishMsg(e.target.value)}
+                  value={rsvpMessage}
+                  onChange={(e) => setRsvpMessage(e.target.value)}
                   className="w-full px-3 py-2.5 text-sm outline-none resize-none text-amber-950 placeholder-amber-900/40"
                   style={{
                     background: "rgba(245,237,214,0.6)",
@@ -1356,22 +1445,26 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
                   }}
                 />
                 <button
-                  onClick={handleWish}
-                  disabled={!wishName.trim() || !wishMsg.trim()}
+                  onClick={handleSubmitRSVP}
+                  disabled={!rsvpName.trim() || !rsvpMessage.trim() || isSubmitting}
                   className="w-full py-3 font-black text-xs tracking-widest uppercase flex items-center justify-center gap-2 transition-all active:scale-95 cursor-pointer disabled:opacity-40"
                   style={{
-                    background: wishSent ? "#2D6A4F" : "linear-gradient(135deg, #3D1F08, #5C2E00)",
+                    background: submitSuccess ? "#2D6A4F" : "linear-gradient(135deg, #3D1F08, #5C2E00)",
                     color: "#F7EDD4",
                     boxShadow: "2px 2px 0 rgba(0,0,0,0.3)",
                   }}
                 >
-                  {wishSent ? (
+                  {submitSuccess ? (
                     <>
                       <CheckCircle2 className="w-3.5 h-3.5" /> Terkirim!
                     </>
+                  ) : isSubmitting ? (
+                    <>
+                      Sending...
+                    </>
                   ) : (
                     <>
-                      <Send className="w-3.5 h-3.5" /> Kirim Ucapan
+                      <Send className="w-3.5 h-3.5" /> Kirim RSVP
                     </>
                   )}
                 </button>
@@ -1381,7 +1474,7 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
 
           {/* Wish list */}
           <div className="relative z-10 space-y-3">
-            {wishes.map((w, i) => (
+            {comments.map((w, i) => (
               <Reveal key={i} delay={i * 80}>
                 <div
                   className="p-4 transition-transform duration-100 ease-out"
@@ -1392,13 +1485,18 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
                   }}
                 >
                   <PaperTexture />
-                  <div className="relative z-10">
+                  <div className="relative z-10 text-left">
                     <div className="flex justify-between items-start mb-1.5">
-                      <span className="font-black text-sm text-amber-950">{w.name}</span>
-                      <span className="text-[9px] text-amber-800/50 italic">{w.time}</span>
+                      <div className="flex flex-col gap-1">
+                        <span className="font-black text-sm text-amber-950">{w.name}</span>
+                        <span className="text-[10px] text-amber-900/60 font-bold bg-amber-900/10 px-2 py-0.5 rounded-full w-fit">
+                          {w.rsvp_status || w.attendance || "Hadir"}
+                        </span>
+                      </div>
+                      <span className="text-[9px] text-amber-800/50 italic">{w.created_at || w.time}</span>
                     </div>
                     <p className="text-xs text-amber-900/70 italic leading-relaxed" style={{ fontFamily: "Georgia, serif" }}>
-                      "{w.msg}"
+                      "{w.comment || w.message}"
                     </p>
                   </div>
                 </div>
