@@ -668,26 +668,6 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
         }}
       />
 
-      {/* Standardized Floating Music Control */}
-      {musicUrl && (
-        <button
-          onClick={toggleAudio}
-          className="fixed bottom-6 right-6 z-[990] w-12 h-12 rounded-full flex items-center justify-center shadow-2xl backdrop-blur-md cursor-pointer transition-all hover:scale-110 active:scale-95"
-          style={{
-            background: "linear-gradient(135deg, #3D1F08, #5C2E00)",
-            border: "2px solid rgba(205,133,63,0.4)",
-            boxShadow: "2px 2px 0 #1A0A00, 0 4px 12px rgba(0,0,0,0.4)",
-          }}
-          title="Toggle Musik"
-        >
-          {isPlayingAudio ? (
-            <Disc className="w-6 h-6 text-amber-300 animate-spin" style={{ animationDuration: '3s' }} />
-          ) : (
-            <Music className="w-5 h-5 text-amber-200/70 animate-bounce" />
-          )}
-        </button>
-      )}
-
       {/* ══════════════════════════════════════════════════════════════════════
           SECTION 1: HERO COVER (Z-INDEX 10)
           ══════════════════════════════════════════════════════════════════════ */}
@@ -1590,7 +1570,7 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
           {isPro && (
               <button
                 onClick={() => setShowQrModal(true)}
-                className="fixed bottom-6 right-6 z-[990] w-12 h-12 rounded-full flex items-center justify-center shadow-2xl backdrop-blur-md cursor-pointer transition-all hover:scale-110 active:scale-95 group"
+                className="w-12 h-12 rounded-full border border-amber-900/50 bg-[#3D1F08] text-amber-200 shadow-2xl flex items-center justify-center backdrop-blur-md hover:scale-110 active:scale-95 transition-all cursor-pointer group"
                 aria-label="QR Code Presensi"
                 title="QR Code Presensi Tamu"
               >
