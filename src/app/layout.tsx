@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Poppins, Inter, Atma, Averia_Gruesa_Libre, Bree_Serif, Cookie, Beth_Ellen, Bungee, Bungee_Inline, Karla, Playfair_Display, Aref_Ruqaa, Cormorant_Garamond, Raleway } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import PWAPrompt from "@/components/PWAPrompt";
 
 const cormorantGaramond = Cormorant_Garamond({
   subsets: ["latin"],
@@ -106,12 +107,14 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
+  themeColor: "#3D1F08",
 };
 
 export const metadata: Metadata = {
   title: "Bintarti - Jasa Undangan Digital Pernikahan, Khitan, Ulang Tahun & Aqiqah",
   description: "Buat undangan digital premium dengan desain elegan dan modern. Cocok untuk pernikahan, khitan, ulang tahun, aqiqah, dan acara custom.",
   metadataBase: new URL("https://bintarti.store"),
+  manifest: "/manifest.json",
   robots: {
     index: true,
     follow: true,
@@ -152,6 +155,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-sans bg-white text-slate-900 overflow-x-hidden">
         {children}
+        <PWAPrompt />
         <SpeedInsights />
       </body>
     </html>
