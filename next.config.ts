@@ -52,6 +52,7 @@ const withPWA = withPWAInit({
 });
 
 const nextConfig: NextConfig = {
+  turbopack: {},
   poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],
