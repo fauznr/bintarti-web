@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useParams, useSearchParams } from "next/navigation";
+import { useParams, useSearchParams, useRouter } from "next/navigation";
 import { supabase } from "../../../utils/supabase";
 import Wedding1View from "@/components/wedding/Wedding1View";
 import Wedding2View from "@/components/wedding/Wedding2View";
@@ -4022,6 +4022,7 @@ const InlineEditorOverlay = ({ designerOpen, inlineEditingKey, inlineEditingValu
   ); 
 };
 export default function ThemePreviewPage() {
+  const router = useRouter();
   const params = useParams();
   const themeId = params.id as string;
   const [editingTextElement, setEditingTextElement] = useState<{section: string, type: string, key: string} | null>(null);
@@ -6734,6 +6735,17 @@ export default function ThemePreviewPage() {
         `}} />
       )}
       
+      {/* Floating Back Button for PWA/Demo users */}
+      {!designerOpen && (
+        <button 
+          onClick={() => router.back()}
+          className="fixed top-4 left-4 z-[9999] p-2 bg-white/70 backdrop-blur-md hover:bg-white rounded-full shadow-lg border border-slate-200 transition-colors text-slate-700 flex items-center justify-center cursor-pointer"
+          aria-label="Kembali"
+        >
+          <ArrowLeft className="w-5 h-5" />
+        </button>
+      )}
+
       {/* ─────────────────────────────────────────────────────────────────
           COVER / LOCK SCREEN OVERLAY 
           ───────────────────────────────────────────────────────────────── */}

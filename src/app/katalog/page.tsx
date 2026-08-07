@@ -242,8 +242,8 @@ export default function Katalog() {
                         <div className="flex flex-col items-center gap-3">
                         <a 
                           href={tpl.demoUrl || (tpl.name.includes("Custom") ? `https://wa.me/6285158573677?text=Halo%20Admin%20Bintarti,%20saya%20ingin%20konsultasi%20desain%20${encodeURIComponent(tpl.name)}` : `/demo?theme=${tpl.id}`)}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          target={(tpl.demoUrl?.startsWith("http") || tpl.name.includes("Custom")) ? "_blank" : undefined}
+                          rel={(tpl.demoUrl?.startsWith("http") || tpl.name.includes("Custom")) ? "noopener noreferrer" : undefined}
                           className="px-5 py-2.5 rounded-xl bg-primary hover:bg-blue-600 text-white font-bold text-xs shadow-lg flex items-center gap-1.5 transition-transform hover:-translate-y-0.5"
                         >
                           {tpl.demoUrl ? "Lihat Demo Live" : tpl.name.includes("Custom") ? "Konsultasi Custom" : "Lihat Demo Live"}
@@ -264,8 +264,8 @@ export default function Katalog() {
                   <div className="pt-4 border-t border-slate-100 flex items-center justify-between mt-auto">
                     <a 
                       href={tpl.demoUrl || (tpl.name.includes("Custom") ? `https://wa.me/6285158573677?text=Halo%20Admin%20Bintarti,%20saya%20ingin%20konsultasi%20desain%20${encodeURIComponent(tpl.name)}` : `/demo?theme=${tpl.id}`)}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      target={(tpl.demoUrl?.startsWith("http") || tpl.name.includes("Custom")) ? "_blank" : undefined}
+                      rel={(tpl.demoUrl?.startsWith("http") || tpl.name.includes("Custom")) ? "noopener noreferrer" : undefined}
                       className="text-xs text-blue-700 hover:text-primary font-bold flex items-center gap-1 transition-colors"
                     >
                       {tpl.name.includes("Custom") ? "Konsultasi Custom" : "Lihat Demo Live"} <ExternalLink className="w-3.5 h-3.5" />
