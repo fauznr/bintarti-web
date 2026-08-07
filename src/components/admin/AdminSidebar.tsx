@@ -6,6 +6,7 @@ import { LayoutTemplate, Image as ImageIcon, Music, Lock, Sparkles, LogOut, Mess
 
 interface AdminSidebarProps {
   isSidebarOpen: boolean;
+  setIsSidebarOpen: (isOpen: boolean) => void;
   activeAdminTab: "dashboard" | "settings" | "media" | "music" | "guestbook" | "analytics";
   setActiveAdminTab: (tab: "dashboard" | "settings" | "media" | "music" | "guestbook" | "analytics") => void;
   onLogout: () => void;
@@ -13,10 +14,18 @@ interface AdminSidebarProps {
 
 export default function AdminSidebar({
   isSidebarOpen,
+  setIsSidebarOpen,
   activeAdminTab,
   setActiveAdminTab,
   onLogout
 }: AdminSidebarProps) {
+  const handleTabClick = (tab: "dashboard" | "settings" | "media" | "music" | "guestbook" | "analytics") => {
+    setActiveAdminTab(tab);
+    if (typeof window !== "undefined" && window.innerWidth < 768) {
+      setIsSidebarOpen(false);
+    }
+  };
+
   return (
     <aside className={`bg-white border-r border-slate-200/80 shadow-sm flex flex-col z-20 shrink-0 transition-all duration-300 ${isSidebarOpen ? 'w-64' : 'w-0 overflow-hidden border-r-0'}`}>
       {/* Sidebar Header */}
@@ -36,7 +45,7 @@ export default function AdminSidebar({
       {/* Sidebar Navigation */}
       <nav className="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
         <button
-          onClick={() => setActiveAdminTab("dashboard")}
+          onClick={() => handleTabClick("dashboard")}
           className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-xs transition-colors shadow-sm cursor-pointer ${activeAdminTab === "dashboard" ? "bg-slate-800 text-white" : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"}`}
         >
           <LayoutTemplate className="w-4 h-4" />
@@ -44,7 +53,7 @@ export default function AdminSidebar({
         </button>
 
         <button
-          onClick={() => setActiveAdminTab("analytics")}
+          onClick={() => handleTabClick("analytics")}
           className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-xs transition-colors shadow-sm cursor-pointer ${activeAdminTab === "analytics" ? "bg-slate-800 text-white" : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"}`}
         >
           <BarChart3 className="w-4 h-4" />
@@ -52,7 +61,7 @@ export default function AdminSidebar({
         </button>
         
         <button
-          onClick={() => setActiveAdminTab("media")}
+          onClick={() => handleTabClick("media")}
           className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-xs transition-colors shadow-sm cursor-pointer ${activeAdminTab === "media" ? "bg-slate-800 text-white" : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"}`}
         >
           <ImageIcon className="w-4 h-4" />
@@ -60,7 +69,7 @@ export default function AdminSidebar({
         </button>
 
         <button
-          onClick={() => setActiveAdminTab("music")}
+          onClick={() => handleTabClick("music")}
           className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-xs transition-colors shadow-sm cursor-pointer ${activeAdminTab === "music" ? "bg-slate-800 text-white" : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"}`}
         >
           <Music className="w-4 h-4" />
@@ -68,7 +77,7 @@ export default function AdminSidebar({
         </button>
 
         <button
-          onClick={() => setActiveAdminTab("guestbook")}
+          onClick={() => handleTabClick("guestbook")}
           className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-xs transition-colors shadow-sm cursor-pointer ${activeAdminTab === "guestbook" ? "bg-slate-800 text-white" : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"}`}
         >
           <MessageSquare className="w-4 h-4" />
@@ -76,7 +85,7 @@ export default function AdminSidebar({
         </button>
 
         <button
-          onClick={() => setActiveAdminTab("settings")}
+          onClick={() => handleTabClick("settings")}
           className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-xs transition-colors shadow-sm cursor-pointer ${activeAdminTab === "settings" ? "bg-slate-800 text-white" : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"}`}
         >
           <Lock className="w-4 h-4" />

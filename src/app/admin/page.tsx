@@ -115,6 +115,19 @@ export default function AdminDashboard() {
   const [isUpdatingPassword, setIsUpdatingPassword] = useState(false);
   const [isLoadingAuth, setIsLoadingAuth] = useState(true);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setIsSidebarOpen(false);
+      } else {
+        setIsSidebarOpen(true);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   // Dashboard Data States
   const [invitations, setInvitations] = useState<AdminInvitation[]>([]);
   const [isLoadingData, setIsLoadingData] = useState(false);
@@ -1013,6 +1026,7 @@ Terima kasih telah mempercayakan undangan digital Anda kepada Bintarti! Semoga a
       {/* Sidebar */}
       <AdminSidebar 
           isSidebarOpen={isSidebarOpen} 
+          setIsSidebarOpen={setIsSidebarOpen}
           activeAdminTab={activeAdminTab} 
           setActiveAdminTab={setActiveAdminTab} 
           onLogout={handleLogout} 
