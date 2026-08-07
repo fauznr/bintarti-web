@@ -1063,12 +1063,6 @@ Terima kasih telah mempercayakan undangan digital Anda kepada Bintarti! Semoga a
               >
                 <RefreshCw className={`w-4 h-4 ${isLoadingData ? "animate-spin" : ""}`} />
               </button>
-              <button
-                onClick={() => setIsCreateModalOpen(true)}
-                className="px-5 py-2.5 rounded-xl bg-primary hover:bg-blue-600 text-white font-bold text-xs transition-colors flex items-center gap-2 shadow-sm cursor-pointer"
-              >
-                <Plus className="w-4 h-4" /> Tambah Undangan
-              </button>
             </div>
           )}
         </header>
