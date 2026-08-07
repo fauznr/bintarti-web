@@ -114,7 +114,6 @@ export const metadata: Metadata = {
   title: "Bintarti - Jasa Undangan Digital Pernikahan, Khitan, Ulang Tahun & Aqiqah",
   description: "Buat undangan digital premium dengan desain elegan dan modern. Cocok untuk pernikahan, khitan, ulang tahun, aqiqah, dan acara custom.",
   metadataBase: new URL("https://bintarti.store"),
-  manifest: "/manifest.json",
   robots: {
     index: true,
     follow: true,
