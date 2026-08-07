@@ -5168,14 +5168,15 @@ export default function ThemePreviewPage() {
 
   if (isWedding && !designerOpen) {
     const wrappedWeddingView = (() => {
-      if (activeTheme === "wedding-8") return <Wedding8View invitationData={invitationData as any} guestName={guestName} themeId={themeId} />;
-      if (activeTheme === "wedding-7") return <Wedding7View invitationData={invitationData as any} guestName={guestName} themeId={themeId} />;
-      if (activeTheme === "wedding-6") return <Wedding6View invitationData={invitationData as any} guestName={guestName} themeId={themeId} />;
-      if (activeTheme === "wedding-5") return <Wedding5View invitationData={invitationData as any} guestName={guestName} themeId={themeId} />;
-      if (activeTheme === "wedding-4") return <Wedding4View invitationData={invitationData as any} guestName={guestName} themeId={themeId} />;
-      if (activeTheme === "wedding-3") return <Wedding3View invitationData={invitationData as any} guestName={guestName} themeId={themeId} />;
-      if (activeTheme === "wedding-2") return <Wedding2View invitationData={invitationData as any} guestName={guestName} themeId={themeId} />;
-      return <Wedding1View invitationData={invitationData as any} guestName={guestName} themeId={themeId} />;
+      const demoData = invitationData || { is_pro: true } as any;
+      if (activeTheme === "wedding-8") return <Wedding8View invitationData={demoData} guestName={guestName} themeId={themeId} />;
+      if (activeTheme === "wedding-7") return <Wedding7View invitationData={demoData} guestName={guestName} themeId={themeId} />;
+      if (activeTheme === "wedding-6") return <Wedding6View invitationData={demoData} guestName={guestName} themeId={themeId} />;
+      if (activeTheme === "wedding-5") return <Wedding5View invitationData={demoData} guestName={guestName} themeId={themeId} />;
+      if (activeTheme === "wedding-4") return <Wedding4View invitationData={demoData} guestName={guestName} themeId={themeId} />;
+      if (activeTheme === "wedding-3") return <Wedding3View invitationData={demoData} guestName={guestName} themeId={themeId} />;
+      if (activeTheme === "wedding-2") return <Wedding2View invitationData={demoData} guestName={guestName} themeId={themeId} />;
+      return <Wedding1View invitationData={demoData} guestName={guestName} themeId={themeId} />;
     })();
     return (
       <>
