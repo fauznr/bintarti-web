@@ -8688,6 +8688,14 @@ export default function ThemePreviewPage() {
               {/* Render custom layout elements */}
               {renderCustomElements("closing")}
             </div>
+
+            {/* FOOTER BINTARTI */}
+            <footer className="absolute bottom-8 left-0 right-0 flex flex-col items-center justify-center z-10 pointer-events-none opacity-80">
+              <img src="/logo.png" alt="Bintarti" className="w-6 h-6 mb-1.5 drop-shadow-md opacity-90" />
+              <p className="text-[10px] font-sans text-white/90 mt-1 drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)] tracking-wider">
+                © 2026 Bintarti. All rights reserved.
+              </p>
+            </footer>
           </div>
 
         </div>
