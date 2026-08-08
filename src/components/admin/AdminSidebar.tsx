@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { LayoutTemplate, Image as ImageIcon, Music, Lock, Sparkles, LogOut, MessageSquare, BarChart3 } from "lucide-react";
+import { LayoutTemplate, Image as ImageIcon, Music, Lock, Sparkles, LogOut, MessageSquare, BarChart3, BellRing } from "lucide-react";
 
 interface AdminSidebarProps {
   isSidebarOpen: boolean;
@@ -23,6 +23,64 @@ export default function AdminSidebar({
     setActiveAdminTab(tab);
     if (typeof window !== "undefined" && window.innerWidth < 768) {
       setIsSidebarOpen(false);
+    }
+  };
+
+  const urlBase64ToUint8Array = (base64String: string) => {
+    const padding = '='.repeat((4 - base64String.length % 4) % 4);
+    const base64 = (base64String + padding)
+      .replace(/\-/g, '+')
+      .replace(/_/g, '/');
+  
+    const rawData = window.atob(base64);
+    const outputArray = new Uint8Array(rawData.length);
+  
+    for (let i = 0; i < rawData.length; ++i) {
+      outputArray[i] = rawData.charCodeAt(i);
+    }
+    return outputArray;
+  };
+
+  const handleSubscribePush = async () => {
+    if (!('serviceWorker' in navigator) || !('PushManager' in window)) {
+      alert("Browser Anda tidak mendukung Notifikasi Push.");
+      return;
+    }
+
+    try {
+      const registration = await navigator.serviceWorker.ready;
+      
+      const existingSubscription = await registration.pushManager.getSubscription();
+      if (existingSubscription) {
+        alert("Perangkat Anda sudah berlangganan notifikasi Bintarti!");
+        return;
+      }
+
+      const publicVapidKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
+      if (!publicVapidKey) {
+        alert("Konfigurasi server belum lengkap (VAPID key hilang).");
+        return;
+      }
+
+      const subscription = await registration.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
+      });
+
+      const response = await fetch('/api/push-subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ subscription })
+      });
+
+      if (response.ok) {
+        alert("Berhasil! Anda akan menerima notifikasi setiap ada pesanan baru.");
+      } else {
+        throw new Error("Gagal menyimpan langganan ke server.");
+      }
+    } catch (error) {
+      console.error("Error subscribing to push:", error);
+      alert("Terjadi kesalahan saat mengaktifkan notifikasi. Pastikan Anda memberi izin (Allow Notifications) di browser.");
     }
   };
 
@@ -107,7 +165,13 @@ export default function AdminSidebar({
       </nav>
 
       {/* Sidebar Footer */}
-      <div className="p-4 border-t border-slate-100 bg-slate-50/50">
+      <div className="p-4 border-t border-slate-100 bg-slate-50/50 space-y-2">
+        <button
+          onClick={handleSubscribePush}
+          className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-600 font-bold text-xs transition-colors shadow-sm cursor-pointer"
+        >
+          <BellRing className="w-4 h-4" /> Aktifkan Notifikasi
+        </button>
         <button
           onClick={onLogout}
           className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-red-50 hover:bg-red-100 text-red-600 font-bold text-xs transition-colors shadow-sm cursor-pointer"

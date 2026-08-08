@@ -253,6 +253,43 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
 
+    // --- Web Push Notification Trigger ---
+    try {
+      const webpush = require("web-push");
+      
+      const publicVapidKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
+      const privateVapidKey = process.env.VAPID_PRIVATE_KEY;
+      const vapidSubject = process.env.VAPID_SUBJECT;
+
+      if (publicVapidKey && privateVapidKey && vapidSubject) {
+        webpush.setVapidDetails(vapidSubject, publicVapidKey, privateVapidKey);
+
+        const { data: subsData, error: subsError } = await supabase
+          .from("push_subscriptions")
+          .select("subscription");
+          
+        if (!subsError && subsData && subsData.length > 0) {
+          const payload = JSON.stringify({
+            title: "Pesanan Baru Masuk!",
+            body: `Klien: ${computedFullName} (${activeTab})`,
+            icon: "/icon.png",
+            url: "/admin"
+          });
+
+          const pushPromises = subsData.map(subRow => 
+            webpush.sendNotification(subRow.subscription, payload).catch((err: any) => {
+              console.error("Failed to send push to a subscription:", err);
+            })
+          );
+          
+          await Promise.all(pushPromises);
+        }
+      }
+    } catch (pushErr) {
+      console.error("Error triggering push notifications:", pushErr);
+    }
+    // --- End Web Push ---
+
     return NextResponse.json({ success: true, invitation: data?.[0] });
   } catch (error: any) {
     console.error("Error in submit-form API route:", error);
