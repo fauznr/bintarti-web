@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { Turnstile } from "@marsidev/react-turnstile";
 import Image from "next/image";
 import { 
   Heart, 
@@ -113,7 +112,6 @@ export default function Wedding6View({
   guestName = "Tamu Undangan",
   themeId = "wedding-6"
 }: Wedding6ViewProps) {
-  const [turnstileToken, setTurnstileToken] = useState("");
 
   const [isOpened, setIsOpened] = useState(false);
   
@@ -344,8 +342,7 @@ export default function Wedding6View({
           invitationId: themeId,
           name: formName,
           rsvpStatus: rsvpValue,
-          comment: formWish,
-          turnstileToken
+          comment: formWish
         })
       });
       setComments([newComment, ...comments]);
@@ -1234,10 +1231,6 @@ export default function Wedding6View({
                   />
                 </div>
                 <div className="flex justify-center w-full overflow-hidden my-2">
-                  <Turnstile 
-                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"} 
-                    onSuccess={(token) => setTurnstileToken(token)} 
-                  />
                 </div>
 
                 <button type="submit"

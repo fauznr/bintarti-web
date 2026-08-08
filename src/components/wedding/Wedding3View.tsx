@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { Turnstile } from "@marsidev/react-turnstile";
 import Image from "next/image";
 import { 
   Heart, 
@@ -291,14 +290,9 @@ export default function Wedding3View({
 
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
-  const [turnstileToken, setTurnstileToken] = useState("");
 
   const handleSubmitRsvp = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!turnstileToken) {
-      alert("Harap tunggu CAPTCHA selesai atau refresh halaman.");
-      return;
-    }
     if (!formName.trim() || !formWish.trim()) return;
 
     setIsSubmitting(true);
@@ -317,8 +311,7 @@ export default function Wedding3View({
           invitationId: themeId,
           name: formName,
           rsvpStatus: newComment.rsvp_status,
-          comment: formWish,
-          turnstileToken
+          comment: formWish
         })
       });
       setComments([newComment, ...comments]);
@@ -1046,10 +1039,6 @@ export default function Wedding3View({
 
                 {/* Tombol Kotak Diperkecil */}
                 <div className="flex justify-center w-full overflow-hidden my-2">
-                  <Turnstile 
-                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"} 
-                    onSuccess={(token) => setTurnstileToken(token)} 
-                  />
                 </div>
 
                 <button type="submit"

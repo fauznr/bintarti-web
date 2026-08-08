@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { Turnstile } from "@marsidev/react-turnstile";
 import Image from "next/image";
 import {
   Heart,
@@ -226,7 +225,6 @@ export default function Wedding7View({
   guestName = "Tamu Undangan",
   themeId = "wedding-7",
 }: Wedding7ViewProps) {
-  const [turnstileToken, setTurnstileToken] = useState("");
 
   const [isOpened, setIsOpened] = useState(false);
   const isPro = !!invitationData?.is_pro;
@@ -471,10 +469,6 @@ const fallbackHero = "/indo_prewed_simple_1_1785092558852.jpg";
   // Handle Form Submit
   const handleSubmitWish = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!turnstileToken) {
-      alert("Harap tunggu CAPTCHA selesai atau refresh halaman.");
-      return;
-    }
     if (!formName || !formMessage) return;
 
     setIsSubmitting(true);
@@ -493,8 +487,7 @@ const fallbackHero = "/indo_prewed_simple_1_1785092558852.jpg";
           invitationId: themeId,
           name: formName,
           rsvpStatus: formStatus,
-          comment: formMessage,
-          turnstileToken
+          comment: formMessage
         })
       });
       setWishes([newComment, ...wishes]);
@@ -1036,10 +1029,6 @@ const fallbackHero = "/indo_prewed_simple_1_1785092558852.jpg";
                 />
               </div>
                 <div className="flex justify-center w-full overflow-hidden my-2">
-                  <Turnstile 
-                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"} 
-                    onSuccess={(token) => setTurnstileToken(token)} 
-                  />
                 </div>
 
                 <button type="submit"
