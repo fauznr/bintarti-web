@@ -108,7 +108,7 @@ export default function GuestbookManager() {
   const toggleGroup = (id: string) => {
     setExpandedGroups(prev => ({
       ...prev,
-      [id]: prev[id] === undefined ? false : !prev[id]
+      [id]: prev[id] === undefined ? true : !prev[id]
     }));
   };
 
@@ -217,7 +217,7 @@ export default function GuestbookManager() {
         ) : (
           <div className="space-y-6">
             {displayedGroups.map((group) => {
-              const isExpanded = expandedGroups[group.invitationId] !== false; // Default to true
+              const isExpanded = expandedGroups[group.invitationId] === true; // Default to false
 
               return (
               <div key={group.invitationId} className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
