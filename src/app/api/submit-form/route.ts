@@ -6,7 +6,30 @@ import { generateInvitationSlug, calculateExpiryDate } from "../../../utils/invi
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { activeTab, formData, profilePhoto, galleryPhotos, activitiesPhoto, emailConfirm, photoGroom, photoBride, photoStory, photoHero, photoClosing, saveTheDateBg, quoteBg, loveStoryBg, eventBg, dresscodeBg, ourMomentBg, giftBg, rsvpBg, qrBg } = body;
+    const { activeTab, formData, profilePhoto, galleryPhotos, activitiesPhoto, emailConfirm, photoGroom, photoBride, photoStory, photoHero, photoClosing, saveTheDateBg, quoteBg, loveStoryBg, eventBg, dresscodeBg, ourMomentBg, giftBg, rsvpBg, qrBg, turnstileToken } = body;
+
+    // Turnstile Validation
+    if (!turnstileToken) {
+      return NextResponse.json({ error: "CAPTCHA token is required" }, { status: 400 });
+    }
+
+    const verifyEndpoint = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
+    const secret = process.env.TURNSTILE_SECRET_KEY || "1x0000000000000000000000000000000AA";
+
+    const verifyRes = await fetch(verifyEndpoint, {
+      method: 'POST',
+      body: `secret=${encodeURIComponent(secret)}&response=${encodeURIComponent(turnstileToken)}`,
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded'
+      }
+    });
+
+    const verifyData = await verifyRes.json();
+
+    if (!verifyData.success) {
+      console.error("Turnstile verification failed in formulir:", verifyData);
+      return NextResponse.json({ error: "CAPTCHA verification failed" }, { status: 403 });
+    }
 
     // Honeypot spam check (silently reject bots)
     if (emailConfirm && emailConfirm.trim() !== "") {

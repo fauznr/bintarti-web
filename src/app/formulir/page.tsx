@@ -1,6 +1,7 @@
                               "use client";
 
 import { useState, useEffect } from "react";
+import { Turnstile } from "@marsidev/react-turnstile";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -51,6 +52,7 @@ export default function Formulir() {
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [waLink, setWaLink] = useState("");
   const [isLoaded, setIsLoaded] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   // Form State
   const [formData, setFormData] = useState({
@@ -783,6 +785,11 @@ export default function Formulir() {
     if (e) e.preventDefault();
     if (!validateStep(4)) return;
 
+    if (!turnstileToken) {
+      alert("Harap tunggu CAPTCHA selesai atau refresh halaman.");
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
@@ -800,6 +807,7 @@ export default function Formulir() {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
+          turnstileToken,
           activeTab,
           formData: {
             ...formData,
