@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Search, Loader2, Trash2, MessageSquare, Download } from "lucide-react";
+import { Search, Loader2, Trash2, MessageSquare, Download, ChevronDown, ChevronUp, Filter } from "lucide-react";
 import { supabase } from "../../utils/supabase";
 
 interface GuestComment {
@@ -24,6 +24,8 @@ export default function GuestbookManager() {
   const [isLoading, setIsLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [isDeleting, setIsDeleting] = useState<number | null>(null);
+  const [selectedInvitationId, setSelectedInvitationId] = useState<string>("all");
+  const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     fetchComments();
@@ -96,6 +98,17 @@ export default function GuestbookManager() {
     }, {} as Record<string, { invitationId: string, invitationName: string, whatsapp: string, comments: GuestComment[] }>)
   ).sort((a, b) => b.comments.length - a.comments.length);
 
+  const displayedGroups = selectedInvitationId === "all" 
+    ? groupedComments 
+    : groupedComments.filter(g => g.invitationId === selectedInvitationId);
+
+  const toggleGroup = (id: string) => {
+    setExpandedGroups(prev => ({
+      ...prev,
+      [id]: prev[id] === undefined ? false : !prev[id]
+    }));
+  };
+
   const handleExportCSV = (group: { invitationId: string, invitationName: string, whatsapp?: string, comments: GuestComment[] }) => {
     if (group.comments.length === 0) {
 
@@ -149,6 +162,25 @@ export default function GuestbookManager() {
         
         {/* Actions (Search & Download) */}
         <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+          <div className="relative w-full sm:w-auto min-w-[220px]">
+            <Filter className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+            <select
+              value={selectedInvitationId}
+              onChange={(e) => setSelectedInvitationId(e.target.value)}
+              className="w-full pl-9 pr-8 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm font-medium bg-white appearance-none cursor-pointer text-slate-600 truncate"
+            >
+              <option value="all">Semua Undangan</option>
+              {groupedComments.map(group => (
+                <option key={group.invitationId} value={group.invitationId}>
+                  {group.invitationName} ({group.comments.length})
+                </option>
+              ))}
+            </select>
+            <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+              <ChevronDown className="w-4 h-4 text-slate-400" />
+            </div>
+          </div>
+          
           <div className="relative max-w-sm w-full">
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
             <input 
@@ -159,8 +191,6 @@ export default function GuestbookManager() {
               className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm font-medium"
             />
           </div>
-          
-
         </div>
       </div>
 
@@ -182,23 +212,36 @@ export default function GuestbookManager() {
             </p>
           </div>
         ) : (
-          <div className="space-y-10">
-            {groupedComments.map((group) => (
-              <div key={group.invitationId} className="space-y-4">
-                <div className="flex items-center justify-between pb-3 border-b border-slate-200">
-                  <div>
-                    <h3 className="text-lg font-black text-slate-800">{group.invitationName}</h3>
-                    <div className="flex items-center gap-2 mt-1">
-                      <p className="text-xs font-bold text-slate-500">{group.comments.length} Ucapan</p>
-                      {group.whatsapp && (
-                        <>
-                          <span className="text-slate-300">•</span>
-                          <span className="text-xs font-medium text-slate-500">{group.whatsapp}</span>
-                        </>
-                      )}
+          <div className="space-y-6">
+            {displayedGroups.map((group) => {
+              const isExpanded = expandedGroups[group.invitationId] !== false; // Default to true
+
+              return (
+              <div key={group.invitationId} className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                <div 
+                  className="flex flex-col sm:flex-row sm:items-center justify-between p-5 bg-slate-50/50 hover:bg-slate-50 cursor-pointer transition-colors border-b border-slate-100"
+                  onClick={() => toggleGroup(group.invitationId)}
+                >
+                  <div className="flex items-center gap-3">
+                    <button className="p-1.5 rounded-lg bg-white border border-slate-200 text-slate-500 shadow-sm">
+                      {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                    </button>
+                    <div>
+                      <h3 className="text-lg font-black text-slate-800">{group.invitationName}</h3>
+                      <div className="flex items-center gap-2 mt-0.5">
+                        <span className="px-2 py-0.5 bg-primary/10 text-primary font-bold text-[10px] rounded-md uppercase tracking-wider">
+                          {group.comments.length} Ucapan
+                        </span>
+                        {group.whatsapp && (
+                          <>
+                            <span className="text-slate-300">•</span>
+                            <span className="text-xs font-medium text-slate-500">{group.whatsapp}</span>
+                          </>
+                        )}
+                      </div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 mt-4 sm:mt-0" onClick={(e) => e.stopPropagation()}>
                     <button 
                       onClick={() => handleExportCSV(group)}
                       className="px-3 py-1.5 bg-emerald-100 hover:bg-emerald-200 text-emerald-700 font-bold text-xs rounded-xl transition-colors flex items-center justify-center gap-1.5 shadow-sm border border-emerald-200 cursor-pointer"
@@ -219,61 +262,65 @@ export default function GuestbookManager() {
                     )}
                   </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {group.comments.map((comment) => (
-              <div key={comment.id} className="border border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:shadow-md transition-shadow bg-slate-50 hover:bg-white hover:border-primary/30 group">
-                <div>
-                  <div className="flex justify-between items-start mb-3">
-                    <div className="flex flex-col">
-                      <span className="font-black text-slate-800 text-sm leading-tight">{comment.name || "Tamu Anonim"}</span>
-                      <span className="text-[10px] font-bold text-slate-400">
-                        {new Date(comment.created_at).toLocaleString("id-ID", {
-                          dateStyle: "medium",
-                          timeStyle: "short"
-                        })}
-                      </span>
-                    </div>
-                    {comment.rsvp_status && (
-                      <span className={`text-[10px] font-black px-2 py-0.5 rounded-full border ${
-                        comment.rsvp_status.toLowerCase() === "hadir" 
-                          ? "bg-green-50 text-green-700 border-green-200" 
-                          : comment.rsvp_status.toLowerCase() === "tidak hadir"
-                          ? "bg-red-50 text-red-700 border-red-200"
-                          : "bg-orange-50 text-orange-700 border-orange-200"
-                      }`}>
-                        {comment.rsvp_status}
-                      </span>
-                    )}
-                  </div>
-                  
-                  <div className="bg-white border border-slate-100 rounded-xl p-3 shadow-sm mb-4">
-                    <p className="text-sm font-medium text-slate-600 line-clamp-4 italic">
-                      "{comment.comment}"
-                    </p>
-                  </div>
-                </div>
 
-                <div className="pt-3 border-t border-slate-100 flex items-center justify-between mt-auto">
-                  <div className="flex flex-col"></div>
-                  
-                  <button 
-                    onClick={() => handleDelete(comment.id)}
-                    disabled={isDeleting === comment.id}
-                    className="p-2 bg-red-50 hover:bg-red-500 text-red-500 hover:text-white rounded-lg transition-colors border border-red-100 opacity-0 group-hover:opacity-100 focus:opacity-100"
-                    title="Hapus Ucapan"
-                  >
-                    {isDeleting === comment.id ? (
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                    ) : (
-                      <Trash2 className="w-4 h-4" />
-                    )}
-                  </button>
-                </div>
+                {isExpanded && (
+                  <div className="p-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 bg-white">
+                    {group.comments.map((comment) => (
+                      <div key={comment.id} className="border border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:shadow-md transition-shadow bg-slate-50 hover:bg-white hover:border-primary/30 group">
+                        <div>
+                          <div className="flex justify-between items-start mb-3">
+                            <div className="flex flex-col">
+                              <span className="font-black text-slate-800 text-sm leading-tight">{comment.name || "Tamu Anonim"}</span>
+                              <span className="text-[10px] font-bold text-slate-400">
+                                {new Date(comment.created_at).toLocaleString("id-ID", {
+                                  dateStyle: "medium",
+                                  timeStyle: "short"
+                                })}
+                              </span>
+                            </div>
+                            {comment.rsvp_status && (
+                              <span className={`text-[10px] font-black px-2 py-0.5 rounded-full border ${
+                                comment.rsvp_status.toLowerCase() === "hadir" 
+                                  ? "bg-green-50 text-green-700 border-green-200" 
+                                  : comment.rsvp_status.toLowerCase() === "tidak hadir"
+                                  ? "bg-red-50 text-red-700 border-red-200"
+                                  : "bg-orange-50 text-orange-700 border-orange-200"
+                              }`}>
+                                {comment.rsvp_status}
+                              </span>
+                            )}
+                          </div>
+                          
+                          <div className="bg-white border border-slate-100 rounded-xl p-3 shadow-sm mb-4">
+                            <p className="text-sm font-medium text-slate-600 line-clamp-4 italic">
+                              "{comment.comment}"
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="pt-3 border-t border-slate-100 flex items-center justify-between mt-auto">
+                          <div className="flex flex-col"></div>
+                          
+                          <button 
+                            onClick={() => handleDelete(comment.id)}
+                            disabled={isDeleting === comment.id}
+                            className="p-2 bg-red-50 hover:bg-red-500 text-red-500 hover:text-white rounded-lg transition-colors border border-red-100 opacity-0 group-hover:opacity-100 focus:opacity-100"
+                            title="Hapus Ucapan"
+                          >
+                            {isDeleting === comment.id ? (
+                              <Loader2 className="w-4 h-4 animate-spin" />
+                            ) : (
+                              <Trash2 className="w-4 h-4" />
+                            )}
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
-            ))}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         )}
       </div>
