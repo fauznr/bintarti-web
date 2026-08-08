@@ -344,7 +344,7 @@ export default function Wedding6View({
           invitationId: themeId,
           name: formName,
           rsvpStatus: rsvpValue,
-          comment: ,
+          comment: formWish,
           turnstileToken
         })
       });

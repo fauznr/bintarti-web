@@ -339,7 +339,7 @@ export default function Wedding2View({
           invitationId: themeId,
           name: rsvpName,
           rsvpStatus: rsvpStatus,
-          comment: ,
+          comment: rsvpMessage,
           turnstileToken
         })
       });
