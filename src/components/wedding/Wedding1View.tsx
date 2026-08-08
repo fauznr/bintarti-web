@@ -1104,7 +1104,7 @@ export default function Wedding1View({
 
                 <div className="flex justify-center w-full overflow-hidden my-2">
                   <Turnstile 
-                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"} 
+                    siteKey={"1x00000000000000000000AA"} 
                     onSuccess={(token) => setTurnstileToken(token)} 
                   />
                 </div>
