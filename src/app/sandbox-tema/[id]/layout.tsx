@@ -1,5 +1,17 @@
 import { Metadata } from 'next';
 import { supabase } from '../../../utils/supabase';
+import {
+  atmaFont,
+  averiaFont,
+  breeSerifFont,
+  cookieFont,
+  bethFont,
+  bungeeFont,
+  bungeeInlineFont,
+  karlaFont,
+  playfairDisplayFont,
+  arefRuqaaFont,
+} from '../../../utils/fonts';
 
 type Props = {
   params: Promise<{ id: string }>
@@ -107,5 +119,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <div className={`${atmaFont.variable} ${averiaFont.variable} ${breeSerifFont.variable} ${cookieFont.variable} ${bethFont.variable} ${bungeeFont.variable} ${bungeeInlineFont.variable} ${karlaFont.variable} ${playfairDisplayFont.variable} ${arefRuqaaFont.variable} contents`}>
+      {children}
+    </div>
+  );
 }

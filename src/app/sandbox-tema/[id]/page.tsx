@@ -6958,6 +6958,7 @@ export default function ThemePreviewPage() {
 
         {isOpened && (layoutConfig as any).global?.musicUrl && (
           <button
+            aria-label="Play or Pause Music"
             onClick={() => {
               if (audioRef.current) {
                 if (isPlaying) {

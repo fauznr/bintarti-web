@@ -964,6 +964,7 @@ export default function Wedding1View({
                       return baseSrc.includes('?') ? `${baseSrc}&enablejsapi=1` : `${baseSrc}?enablejsapi=1`;
                     })()}
                     title="Cinematic Prewedding Video"
+                    loading="lazy"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                   />
