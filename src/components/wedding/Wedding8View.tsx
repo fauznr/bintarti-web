@@ -500,13 +500,10 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          invitation_id: themeId,
+          invitationId: themeId,
           name: rsvpName,
-          attendance: rsvpStatus,
-          rsvp_status: rsvpStatus,
-          guest_count: parseInt(rsvpCount),
-          message: rsvpMessage,
-          comment: rsvpMessage,
+          rsvpStatus: rsvpStatus,
+          comment: rsvpMessage
         }),
       });
       setComments([newComment, ...comments]);

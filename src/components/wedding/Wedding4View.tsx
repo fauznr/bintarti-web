@@ -362,8 +362,8 @@ export default function Wedding4View({
         body: JSON.stringify({
           invitationId: themeId,
           name: rsvpName,
-          attendance: newComment.attendance,
-          message: rsvpMessage
+          rsvpStatus: rsvpStatus,
+          comment: rsvpMessage
         })
       });
       setComments([newComment, ...comments]);
