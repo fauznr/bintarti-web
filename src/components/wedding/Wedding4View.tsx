@@ -227,7 +227,7 @@ export default function Wedding4View({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
-  const [comments, setComments] = useState<Array<{ name: string; attendance: string; message: string; created_at: string }>>([]);
+  const [comments, setComments] = useState<Array<{ name: string; attendance: string; message: string; comment?: string; created_at: string }>>([]);
 
   // Background Photos Slideshow (Gen Z White Aesthetic Relaxed Couple Photos)
   const coverPhotoUrl = invitationData?.child_photo_url || invitationData?.childPhotoUrl || weddingNotes?.heroPhotoUrl || invitationData?.coverPhoto || invitationData?.cover_photo || "/wedding4-hero.jpg";

@@ -192,7 +192,7 @@ export default function Wedding5View({
   const [rsvpMessage, setRsvpMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [comments, setComments] = useState<Array<{ name: string; attendance: string; message: string; created_at?: string }>>([]);
+  const [comments, setComments] = useState<Array<{ name: string; attendance: string; message: string; comment?: string; created_at?: string }>>([]);
 
   // Countdown timer target (22 November 2026)
   // targetDate is now dynamic above
