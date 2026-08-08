@@ -24,7 +24,7 @@ export default function GuestbookManager() {
   const [isLoading, setIsLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [isDeleting, setIsDeleting] = useState<number | null>(null);
-  const [selectedInvitationId, setSelectedInvitationId] = useState<string>("all");
+  const [selectedThemeType, setSelectedThemeType] = useState<string>("all");
   const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
@@ -90,17 +90,20 @@ export default function GuestbookManager() {
           invitationId: id,
           invitationName: curr.invitations?.full_name || id,
           whatsapp: curr.invitations?.whatsapp || "",
+          themeType: curr.invitations?.type || "Lainnya",
           comments: []
         };
       }
       acc[id].comments.push(curr);
       return acc;
-    }, {} as Record<string, { invitationId: string, invitationName: string, whatsapp: string, comments: GuestComment[] }>)
+    }, {} as Record<string, { invitationId: string, invitationName: string, whatsapp: string, themeType: string, comments: GuestComment[] }>)
   ).sort((a, b) => b.comments.length - a.comments.length);
 
-  const displayedGroups = selectedInvitationId === "all" 
+  const uniqueThemes = Array.from(new Set(groupedComments.map(g => g.themeType))).sort();
+
+  const displayedGroups = selectedThemeType === "all" 
     ? groupedComments 
-    : groupedComments.filter(g => g.invitationId === selectedInvitationId);
+    : groupedComments.filter(g => g.themeType === selectedThemeType);
 
   const toggleGroup = (id: string) => {
     setExpandedGroups(prev => ({
@@ -165,14 +168,14 @@ export default function GuestbookManager() {
           <div className="relative w-full sm:w-auto min-w-[220px]">
             <Filter className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
             <select
-              value={selectedInvitationId}
-              onChange={(e) => setSelectedInvitationId(e.target.value)}
+              value={selectedThemeType}
+              onChange={(e) => setSelectedThemeType(e.target.value)}
               className="w-full pl-9 pr-8 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm font-medium bg-white appearance-none cursor-pointer text-slate-600 truncate"
             >
-              <option value="all">Semua Undangan</option>
-              {groupedComments.map(group => (
-                <option key={group.invitationId} value={group.invitationId}>
-                  {group.invitationName} ({group.comments.length})
+              <option value="all">Semua Tema Undangan</option>
+              {uniqueThemes.map(theme => (
+                <option key={theme} value={theme}>
+                  Tema: {theme}
                 </option>
               ))}
             </select>
@@ -229,6 +232,9 @@ export default function GuestbookManager() {
                     <div>
                       <h3 className="text-lg font-black text-slate-800">{group.invitationName}</h3>
                       <div className="flex items-center gap-2 mt-0.5">
+                        <span className="px-2 py-0.5 bg-slate-100 text-slate-600 font-bold text-[10px] rounded-md">
+                          {group.themeType}
+                        </span>
                         <span className="px-2 py-0.5 bg-primary/10 text-primary font-bold text-[10px] rounded-md uppercase tracking-wider">
                           {group.comments.length} Ucapan
                         </span>
