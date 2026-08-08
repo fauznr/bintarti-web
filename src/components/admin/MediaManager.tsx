@@ -30,6 +30,16 @@ export default function MediaManager() {
   
   const [defaultSearch, setDefaultSearch] = useState("");
   const [customerSearch, setCustomerSearch] = useState("");
+  const [defaultPage, setDefaultPage] = useState(1);
+  const [customerPage, setCustomerPage] = useState(1);
+
+  useEffect(() => {
+    setDefaultPage(1);
+  }, [activeDefaultTab, defaultSearch]);
+
+  useEffect(() => {
+    setCustomerPage(1);
+  }, [activeCustomerTab, customerSearch]);
 
   const fetchInvitations = async () => {
     try {
@@ -205,12 +215,16 @@ export default function MediaManager() {
     </div>
   );
 
-  const renderFolderList = (folderList: MediaFolder[]) => (
+  const renderFolderList = (folderList: MediaFolder[], page: number, setPage: (p: number) => void) => {
+    const totalPages = Math.ceil(folderList.length / 10);
+    const startIndex = (page - 1) * 10;
+    const paginatedList = folderList.slice(startIndex, startIndex + 10);
+    return (
     <div className="divide-y divide-slate-100">
-      {folderList.length === 0 ? (
+      {paginatedList.length === 0 ? (
         <div className="p-8 text-center text-slate-500 text-sm">Tidak ada folder di kategori ini.</div>
       ) : (
-        folderList.map(folder => (
+        paginatedList.map(folder => (
           <div key={folder.name} className="w-full flex items-center justify-between p-4 hover:bg-slate-50 transition-colors border-b border-slate-100 group">
             <button
               onClick={() => handleSelectFolder(folder.name)}
@@ -242,8 +256,30 @@ export default function MediaManager() {
           </div>
         ))
       )}
+      {totalPages > 1 && (
+        <div className="flex items-center justify-between p-4 bg-slate-50 border-t border-slate-100">
+          <span className="text-xs text-slate-500 font-medium">Halaman {page} dari {totalPages}</span>
+          <div className="flex items-center gap-2">
+            <button 
+              onClick={() => setPage(Math.max(1, page - 1))}
+              disabled={page === 1}
+              className="px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 rounded-lg text-xs font-bold text-slate-700 disabled:opacity-50 transition-colors"
+            >
+              Sebelumnya
+            </button>
+            <button 
+              onClick={() => setPage(Math.min(totalPages, page + 1))}
+              disabled={page === totalPages}
+              className="px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 rounded-lg text-xs font-bold text-slate-700 disabled:opacity-50 transition-colors"
+            >
+              Berikutnya
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
+};
 
   return (
     <div className="space-y-6">
@@ -275,7 +311,7 @@ export default function MediaManager() {
               </div>
             </div>
             {renderTabs(activeDefaultTab, setActiveDefaultTab)}
-            {renderFolderList(filteredDefault)}
+            {renderFolderList(filteredDefault, defaultPage, setDefaultPage)}
           </div>
           
           <div className="bg-white rounded-3xl border border-slate-200/80 shadow-sm overflow-hidden">
@@ -295,7 +331,7 @@ export default function MediaManager() {
               </div>
             </div>
             {renderTabs(activeCustomerTab, setActiveCustomerTab)}
-            {renderFolderList(filteredCustomer)}
+            {renderFolderList(filteredCustomer, customerPage, setCustomerPage)}
           </div>
         </div>
       ) : (
