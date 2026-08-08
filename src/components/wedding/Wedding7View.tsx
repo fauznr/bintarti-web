@@ -226,6 +226,8 @@ export default function Wedding7View({
   guestName = "Tamu Undangan",
   themeId = "wedding-7",
 }: Wedding7ViewProps) {
+  const [turnstileToken, setTurnstileToken] = useState("");
+
   const [isOpened, setIsOpened] = useState(false);
   const isPro = !!invitationData?.is_pro;
   const [isClosingCover, setIsClosingCover] = useState(false);

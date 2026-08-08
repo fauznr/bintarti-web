@@ -113,6 +113,8 @@ export default function Wedding6View({
   guestName = "Tamu Undangan",
   themeId = "wedding-6"
 }: Wedding6ViewProps) {
+  const [turnstileToken, setTurnstileToken] = useState("");
+
   const [isOpened, setIsOpened] = useState(false);
   
   const [isClosingCover, setIsClosingCover] = useState(false);
