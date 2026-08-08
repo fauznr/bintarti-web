@@ -1123,7 +1123,7 @@ export default function Wedding4View({
                         <span className="font-bold text-xs text-slate-900">{item.name}</span>
                         <span className="text-[9px] text-slate-600 bg-white border border-slate-200 px-2 py-0.5 rounded-full font-bold">{item.attendance}</span>
                       </div>
-                      <p className="text-xs text-slate-600 leading-relaxed font-normal">{item.message}</p>
+                      <p className="text-xs text-slate-600 leading-relaxed font-normal">{item.comment || item.message}</p>
                     </div>
                   ))}
                 </div>

@@ -256,7 +256,7 @@ export default function Wedding7View({
             const mapped = data.map((d: any) => ({
               name: d.name,
               status: d.rsvp_status || "Hadir",
-              message: d.comment,
+              message: d.comment || d.message,
               time: d.created_at ? new Date(d.created_at).toLocaleDateString("id-ID") : "Baru saja"
             }));
             setWishes(mapped);

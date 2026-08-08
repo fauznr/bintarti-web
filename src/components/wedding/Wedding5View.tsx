@@ -1059,7 +1059,7 @@ export default function Wedding5View({
                         <span className="font-extrabold text-xs text-[#2A1E17]">{item.name}</span>
                         <span className="text-[9px] text-[#FAF6F0] bg-[#3E2312] border border-[#5C3A21] px-2 py-0.5 rounded-full font-bold">{item.attendance}</span>
                       </div>
-                      <p className="text-xs text-[#3E2312] leading-relaxed font-medium font-adea-lora">{item.message}</p>
+                      <p className="text-xs text-[#3E2312] leading-relaxed font-medium font-adea-lora">{item.comment || item.message}</p>
                     </div>
                   ))}
                 </div>
