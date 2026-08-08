@@ -312,8 +312,14 @@ export default function Wedding2View({
       .catch(() => {});
   }, [themeId]);
 
+  const [turnstileToken, setTurnstileToken] = useState("");
+
   const handleSubmitRsvp = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!turnstileToken) {
+      alert("Harap tunggu CAPTCHA selesai atau refresh halaman.");
+      return;
+    }
     if (!rsvpName.trim() || !rsvpMessage.trim()) return;
 
     setIsSubmitting(true);

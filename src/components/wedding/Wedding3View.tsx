@@ -291,8 +291,14 @@ export default function Wedding3View({
 
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
-  const handleSubmitRSVP = async (e: React.FormEvent) => {
+  const [turnstileToken, setTurnstileToken] = useState("");
+
+  const handleSubmitRsvp = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!turnstileToken) {
+      alert("Harap tunggu CAPTCHA selesai atau refresh halaman.");
+      return;
+    }
     if (!formName.trim() || !formWish.trim()) return;
 
     setIsSubmitting(true);
@@ -986,7 +992,7 @@ export default function Wedding3View({
               </div>
 
               {/* RSVP Form */}
-              <form onSubmit={handleSubmitRSVP} className="space-y-3 font-inter text-xs py-3 border-y border-[#2C1A14]/20">
+              <form onSubmit={handleSubmitRsvp} className="space-y-3 font-inter text-xs py-3 border-y border-[#2C1A14]/20">
                 <div>
                   <label className="block text-[#2C1A14] font-semibold mb-1">Nama Lengkap</label>
                   <input

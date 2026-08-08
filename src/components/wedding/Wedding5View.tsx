@@ -265,8 +265,14 @@ export default function Wedding5View({
     setTimeout(() => setCopiedBank(null), 2500);
   };
 
-  const handleSubmitRSVP = async (e: React.FormEvent) => {
+  const [turnstileToken, setTurnstileToken] = useState("");
+
+  const handleSubmitRsvp = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!turnstileToken) {
+      alert("Harap tunggu CAPTCHA selesai atau refresh halaman.");
+      return;
+    }
     if (!rsvpName.trim() || !rsvpMessage.trim()) return;
 
     setIsSubmitting(true);
@@ -956,7 +962,7 @@ export default function Wedding5View({
 
             {/* Form */}
             <ScrollReveal delay={150}>
-              <form onSubmit={handleSubmitRSVP} className="bg-white/60 backdrop-blur-xl p-5 rounded-3xl border-2 border-[#5C3A21]/40 text-left space-y-4 shadow-md">
+              <form onSubmit={handleSubmitRsvp} className="bg-white/60 backdrop-blur-xl p-5 rounded-3xl border-2 border-[#5C3A21]/40 text-left space-y-4 shadow-md">
                 <div>
                   <label className="block text-xs font-black text-[#3E2312] mb-1">Nama Asli / Inisial</label>
                   <input 

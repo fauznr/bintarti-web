@@ -343,8 +343,14 @@ export default function Wedding4View({
     setTimeout(() => setCopiedBank(null), 2500);
   };
 
-  const handleSubmitRSVP = async (e: React.FormEvent) => {
+  const [turnstileToken, setTurnstileToken] = useState("");
+
+  const handleSubmitRsvp = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!turnstileToken) {
+      alert("Harap tunggu CAPTCHA selesai atau refresh halaman.");
+      return;
+    }
     if (!rsvpName.trim() || !rsvpMessage.trim()) return;
 
     setIsSubmitting(true);
@@ -1020,7 +1026,7 @@ export default function Wedding4View({
 
             {/* Form */}
             <ScrollReveal delay={150}>
-              <form onSubmit={handleSubmitRSVP} className="bg-slate-50 p-5 rounded-3xl border border-slate-200/90 text-left space-y-4 shadow-md">
+              <form onSubmit={handleSubmitRsvp} className="bg-slate-50 p-5 rounded-3xl border border-slate-200/90 text-left space-y-4 shadow-md">
                 <div>
                   <label className="block text-xs font-bold text-slate-700 mb-1">Nama Anda / Inisial</label>
                   <input 
