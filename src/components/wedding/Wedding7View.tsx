@@ -469,24 +469,44 @@ const fallbackHero = "/indo_prewed_simple_1_1785092558852.jpg";
   };
 
   // Handle Form Submit
-  const handleSubmitWish = (e: React.FormEvent) => {
+  const handleSubmitWish = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!turnstileToken) {
+      alert("Harap tunggu CAPTCHA selesai atau refresh halaman.");
+      return;
+    }
     if (!formName || !formMessage) return;
+
     setIsSubmitting(true);
-    setTimeout(() => {
-      setWishes([
-        {
+    const newComment = {
+      name: formName,
+      status: formStatus,
+      message: formMessage,
+      time: "Baru saja"
+    };
+
+    try {
+      await fetch("/api/comments", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          invitationId: themeId,
           name: formName,
-          status: formStatus,
-          message: formMessage,
-          time: "Baru saja"
-        },
-        ...wishes
-      ]);
+          rsvpStatus: formStatus,
+          comment: formMessage,
+          turnstileToken
+        })
+      });
+      setWishes([newComment, ...wishes]);
       setFormName("");
       setFormMessage("");
+    } catch (err) {
+      setWishes([newComment, ...wishes]);
+      setFormName("");
+      setFormMessage("");
+    } finally {
       setIsSubmitting(false);
-    }, 500);
+    }
   };
 
   return (

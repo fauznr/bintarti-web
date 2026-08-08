@@ -291,7 +291,8 @@ export default function Wedding5View({
           invitationId: themeId,
           name: rsvpName,
           attendance: newComment.attendance,
-          message: rsvpMessage
+          message: rsvpMessage,
+          turnstileToken
         })
       });
       setComments([newComment, ...comments]);

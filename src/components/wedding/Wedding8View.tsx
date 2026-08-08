@@ -314,6 +314,7 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
   const [rsvpCount, setRsvpCount] = useState("1");
   const [rsvpStatus, setRsvpStatus] = useState("Hadir");
   const [rsvpMessage, setRsvpMessage] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
@@ -484,6 +485,10 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
 
   // ── RSVP submit ──
   const handleSubmitRSVP = async () => {
+    if (!turnstileToken) {
+      alert("Harap tunggu CAPTCHA selesai atau refresh halaman.");
+      return;
+    }
     if (!rsvpName.trim() || !rsvpMessage.trim()) return;
     setIsSubmitting(true);
     const newComment = {
@@ -1441,6 +1446,12 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
                       "repeating-linear-gradient(transparent, transparent 26px, rgba(139,90,43,0.12) 26px, rgba(139,90,43,0.12) 27px)",
                   }}
                 />
+                <div className="w-full flex justify-center my-4 overflow-hidden">
+                  <Turnstile 
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"} 
+                    onSuccess={(token) => setTurnstileToken(token)} 
+                  />
+                </div>
                 <button
                   onClick={handleSubmitRSVP}
                   disabled={!rsvpName.trim() || !rsvpMessage.trim() || isSubmitting}
