@@ -2973,6 +2973,14 @@ export default function Formulir() {
                 )}
 
                 {/* Navigation Buttons */}
+                {currentStep === 4 && (
+                  <div className="flex justify-center w-full overflow-hidden mt-8">
+                    <Turnstile 
+                      siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"} 
+                      onSuccess={(token) => setTurnstileToken(token)} 
+                    />
+                  </div>
+                )}
                 <div className="flex justify-between items-center border-t border-slate-100 pt-6 mt-8">
                   {currentStep > 1 ? (
                     <button
