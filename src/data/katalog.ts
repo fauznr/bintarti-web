@@ -118,7 +118,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Tema biru gelap mewah dengan ornamen mahkota emas bergaya tradisional, hiasan awan klasik, dan karakter anak-anak kartun berpakaian adat nusantara yang ceria.",
     previewImage: "/khitan1.jpg",
-    demoUrl: "https://onlineundangan.id/bintarti-khitan-1/"
+    demoUrl: "/sandbox-tema/khitan-1"
   },
   {
     id: 5,
@@ -130,7 +130,7 @@ export const templates: Template[] = [
     fontFamily: "font-serif",
     description: "Sentuhan estetis tradisional jawa bermotif kertas kuno dengan hiasan wayang kulit yang sakral.",
     previewImage: "/khitan2.jpg",
-    demoUrl: "https://onlineundangan.id/bintarti-khitan-2/"
+    demoUrl: "/sandbox-tema/khitan-2"
   },
   {
     id: 6,
@@ -142,7 +142,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Keindahan nuansa hijau tosca islami dipadukan ornamen lentera gantung lan kubah masjid yang damai.",
     previewImage: "/khitan3.jpg",
-    demoUrl: "https://onlineundangan.id/bintarti-khitan-3/"
+    demoUrl: "/sandbox-tema/khitan-3"
   },
   {
     id: 7,
@@ -154,7 +154,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Tema sekolah ceria dengan karakter anak-anak kartun lucu, buku terbuka, apel merah, pensil warna-warni, dan latar biru muda yang menyenangkan.",
     previewImage: "/khitan4.jpg",
-    demoUrl: "https://onlineundangan.id/bintarti-khitan-4/"
+    demoUrl: "/sandbox-tema/khitan-4"
   },
   {
     id: 8,
@@ -166,7 +166,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Tema gamer cyber gelap dengan ikon joystick controller, elemen futuristik neon biru-hijau, dan tipografi bold khas dunia gaming.",
     previewImage: "/khitan5.jpg",
-    demoUrl: "https://onlineundangan.id/bintarti-khitan-5/"
+    demoUrl: "/sandbox-tema/khitan-5"
   },
   {
     id: 9,
@@ -178,7 +178,7 @@ export const templates: Template[] = [
     fontFamily: "font-serif",
     description: "Tema hitam elegan premium dengan ornamen emas bermotif batik bunga dan awan klasik, berlatar tekstur tenun gelap yang mewah dan berkelas.",
     previewImage: "/khitan6.jpg",
-    demoUrl: "https://onlineundangan.id/bintarti-khitan-6/"
+    demoUrl: "/sandbox-tema/khitan-6"
   },
   {
     id: 10,
@@ -190,7 +190,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Tema pantai tropis ceria dengan gradasi sunset oranye, pohon kelapa, kursi pantai, payung jerami, dan pemandangan laut yang menyegarkan.",
     previewImage: "/khitan7.jpg",
-    demoUrl: "https://onlineundangan.id/bintarti-khitan-7/"
+    demoUrl: "/sandbox-tema/khitan-7"
   },
   {
     id: 11,
@@ -202,7 +202,7 @@ export const templates: Template[] = [
     fontFamily: "font-serif",
     description: "Tema putih bersih islami elegan dengan hiasan kaligrafi arab di bagian atas dan motif geometris islami halus yang anggun dan khidmat.",
     previewImage: "/khitan8.jpg",
-    demoUrl: "https://onlineundangan.id/bintarti-khitan-8/"
+    demoUrl: "/sandbox-tema/khitan-8"
   },
   
   {
@@ -226,7 +226,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Tema kuning ceria 3D dengan elemen es krim, donat, matahari, awan, bunga daisy, dan suasana pesta yang menyenangkan.",
     previewImage: "/birthday1.jpg",
-    demoUrl: "https://onlineundangan.id/bintarti-birthday-1/"
+    demoUrl: "/sandbox-tema/birthday-1"
   },
   {
     id: 13,
@@ -238,7 +238,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Tema safari hewan lucu dengan ilustrasi watercolor singa, jerapah, gajah, monyet, zebra, dan koala di tengah dedaunan tropis.",
     previewImage: "/birthday2.jpg",
-    demoUrl: "https://onlineundangan.id/bintarti-birthday-2/"
+    demoUrl: "/sandbox-tema/birthday-2"
   },
   {
     id: 14,
@@ -250,7 +250,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Tema luar angkasa petualangan dengan roket, planet Saturnus, satelit, bintang-bintang, dan nuansa biru langit yang imajinatif.",
     previewImage: "/birthday3.jpg",
-    demoUrl: "https://onlineundangan.id/bintarti-birthday-3/"
+    demoUrl: "/sandbox-tema/birthday-3"
   },
   {
     id: 15,
@@ -262,7 +262,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Tema musik rock berwarna-warni dengan gitar elektrik, keyboard piano, drum set, dan elemen graffiti yang energik dan seru.",
     previewImage: "/birthday4.jpg",
-    demoUrl: "https://onlineundangan.id/bintarti-birthday-4/"
+    demoUrl: "/sandbox-tema/birthday-4"
   },
   {
     id: 16,
@@ -274,7 +274,7 @@ export const templates: Template[] = [
     fontFamily: "font-serif",
     description: "Tema otonan Bali tradisional dengan ilustrasi pura, penjor, canang sari, dan nuansa upacara Manusa Yadna yang sakral.",
     previewImage: "/birthday5.jpg",
-    demoUrl: "https://onlineundangan.id/bintarti-birthday-5/"
+    demoUrl: "/sandbox-tema/birthday-5"
   },
   {
     id: 17,
@@ -286,7 +286,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Tema pink romantis 3D dengan balon hati mengkilap, kotak hadiah berpita, dan nuansa merah muda yang manis dan feminin.",
     previewImage: "/birthday6.jpg",
-    demoUrl: "https://onlineundangan.id/bintarti-birthday-6/"
+    demoUrl: "/sandbox-tema/birthday-6"
   },
   {
     id: 18,
@@ -298,7 +298,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Tema pastel ungu lavender dengan balon watercolor warna-warni, confetti meriah, dan suasana pesta yang lembut dan ceria.",
     previewImage: "/birthday7.jpg",
-    demoUrl: "https://onlineundangan.id/bintarti-birthday-7/"
+    demoUrl: "/sandbox-tema/birthday-7"
   },
   {
     id: 19,
@@ -310,7 +310,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Tema konstruksi seru dengan excavator, dump truck, crane, helm proyek, kerucut lalu lintas, dan garis peringatan kuning-hitam.",
     previewImage: "/birthday8.jpg",
-    demoUrl: "https://onlineundangan.id/bintarti-birthday-8/"
+    demoUrl: "/sandbox-tema/birthday-8"
   },
   {
     id: 26,
