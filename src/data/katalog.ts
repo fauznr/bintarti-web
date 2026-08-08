@@ -22,7 +22,7 @@ export const templates: Template[] = [
     fontFamily: "font-serif",
     description: "Desain undangan pernikahan eksklusif berkonsep Monochrome Black & White modern yang terinspirasi dari Jessica Bevitation.",
     previewImage: "/wedding1-thumb.jpg",
-    demoUrl: "/sandbox-tema/wedding-1"
+    demoUrl: "/wedding-1"
   },
   {
     id: 102,
@@ -34,7 +34,7 @@ export const templates: Template[] = [
     fontFamily: "font-serif",
     description: "Tema pernikahan estetik bernuansa terracotta botanical dan bingkai arch minimalis terinspirasi dari Adea Bevitation.",
     previewImage: "/wedding2-thumb.jpg",
-    demoUrl: "/sandbox-tema/wedding-2"
+    demoUrl: "/wedding-2"
   },
   {
     id: 103,
@@ -46,7 +46,7 @@ export const templates: Template[] = [
     fontFamily: "font-serif",
     description: "Desain pernikahan Terracotta Aesthetic bernuansa alami, hangat, elegan dengan gabungan font Ovo & Tenor Sans.",
     previewImage: "/wedding3-thumb.jpg",
-    demoUrl: "/sandbox-tema/wedding-3"
+    demoUrl: "/wedding-3"
   },
   {
     id: 104,
@@ -58,7 +58,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Desain pernikahan Clean White Gen-Z Vibe berkonsep santai, estetik, ceria dengan aksen badge modern.",
     previewImage: "/wedding4-thumb.jpg",
-    demoUrl: "/sandbox-tema/wedding-4"
+    demoUrl: "/wedding-4"
   },
   {
     id: 105,
@@ -70,7 +70,7 @@ export const templates: Template[] = [
     fontFamily: "font-serif",
     description: "Desain pernikahan Coklat Tua Classic Java dengan hiasan pola batik kawung dan nuansa adat sakral.",
     previewImage: "/wedding5-thumb.jpg",
-    demoUrl: "/sandbox-tema/wedding-5"
+    demoUrl: "/wedding-5"
   },
   {
     id: 106,
@@ -82,7 +82,7 @@ export const templates: Template[] = [
     fontFamily: "font-serif",
     description: "Desain undangan pernikahan super mewah dengan warna Dark Emerald Rose Gold, tipografi Playfair Display & Cinzel.",
     previewImage: "/wedding6-thumb.jpg",
-    demoUrl: "/sandbox-tema/wedding-6"
+    demoUrl: "/wedding-6"
   },
   {
     id: 107,
@@ -94,7 +94,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Desain pernikahan Sage Green & White Papercut dengan dedaunan botanis segar, bingkai alami, dan font Cinzel.",
     previewImage: "/wedding7-thumb.jpg",
-    demoUrl: "/sandbox-tema/wedding-7"
+    demoUrl: "/wedding-7"
   },
   {
     id: 108,
@@ -106,7 +106,7 @@ export const templates: Template[] = [
     fontFamily: "font-serif",
     description: "Desain pernikahan Vintage Rustic Brown & Wax Seal dengan kartu polaroid miring interaktif merespons gerakan scroll.",
     previewImage: "/wedding8-thumb.jpg",
-    demoUrl: "/sandbox-tema/wedding-8"
+    demoUrl: "/wedding-8"
   },
   {
     id: 4,
@@ -118,7 +118,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Tema biru gelap mewah dengan ornamen mahkota emas bergaya tradisional, hiasan awan klasik, dan karakter anak-anak kartun berpakaian adat nusantara yang ceria.",
     previewImage: "/khitan1.jpg",
-    demoUrl: "/sandbox-tema/khitan-1"
+    demoUrl: "/khitan-1"
   },
   {
     id: 5,
@@ -130,7 +130,7 @@ export const templates: Template[] = [
     fontFamily: "font-serif",
     description: "Sentuhan estetis tradisional jawa bermotif kertas kuno dengan hiasan wayang kulit yang sakral.",
     previewImage: "/khitan2.jpg",
-    demoUrl: "/sandbox-tema/khitan-2"
+    demoUrl: "/khitan-2"
   },
   {
     id: 6,
@@ -142,7 +142,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Keindahan nuansa hijau tosca islami dipadukan ornamen lentera gantung lan kubah masjid yang damai.",
     previewImage: "/khitan3.jpg",
-    demoUrl: "/sandbox-tema/khitan-3"
+    demoUrl: "/khitan-3"
   },
   {
     id: 7,
@@ -154,7 +154,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Tema sekolah ceria dengan karakter anak-anak kartun lucu, buku terbuka, apel merah, pensil warna-warni, dan latar biru muda yang menyenangkan.",
     previewImage: "/khitan4.jpg",
-    demoUrl: "/sandbox-tema/khitan-4"
+    demoUrl: "/khitan-4"
   },
   {
     id: 8,
@@ -166,7 +166,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Tema gamer cyber gelap dengan ikon joystick controller, elemen futuristik neon biru-hijau, dan tipografi bold khas dunia gaming.",
     previewImage: "/khitan5.jpg",
-    demoUrl: "/sandbox-tema/khitan-5"
+    demoUrl: "/khitan-5"
   },
   {
     id: 9,
@@ -178,7 +178,7 @@ export const templates: Template[] = [
     fontFamily: "font-serif",
     description: "Tema hitam elegan premium dengan ornamen emas bermotif batik bunga dan awan klasik, berlatar tekstur tenun gelap yang mewah dan berkelas.",
     previewImage: "/khitan6.jpg",
-    demoUrl: "/sandbox-tema/khitan-6"
+    demoUrl: "/khitan-6"
   },
   {
     id: 10,
@@ -190,7 +190,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Tema pantai tropis ceria dengan gradasi sunset oranye, pohon kelapa, kursi pantai, payung jerami, dan pemandangan laut yang menyegarkan.",
     previewImage: "/khitan7.jpg",
-    demoUrl: "/sandbox-tema/khitan-7"
+    demoUrl: "/khitan-7"
   },
   {
     id: 11,
@@ -202,7 +202,7 @@ export const templates: Template[] = [
     fontFamily: "font-serif",
     description: "Tema putih bersih islami elegan dengan hiasan kaligrafi arab di bagian atas dan motif geometris islami halus yang anggun dan khidmat.",
     previewImage: "/khitan8.jpg",
-    demoUrl: "/sandbox-tema/khitan-8"
+    demoUrl: "/khitan-8"
   },
   
   {
@@ -226,7 +226,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Tema kuning ceria 3D dengan elemen es krim, donat, matahari, awan, bunga daisy, dan suasana pesta yang menyenangkan.",
     previewImage: "/birthday1.jpg",
-    demoUrl: "/sandbox-tema/birthday-1"
+    demoUrl: "/birthday-1"
   },
   {
     id: 13,
@@ -238,7 +238,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Tema safari hewan lucu dengan ilustrasi watercolor singa, jerapah, gajah, monyet, zebra, dan koala di tengah dedaunan tropis.",
     previewImage: "/birthday2.jpg",
-    demoUrl: "/sandbox-tema/birthday-2"
+    demoUrl: "/birthday-2"
   },
   {
     id: 14,
@@ -250,7 +250,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Tema luar angkasa petualangan dengan roket, planet Saturnus, satelit, bintang-bintang, dan nuansa biru langit yang imajinatif.",
     previewImage: "/birthday3.jpg",
-    demoUrl: "/sandbox-tema/birthday-3"
+    demoUrl: "/birthday-3"
   },
   {
     id: 15,
@@ -262,7 +262,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Tema musik rock berwarna-warni dengan gitar elektrik, keyboard piano, drum set, dan elemen graffiti yang energik dan seru.",
     previewImage: "/birthday4.jpg",
-    demoUrl: "/sandbox-tema/birthday-4"
+    demoUrl: "/birthday-4"
   },
   {
     id: 16,
@@ -274,7 +274,7 @@ export const templates: Template[] = [
     fontFamily: "font-serif",
     description: "Tema otonan Bali tradisional dengan ilustrasi pura, penjor, canang sari, dan nuansa upacara Manusa Yadna yang sakral.",
     previewImage: "/birthday5.jpg",
-    demoUrl: "/sandbox-tema/birthday-5"
+    demoUrl: "/birthday-5"
   },
   {
     id: 17,
@@ -286,7 +286,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Tema pink romantis 3D dengan balon hati mengkilap, kotak hadiah berpita, dan nuansa merah muda yang manis dan feminin.",
     previewImage: "/birthday6.jpg",
-    demoUrl: "/sandbox-tema/birthday-6"
+    demoUrl: "/birthday-6"
   },
   {
     id: 18,
@@ -298,7 +298,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Tema pastel ungu lavender dengan balon watercolor warna-warni, confetti meriah, dan suasana pesta yang lembut dan ceria.",
     previewImage: "/birthday7.jpg",
-    demoUrl: "/sandbox-tema/birthday-7"
+    demoUrl: "/birthday-7"
   },
   {
     id: 19,
@@ -310,7 +310,7 @@ export const templates: Template[] = [
     fontFamily: "font-sans",
     description: "Tema konstruksi seru dengan excavator, dump truck, crane, helm proyek, kerucut lalu lintas, dan garis peringatan kuning-hitam.",
     previewImage: "/birthday8.jpg",
-    demoUrl: "/sandbox-tema/birthday-8"
+    demoUrl: "/birthday-8"
   },
   {
     id: 26,
