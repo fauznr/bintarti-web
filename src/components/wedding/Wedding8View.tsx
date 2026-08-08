@@ -533,6 +533,7 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
   if (!isOpened) {
     return (
       <div
+        id="cover-section"
         className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden select-none"
         style={{ background: "linear-gradient(160deg, #2C1A0E 0%, #3D2411 40%, #5C3317 70%, #2C1A0E 100%)" }}
       >

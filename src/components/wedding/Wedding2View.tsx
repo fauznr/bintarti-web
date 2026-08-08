@@ -393,7 +393,7 @@ export default function Wedding2View({
           COVER / LOCK SCREEN OVERLAY (BEVITATION ADEA MINIMALIST CANVAS)
           ───────────────────────────────────────────────────────────────── */}
       {(!isOpened || isClosingCover) && (
-        <div className={`fixed inset-0 z-50 flex flex-col items-center justify-between p-6 bg-[#FAF7F2] text-center select-none overflow-hidden font-adea-montserrat transition-all duration-700 ease-in-out ${
+        <div id="cover-section" className={`fixed inset-0 z-50 flex flex-col items-center justify-between p-6 bg-[#FAF7F2] text-center select-none overflow-hidden font-adea-montserrat transition-all duration-700 ease-in-out ${
           isClosingCover ? "opacity-0 scale-105 pointer-events-none filter blur-sm" : "opacity-100 scale-100"
         }`}>
           {/* Subtle Clean Floral Border Line */}

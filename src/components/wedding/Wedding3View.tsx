@@ -389,7 +389,7 @@ export default function Wedding3View({
       {/* (Foto 100% Clear Jelas - Tanpa Efek Putih/Haze)         */}
       {/* ======================================================== */}
       {(!isOpened || isClosingCover) && (
-        <div className={`fixed inset-0 z-[999] bg-black flex flex-col items-center justify-between p-6 sm:p-10 text-center overflow-hidden transition-all duration-700 ease-in-out ${
+        <div id="cover-section" className={`fixed inset-0 z-[999] bg-black flex flex-col items-center justify-between p-6 sm:p-10 text-center overflow-hidden transition-all duration-700 ease-in-out ${
           isClosingCover ? "opacity-0 scale-105 pointer-events-none filter blur-sm" : "opacity-100 scale-100"
         }`}>
           {/* FULL SECTION BACKGROUND IMAGE (100% CLEAR, NO WHITE HAZE) */}

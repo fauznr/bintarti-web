@@ -468,7 +468,7 @@ export default function Wedding1View({
           COVER / LOCK SCREEN OVERLAY (MONOCHROME BLACK & WHITE)
           ───────────────────────────────────────────────────────────────── */}
       {(!isOpened || isClosingCover) && (
-        <div className={`fixed inset-0 z-50 flex flex-col items-center justify-between p-6 bg-black text-center select-none overflow-hidden transition-all duration-700 ease-in-out ${
+        <div id="cover-section" className={`fixed inset-0 z-50 flex flex-col items-center justify-between p-6 bg-black text-center select-none overflow-hidden transition-all duration-700 ease-in-out ${
           isClosingCover ? "opacity-0 scale-105 pointer-events-none filter blur-sm" : "opacity-100 scale-100"
         }`}>
           {/* Background image with high contrast B&W overlay */}

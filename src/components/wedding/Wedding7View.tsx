@@ -512,6 +512,7 @@ const fallbackHero = "/indo_prewed_simple_1_1785092558852.jpg";
       {/* ======================================================== */}
       {!isOpened && (
         <div
+          id="cover-section"
           className={`fixed inset-0 z-[999] flex items-center justify-center bg-[#FAFBFB] transition-all duration-700 ease-in-out ${
             isClosingCover ? "opacity-0 scale-95 pointer-events-none" : "opacity-100 scale-100"
           }`}

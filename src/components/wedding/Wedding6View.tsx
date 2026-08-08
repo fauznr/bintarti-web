@@ -391,8 +391,7 @@ export default function Wedding6View({
       {/* COVER OVERLAY / LOCK SCREEN MODAL                        */}
       {/* ======================================================== */}
       {(!isOpened || isClosingCover) && (
-        <div
-          className={`fixed inset-0 z-[999] bg-[#050505] flex flex-col items-center justify-between p-6 text-center overflow-hidden transition-all duration-700 ease-in-out ${
+        <div id="cover-section" className={`fixed inset-0 z-[999] bg-[#050505] flex flex-col items-center justify-between p-6 text-center overflow-hidden transition-all duration-700 ease-in-out ${
             isClosingCover
               ? "opacity-0 scale-105 -translate-y-8 blur-sm pointer-events-none"
               : "opacity-100 scale-100 translate-y-0 blur-none"
