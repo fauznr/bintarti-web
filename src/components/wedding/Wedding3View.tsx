@@ -317,7 +317,8 @@ export default function Wedding3View({
           invitationId: themeId,
           name: formName,
           rsvpStatus: newComment.rsvp_status,
-          comment: formWish
+          comment: ,
+          turnstileToken
         })
       });
       setComments([newComment, ...comments]);
