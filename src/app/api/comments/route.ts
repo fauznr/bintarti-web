@@ -104,7 +104,7 @@ export async function POST(request: Request) {
     }
 
     const verifyEndpoint = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
-    const secret = "1x0000000000000000000000000000000AA";
+    const secret = process.env.TURNSTILE_SECRET_KEY || "1x0000000000000000000000000000000AA";
 
     const verifyRes = await fetch(verifyEndpoint, {
       method: 'POST',
