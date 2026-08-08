@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import { Turnstile } from "@marsidev/react-turnstile";
 import Image from "next/image";
 import { 
   Heart, 
