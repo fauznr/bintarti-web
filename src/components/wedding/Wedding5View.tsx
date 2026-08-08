@@ -1018,9 +1018,14 @@ export default function Wedding5View({
                     className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-white/80 border border-[#5C3A21]/40 text-[#2A1E17] focus:outline-none focus:border-[#3E2312] resize-none shadow-sm"
                   />
                 </div>
+                <div className="flex justify-center w-full overflow-hidden my-2">
+                  <Turnstile 
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"} 
+                    onSuccess={(token) => setTurnstileToken(token)} 
+                  />
+                </div>
 
-                <button 
-                  type="submit"
+                <button type="submit"
                   disabled={isSubmitting}
                   className="w-full py-3 rounded-full bg-[#3E2312] hover:bg-[#5C3A21] text-[#FAF6F0] border-2 border-[#5C3A21] font-black text-xs uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >

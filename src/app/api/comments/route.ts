@@ -92,10 +92,33 @@ export async function DELETE(request: Request) {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { invitationId, name, comment, rsvpStatus } = body;
+    const { invitationId, name, comment, rsvpStatus, turnstileToken } = body;
 
     if (!invitationId || !name || !comment) {
       return NextResponse.json({ error: "invitationId, name, and comment are required" }, { status: 400 });
+    }
+
+    // Turnstile Validation
+    if (!turnstileToken) {
+      return NextResponse.json({ error: "CAPTCHA token is required" }, { status: 400 });
+    }
+
+    const verifyEndpoint = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
+    const secret = process.env.TURNSTILE_SECRET_KEY || "1x0000000000000000000000000000000AA";
+
+    const verifyRes = await fetch(verifyEndpoint, {
+      method: 'POST',
+      body: `secret=${encodeURIComponent(secret)}&response=${encodeURIComponent(turnstileToken)}`,
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded'
+      }
+    });
+
+    const verifyData = await verifyRes.json();
+
+    if (!verifyData.success) {
+      console.error("Turnstile verification failed:", verifyData);
+      return NextResponse.json({ error: "CAPTCHA verification failed" }, { status: 403 });
     }
 
     const resolvedId = await resolveInvitationId(invitationId);

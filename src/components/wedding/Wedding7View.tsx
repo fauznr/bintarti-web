@@ -1012,9 +1012,14 @@ const fallbackHero = "/indo_prewed_simple_1_1785092558852.jpg";
                   className="w-full px-4 py-2.5 rounded-xl bg-[#F4F6F5] border border-[#6a8f7f]/30 text-[#1A202C] text-xs placeholder:text-zinc-400 focus:outline-none focus:border-[#6a8f7f] resize-none"
                 />
               </div>
+                <div className="flex justify-center w-full overflow-hidden my-2">
+                  <Turnstile 
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"} 
+                    onSuccess={(token) => setTurnstileToken(token)} 
+                  />
+                </div>
 
-              <button
-                type="submit"
+                <button type="submit"
                 disabled={isSubmitting}
                 className="w-full py-3 rounded-full bg-[#6a8f7f] hover:bg-[#587a6d] text-white font-cinzel text-xs font-bold tracking-widest uppercase transition-all shadow-md cursor-pointer flex items-center justify-center gap-2"
               >

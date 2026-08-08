@@ -1082,9 +1082,14 @@ export default function Wedding4View({
                     className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-white border border-slate-300 text-slate-900 focus:outline-none focus:border-slate-900 resize-none shadow-sm"
                   />
                 </div>
+                <div className="flex justify-center w-full overflow-hidden my-2">
+                  <Turnstile 
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"} 
+                    onSuccess={(token) => setTurnstileToken(token)} 
+                  />
+                </div>
 
-                <button 
-                  type="submit"
+                <button type="submit"
                   disabled={isSubmitting}
                   className="w-full py-3 rounded-full bg-slate-900 text-white font-black text-xs uppercase tracking-wider shadow-md hover:bg-slate-800 transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >

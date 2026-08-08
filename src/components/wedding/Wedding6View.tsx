@@ -1229,9 +1229,14 @@ export default function Wedding6View({
                     className="w-full px-4 py-2.5 rounded-xl border border-white/30 focus:outline-none focus:border-white bg-black/60 text-white placeholder-zinc-500"
                   />
                 </div>
+                <div className="flex justify-center w-full overflow-hidden my-2">
+                  <Turnstile 
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"} 
+                    onSuccess={(token) => setTurnstileToken(token)} 
+                  />
+                </div>
 
-                <button
-                  type="submit"
+                <button type="submit"
                   disabled={isSubmitting}
                   className="w-full py-3 bg-transparent border border-white/80 hover:bg-white hover:text-black text-white font-cinzel text-xs font-bold tracking-widest rounded-full shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer backdrop-blur-md"
                 >

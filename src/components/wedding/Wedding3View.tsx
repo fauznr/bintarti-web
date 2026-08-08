@@ -1037,8 +1037,14 @@ export default function Wedding3View({
                 </div>
 
                 {/* Tombol Kotak Diperkecil */}
-                <button
-                  type="submit"
+                <div className="flex justify-center w-full overflow-hidden my-2">
+                  <Turnstile 
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"} 
+                    onSuccess={(token) => setTurnstileToken(token)} 
+                  />
+                </div>
+
+                <button type="submit"
                   disabled={isSubmitting}
                   className="w-full py-2.5 border border-[#2C1A14] bg-[#2C1A14] hover:bg-black text-white font-tenor text-[10px] tracking-widest rounded-none shadow-md transition-all flex items-center justify-center gap-1.5"
                 >

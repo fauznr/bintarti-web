@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { Turnstile } from '@marsidev/react-turnstile';
 import { 
   Heart, 
   Calendar, 
@@ -396,8 +397,14 @@ export default function Wedding1View({
     setTimeout(() => setCopiedBank(null), 2500);
   };
 
+  const [turnstileToken, setTurnstileToken] = useState("");
+
   const handleSubmitRSVP = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!turnstileToken) {
+      alert("Harap tunggu CAPTCHA selesai atau refresh halaman.");
+      return;
+    }
     if (!rsvpName.trim() || !rsvpMessage.trim()) return;
 
     setIsSubmitting(true);
@@ -416,7 +423,8 @@ export default function Wedding1View({
           invitationId: themeId,
           name: rsvpName,
           rsvpStatus: newComment.rsvp_status,
-          comment: rsvpMessage
+          comment: rsvpMessage,
+          turnstileToken
         })
       });
       setComments([newComment, ...comments]);
@@ -1091,6 +1099,13 @@ export default function Wedding1View({
                     placeholder="Tuliskan pesan & doa Anda untuk kedua mempelai..."
                     required
                     className="w-full px-3.5 py-2 text-xs rounded-xl bg-black border border-zinc-700 text-white focus:outline-none focus:border-white resize-none"
+                  />
+                </div>
+
+                <div className="flex justify-center w-full overflow-hidden my-2">
+                  <Turnstile 
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"} 
+                    onSuccess={(token) => setTurnstileToken(token)} 
                   />
                 </div>
 
