@@ -111,7 +111,7 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
-        source: '/:id',
+        source: '/:id([^\\.]+)', // Hanya tangkap URL tanpa ekstensi (jangan tangkap .js, .json, dsb)
         destination: '/sandbox-tema/:id',
       },
     ];
