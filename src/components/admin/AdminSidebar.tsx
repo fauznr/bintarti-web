@@ -80,9 +80,9 @@ export default function AdminSidebar({
       } else {
         throw new Error("Gagal menyimpan langganan ke server.");
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error subscribing to push:", error);
-      alert("Terjadi kesalahan saat mengaktifkan notifikasi. Pastikan Anda memberi izin (Allow Notifications) di browser.");
+      alert("Terjadi kesalahan (" + (error.name || "Error") + "): " + error.message + "\n\nPastikan Anda memberi izin (Allow Notifications) di browser.");
     }
   };
 
