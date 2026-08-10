@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { LayoutTemplate, Image as ImageIcon, Music, Lock, Sparkles, LogOut, MessageSquare, BarChart3, BellRing } from "lucide-react";
+import { LayoutTemplate, Image as ImageIcon, Music, Lock, Sparkles, LogOut, MessageSquare, BarChart3, BellRing, Eraser } from "lucide-react";
 
 interface AdminSidebarProps {
   isSidebarOpen: boolean;
@@ -39,6 +39,25 @@ export default function AdminSidebar({
       outputArray[i] = rawData.charCodeAt(i);
     }
     return outputArray;
+  };
+
+  const handleClearCache = async () => {
+    if (!confirm("Apakah Anda yakin ingin membersihkan cache seluruh situs? Ini akan memaksa semua halaman memuat data terbaru.")) {
+      return;
+    }
+    
+    try {
+      const res = await fetch('/api/admin/revalidate', { method: 'POST' });
+      const data = await res.json();
+      
+      if (res.ok) {
+        alert("Berhasil! " + data.message);
+      } else {
+        throw new Error(data.error || "Gagal membersihkan cache");
+      }
+    } catch (error: any) {
+      alert("Terjadi kesalahan: " + error.message);
+    }
   };
 
   const handleSubscribePush = async () => {
@@ -173,6 +192,12 @@ export default function AdminSidebar({
           className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-600 font-bold text-xs transition-colors shadow-sm cursor-pointer"
         >
           <BellRing className="w-4 h-4" /> Aktifkan Notifikasi
+        </button>
+        <button
+          onClick={handleClearCache}
+          className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-600 font-bold text-xs transition-colors shadow-sm cursor-pointer"
+        >
+          <Eraser className="w-4 h-4" /> Bersihkan Cache
         </button>
         <button
           onClick={onLogout}
