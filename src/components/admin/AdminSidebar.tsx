@@ -48,6 +48,8 @@ export default function AdminSidebar({
     }
 
     try {
+      // Pastikan Service Worker terdaftar sebelum berlangganan
+      await navigator.serviceWorker.register('/sw.js');
       const registration = await navigator.serviceWorker.ready;
       
       const existingSubscription = await registration.pushManager.getSubscription();
