@@ -33,26 +33,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       };
     }
     
-    const isKhitan = invitation.type === "Khitan";
-    const activeTheme = invitation.theme?.toLowerCase().replace(/\s+/g, '-') || "khitan-1";
-    
-    const defaultKidPhoto = isKhitan ? `/templates/${activeTheme}/kid.png` 
-      : activeTheme === "birthday-8" ? "/templates/birthday-8/kid-1.jpg" 
-      : activeTheme === "birthday-5" ? "/templates/birthday-5/kid-1.jpg" 
-      : activeTheme === "birthday-1" ? "/templates/birthday-1/kid-1.jpg" 
-      : "/templates/birthday-2/kid-1.jpg";
-      
-    const absoluteDefaultKidPhoto = `https://bintarti.store${defaultKidPhoto}`;
-
-    // Determine the OG image
-    let ogImage = invitation.child_photo_url || invitation.layout_config?.cover?.bgUrl;
-    if (!ogImage && invitation.gallery_images && invitation.gallery_images.length > 0) {
-      ogImage = invitation.gallery_images[0];
-    }
-    if (!ogImage) {
-      ogImage = absoluteDefaultKidPhoto;
-    }
-    
     const childName = invitation.full_name || 'Tamu Undangan';
     const typeMap: Record<string, string> = {
       "Birthday": "Ulang Tahun",
@@ -93,20 +73,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       }
     }
 
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bintarti.store';
+    const ogImageUrl = `${siteUrl}/api/og?id=${resolvedParams.id}`;
+
     return {
       title,
       description,
       openGraph: {
         title,
         description,
-        images: ogImage ? [{ url: ogImage, width: 800, height: 600, alt: title }] : [],
+        images: [{ url: ogImageUrl, width: 1200, height: 630, alt: title }],
         type: 'website',
       },
       twitter: {
         card: 'summary_large_image',
         title,
         description,
-        images: ogImage ? [ogImage] : [],
+        images: [ogImageUrl],
       }
     };
   } catch (error) {
