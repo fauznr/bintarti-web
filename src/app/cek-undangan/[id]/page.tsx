@@ -89,6 +89,7 @@ export default function KelolaUndangan() {
   const [isLoadingDetails, setIsLoadingDetails] = useState(true);
   const [copiedField, setCopiedField] = useState<string | null>(null);
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
+  const [activeTab, setActiveTab] = useState("kelola");
 
   // States for guest manager
   const [guests, setGuests] = useState<any[]>([]);
@@ -793,6 +794,18 @@ export default function KelolaUndangan() {
             {/* Kelola Penerima Undangan Dashboard */}
             {result.status.toLowerCase() === 'selesai' && result.linkTamu && (
               <div className="p-5 rounded-3xl bg-emerald-50/30 border border-emerald-100/80 shadow-xl shadow-slate-100/30 space-y-5">
+
+                {/* Tab Navigation */}
+                <div className="flex overflow-x-auto gap-2 pb-2 mb-4 scrollbar-hide [&::-webkit-scrollbar]:hidden">
+                  <button type="button" onClick={() => setActiveTab("kelola")} className={`px-4 py-2.5 rounded-xl font-bold text-xs whitespace-nowrap transition-all duration-300 ${activeTab === 'kelola' ? 'bg-emerald-500 text-white shadow-md' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}>📨 Kelola Penerima Undangan</button>
+                  <button type="button" onClick={() => setActiveTab("ucapan")} className={`px-4 py-2.5 rounded-xl font-bold text-xs whitespace-nowrap transition-all duration-300 ${activeTab === 'ucapan' ? 'bg-blue-500 text-white shadow-md' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}>💬 Ucapan, Doa & RSVP</button>
+                  <button type="button" onClick={() => setActiveTab("scanner")} className={`px-4 py-2.5 rounded-xl font-bold text-xs whitespace-nowrap transition-all duration-300 ${activeTab === 'scanner' ? 'bg-indigo-500 text-white shadow-md' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}>📱 Buku Tamu QR Code</button>
+                  <button type="button" onClick={() => setActiveTab("statistik")} className={`px-4 py-2.5 rounded-xl font-bold text-xs whitespace-nowrap transition-all duration-300 ${activeTab === 'statistik' ? 'bg-purple-500 text-white shadow-md' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}>📊 Statistik & Kehadiran</button>
+                  <button type="button" onClick={() => setActiveTab("log")} className={`px-4 py-2.5 rounded-xl font-bold text-xs whitespace-nowrap transition-all duration-300 ${activeTab === 'log' ? 'bg-emerald-600 text-white shadow-md' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}>👥 Log Kehadiran</button>
+                </div>
+
+                {/* TAB_KELOLA_START */}
+                <div className={activeTab === "kelola" ? "space-y-5" : "hidden"}>
                 <div className="bg-emerald-50/50 p-4 rounded-2xl border border-emerald-100/50">
                   <span className="text-xs font-extrabold text-emerald-800 uppercase tracking-wider flex items-center gap-1.5">
                     📨 Kelola Penerima Undangan
@@ -1135,6 +1148,9 @@ export default function KelolaUndangan() {
                 )}
               </div>
 
+            </div>
+                {/* TAB_UCAPAN_START */}
+                <div className={activeTab === "ucapan" ? "space-y-5" : "hidden"}>
             {/* Ucapan, Doa & RSVP Tamu (WordPress Webhook integration) */}
             <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm space-y-4 relative">
               <div className="flex items-center justify-between pb-3 border-b border-slate-100">
@@ -1229,6 +1245,9 @@ export default function KelolaUndangan() {
               )}
             </div>
 
+                </div>
+                {/* TAB_SCANNER_START */}
+                <div className={activeTab === "scanner" ? "space-y-5" : "hidden"}>
                 {/* Scanner Penerima Tamu Button */}
                 <div className="flex">
                   {isExpired ? (
@@ -1320,6 +1339,9 @@ export default function KelolaUndangan() {
                   )}
                 </div>
 
+                </div>
+                {/* TAB_STATISTIK_START */}
+                <div className={activeTab === "statistik" ? "space-y-5" : "hidden"}>
                 {/* Dashboard Analytics & Chart */}
                 <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm space-y-5 relative">
                   <div className="flex items-center gap-2 pb-3 border-b border-slate-100">
@@ -1553,6 +1575,9 @@ export default function KelolaUndangan() {
                   )}
                 </div>
 
+                </div>
+                {/* TAB_LOG_START */}
+                <div className={activeTab === "log" ? "space-y-5" : "hidden"}>
                 {/* Log Kehadiran Tamu (Semua Check-in) */}
                 <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm space-y-4 relative">
                   <div className="flex items-center gap-2 pb-3 border-b border-slate-100">
@@ -1620,6 +1645,7 @@ export default function KelolaUndangan() {
                     </div>
                   )}
                 </div>
+              </div>
               </div>
             )}
 
