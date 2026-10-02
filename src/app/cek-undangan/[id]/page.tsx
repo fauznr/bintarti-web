@@ -796,67 +796,67 @@ export default function KelolaUndangan() {
               <div className="p-3 sm:p-5 rounded-2xl sm:rounded-3xl bg-emerald-50/30 border border-emerald-100/80 shadow-xl shadow-slate-100/30 space-y-5">
 
                 {/* Tab Navigation */}
-                <div className="bg-white/90 backdrop-blur-md p-1.5 rounded-2xl border border-slate-200/80 shadow-sm mb-2 sticky top-2 z-20">
-                  <div className="flex overflow-x-auto gap-1.5 pb-0.5 no-scrollbar touch-pan-x" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+                <div className="bg-white/95 backdrop-blur-md p-2 rounded-2xl border border-slate-200/90 shadow-sm mb-3">
+                  <div className="grid grid-cols-2 sm:grid-cols-5 gap-1.5">
                     <button
                       type="button"
                       onClick={() => setActiveTab("kelola")}
-                      className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl font-bold text-xs whitespace-nowrap transition-all duration-200 shrink-0 ${
+                      className={`flex items-center justify-center gap-1.5 px-2.5 py-2.5 rounded-xl font-bold text-xs transition-all duration-200 ${
                         activeTab === 'kelola'
-                          ? 'bg-emerald-600 text-white shadow-sm ring-2 ring-emerald-600/20'
-                          : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
+                          ? 'bg-emerald-600 text-white shadow-md shadow-emerald-600/20 ring-2 ring-emerald-600/30 font-extrabold'
+                          : 'bg-slate-50 hover:bg-slate-100 text-slate-600 border border-slate-150'
                       }`}
                     >
-                      <span className="text-sm">📨</span>
-                      <span>Kelola Tamu</span>
+                      <span className="text-base leading-none">📨</span>
+                      <span className="truncate">Kelola Tamu</span>
                     </button>
                     <button
                       type="button"
                       onClick={() => setActiveTab("ucapan")}
-                      className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl font-bold text-xs whitespace-nowrap transition-all duration-200 shrink-0 ${
+                      className={`flex items-center justify-center gap-1.5 px-2.5 py-2.5 rounded-xl font-bold text-xs transition-all duration-200 ${
                         activeTab === 'ucapan'
-                          ? 'bg-blue-600 text-white shadow-sm ring-2 ring-blue-600/20'
-                          : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
+                          ? 'bg-blue-600 text-white shadow-md shadow-blue-600/20 ring-2 ring-blue-600/30 font-extrabold'
+                          : 'bg-slate-50 hover:bg-slate-100 text-slate-600 border border-slate-150'
                       }`}
                     >
-                      <span className="text-sm">💬</span>
-                      <span>Ucapan & RSVP</span>
+                      <span className="text-base leading-none">💬</span>
+                      <span className="truncate">Ucapan & RSVP</span>
                     </button>
                     <button
                       type="button"
                       onClick={() => setActiveTab("scanner")}
-                      className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl font-bold text-xs whitespace-nowrap transition-all duration-200 shrink-0 ${
+                      className={`flex items-center justify-center gap-1.5 px-2.5 py-2.5 rounded-xl font-bold text-xs transition-all duration-200 ${
                         activeTab === 'scanner'
-                          ? 'bg-indigo-600 text-white shadow-sm ring-2 ring-indigo-600/20'
-                          : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
+                          ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/20 ring-2 ring-indigo-600/30 font-extrabold'
+                          : 'bg-slate-50 hover:bg-slate-100 text-slate-600 border border-slate-150'
                       }`}
                     >
-                      <span className="text-sm">📱</span>
-                      <span>QR Scanner</span>
+                      <span className="text-base leading-none">📱</span>
+                      <span className="truncate">QR Scanner</span>
                     </button>
                     <button
                       type="button"
                       onClick={() => setActiveTab("statistik")}
-                      className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl font-bold text-xs whitespace-nowrap transition-all duration-200 shrink-0 ${
+                      className={`flex items-center justify-center gap-1.5 px-2.5 py-2.5 rounded-xl font-bold text-xs transition-all duration-200 ${
                         activeTab === 'statistik'
-                          ? 'bg-purple-600 text-white shadow-sm ring-2 ring-purple-600/20'
-                          : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
+                          ? 'bg-purple-600 text-white shadow-md shadow-purple-600/20 ring-2 ring-purple-600/30 font-extrabold'
+                          : 'bg-slate-50 hover:bg-slate-100 text-slate-600 border border-slate-150'
                       }`}
                     >
-                      <span className="text-sm">📊</span>
-                      <span>Statistik</span>
+                      <span className="text-base leading-none">📊</span>
+                      <span className="truncate">Statistik</span>
                     </button>
                     <button
                       type="button"
                       onClick={() => setActiveTab("log")}
-                      className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl font-bold text-xs whitespace-nowrap transition-all duration-200 shrink-0 ${
+                      className={`col-span-2 sm:col-span-1 flex items-center justify-center gap-1.5 px-2.5 py-2.5 rounded-xl font-bold text-xs transition-all duration-200 ${
                         activeTab === 'log'
-                          ? 'bg-teal-600 text-white shadow-sm ring-2 ring-teal-600/20'
-                          : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
+                          ? 'bg-teal-600 text-white shadow-md shadow-teal-600/20 ring-2 ring-teal-600/30 font-extrabold'
+                          : 'bg-slate-50 hover:bg-slate-100 text-slate-600 border border-slate-150'
                       }`}
                     >
-                      <span className="text-sm">👥</span>
-                      <span>Log Hadir</span>
+                      <span className="text-base leading-none">👥</span>
+                      <span className="truncate">Log Hadir</span>
                     </button>
                   </div>
                 </div>
