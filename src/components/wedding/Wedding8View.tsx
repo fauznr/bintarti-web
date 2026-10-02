@@ -23,6 +23,15 @@ import {
   Scan
 } from "lucide-react";
 
+const parseGDriveUrl = (url?: string) => {
+  if (!url) return "";
+  const match = url.match(/[-\w]{25,}/);
+  if (match) {
+    return `/api/proxy-audio?id=${match[0]}`;
+  }
+  return url;
+};
+
 // ─── Props ────────────────────────────────────────────────────────────────────
 interface Props {
   invitationData?: any;
@@ -363,7 +372,7 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
   const resepsiTime = weddingNotes?.resepsiTime || data.resepsiTime || "11.00 – 14.00 WIB";
   const resepsiVenue = weddingNotes?.resepsiLocation || data.resepsiVenue || "Gedung Sasana Budaya, Jakarta";
   
-  const musicUrl = data.musicUrl || data.music_url || "https://assets.mixkit.co/music/preview/mixkit-romantic-wedding-462.mp3";
+  const musicUrl = parseGDriveUrl(data.music || data.musicUrl || data.music_url || "https://drive.google.com/file/d/1r7lOmps_NI1clBhXjKKyN4pliWRg9mLy/view?usp=drive_link");
 
   const guest = guestName ? safeDecodeGuestName(guestName) : "";
 

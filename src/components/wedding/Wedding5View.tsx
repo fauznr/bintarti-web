@@ -339,7 +339,7 @@ export default function Wedding5View({
       <audio 
         ref={audioRef} 
         loop 
-        src={parseGDriveUrl(invitationData?.music || invitationData?.music_url) || "https://assets.mixkit.co/music/preview/mixkit-romantic-wedding-462.mp3"} 
+        src={parseGDriveUrl(invitationData?.music || invitationData?.music_url || "https://drive.google.com/file/d/17m_VVU8mZ63uw_CIYgrL0ZgwP2WNVa2a/view?usp=drive_link")} 
       />
 
       {/* ─────────────────────────────────────────────────────────────────

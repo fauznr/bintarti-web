@@ -42,6 +42,15 @@ const Youtube = ({ className = "w-4 h-4" }: { className?: string }) => (
   </svg>
 );
 
+const parseGDriveUrl = (url?: string) => {
+  if (!url) return "";
+  const match = url.match(/[-\w]{25,}/);
+  if (match) {
+    return `/api/proxy-audio?id=${match[0]}`;
+  }
+  return url;
+};
+
 interface Wedding7ViewProps {
   invitationData?: any;
   guestName?: string;
@@ -505,7 +514,7 @@ const fallbackHero = "/indo_prewed_simple_1_1785092558852.jpg";
   return (
     <div className="relative min-h-screen bg-[#FAFBFB] text-[#2D3748] font-montserrat antialiased selection:bg-[#6a8f7f] selection:text-white overflow-x-hidden">
       {/* Background Audio Player */}
-      <audio ref={audioRef} src={invitationData?.music_url || "https://assets.mixkit.co/music/preview/mixkit-romantic-wedding-462.mp3"} loop preload="auto" />
+      <audio ref={audioRef} src={parseGDriveUrl(invitationData?.music || invitationData?.music_url || "https://drive.google.com/file/d/1J1jrhW12n1f0dhqWpYaJD9rLu6fqOa8s/view?usp=drive_link")} loop preload="auto" />
 
       {/* ======================================================== */}
       {/* COVER / LOCKSCREEN MODAL (WHITE & SAGE GREEN STYLE)     */}

@@ -5167,8 +5167,24 @@ export default function ThemePreviewPage() {
   }
 
   if (isWedding && !designerOpen) {
+    const defaultWeddingMusic =
+      activeTheme === "wedding-5"
+        ? "https://drive.google.com/file/d/17m_VVU8mZ63uw_CIYgrL0ZgwP2WNVa2a/view?usp=drive_link"
+        : activeTheme === "wedding-4" || activeTheme === "wedding-8"
+        ? "https://drive.google.com/file/d/1r7lOmps_NI1clBhXjKKyN4pliWRg9mLy/view?usp=drive_link"
+        : "https://drive.google.com/file/d/1J1jrhW12n1f0dhqWpYaJD9rLu6fqOa8s/view?usp=drive_link";
+
     const wrappedWeddingView = (() => {
-      const demoData = invitationData || { is_pro: true } as any;
+      const demoData = {
+        is_pro: true,
+        music_url: defaultWeddingMusic,
+        music: defaultWeddingMusic,
+        ...(invitationData || {})
+      };
+      if (!demoData.music_url && !demoData.music) {
+        demoData.music_url = defaultWeddingMusic;
+        demoData.music = defaultWeddingMusic;
+      }
       if (activeTheme === "wedding-8") return <Wedding8View invitationData={demoData} guestName={guestName} themeId={themeId} />;
       if (activeTheme === "wedding-7") return <Wedding7View invitationData={demoData} guestName={guestName} themeId={themeId} />;
       if (activeTheme === "wedding-6") return <Wedding6View invitationData={demoData} guestName={guestName} themeId={themeId} />;
