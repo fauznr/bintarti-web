@@ -861,7 +861,6 @@ export default function KelolaUndangan() {
                   </div>
                 </div>
 
-                {/* TAB_KELOLA_START */}
                 <div className={activeTab === "kelola" ? "space-y-5" : "hidden"}>
                 <div className="bg-emerald-50/50 p-4 rounded-2xl border border-emerald-100/50">
                   <span className="text-xs font-extrabold text-emerald-800 uppercase tracking-wider flex items-center gap-1.5">
@@ -1206,9 +1205,7 @@ export default function KelolaUndangan() {
               </div>
 
             </div>
-                {/* TAB_UCAPAN_START */}
                 <div className={activeTab === "ucapan" ? "space-y-5" : "hidden"}>
-            {/* Ucapan, Doa & RSVP Tamu (WordPress Webhook integration) */}
             <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm space-y-4 relative">
               <div className="flex items-center justify-between pb-3 border-b border-slate-100">
                 <div className="flex items-center gap-2">
@@ -1219,7 +1216,7 @@ export default function KelolaUndangan() {
                     <h4 className="text-xs font-extrabold text-slate-800 uppercase tracking-wider">
                       💬 Ucapan, Doa & RSVP Tamu
                     </h4>
-                    <p className="text-[10px] text-slate-400">Pesan ucapan langsung dari halaman undangan WordPress</p>
+                    <p className="text-[10px] text-slate-400">Pesan ucapan dan konfirmasi kehadiran dari para tamu</p>
                   </div>
                 </div>
                 <button
@@ -1303,7 +1300,6 @@ export default function KelolaUndangan() {
             </div>
 
                 </div>
-                {/* TAB_SCANNER_START */}
                 <div className={activeTab === "scanner" ? "space-y-5" : "hidden"}>
                 {/* Scanner Penerima Tamu Button */}
                 <div className="flex">
@@ -1397,7 +1393,6 @@ export default function KelolaUndangan() {
                 </div>
 
                 </div>
-                {/* TAB_STATISTIK_START */}
                 <div className={activeTab === "statistik" ? "space-y-5" : "hidden"}>
                 {/* Dashboard Analytics & Chart */}
                 <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm space-y-5 relative">
@@ -1633,7 +1628,6 @@ export default function KelolaUndangan() {
                 </div>
 
                 </div>
-                {/* TAB_LOG_START */}
                 <div className={activeTab === "log" ? "space-y-5" : "hidden"}>
                 {/* Log Kehadiran Tamu (Semua Check-in) */}
                 <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm space-y-4 relative">
@@ -1955,24 +1949,8 @@ export default function KelolaUndangan() {
           </div>
         )}
 
-        {/* Info Section */}
-        <div className="mt-12 bg-white rounded-2xl border border-slate-100 p-6 shadow-sm">
-          <h3 className="font-bold text-slate-800 text-sm mb-3">ℹ️ Informasi Penting</h3>
-          <ul className="space-y-2 text-xs text-slate-500 leading-relaxed">
-            <li className="flex items-start gap-2">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 mt-0.5 shrink-0" />
-              Gunakan nomor WhatsApp atau nomor pesanan Shopee yang sama saat Anda mengisi formulir.
-            </li>
-            <li className="flex items-start gap-2">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 mt-0.5 shrink-0" />
-              Link undangan akan tersedia setelah admin menyelesaikan pembuatan undangan Anda.
-            </li>
-            <li className="flex items-start gap-2">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 mt-0.5 shrink-0" />
-              <strong>Link Undangan (Preview)</strong> adalah link pratinjau untuk dicoba oleh pemilik acara sendiri. <strong>Kelola Penerima Undangan</strong> digunakan untuk generate link personal per tamu undangan.
-            </li>
-          </ul>
-        </div>
+        {/* Footer info spacing */}
+        <div className="pb-8" />
       </main>
 
       {/* Footer */}
