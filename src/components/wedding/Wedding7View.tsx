@@ -118,11 +118,13 @@ const TornPaperBottom = ({
 function ScrollReveal({
   children,
   delay = 0,
-  variant = "fade-up"
+  variant = "fade-up",
+  className = ""
 }: {
   children: React.ReactNode;
   delay?: number;
-  variant?: "fade-up" | "fade-down" | "slide-left" | "slide-right" | "zoom-in"; className?: string;
+  variant?: "fade-up" | "fade-down" | "slide-left" | "slide-right" | "zoom-in";
+  className?: string;
 }) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -138,10 +140,11 @@ function ScrollReveal({
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(entry.target);
+        } else if (entry.boundingClientRect.top > 0) {
+          setIsVisible(false);
         }
       },
-      { threshold: 0.05, rootMargin: "0px 0px -30px 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -100px 0px" }
     );
     observer.observe(el);
     return () => {
@@ -149,34 +152,26 @@ function ScrollReveal({
     };
   }, []);
 
-  const getVariantClasses = () => {
-    if (isVisible) return "opacity-100 translate-y-0 translate-x-0 scale-100";
-    switch (variant) {
-      case "fade-down":
-        return "opacity-0 -translate-y-8 scale-95";
-      case "slide-left":
-        return "opacity-0 translate-x-8";
-      case "slide-right":
-        return "opacity-0 -translate-x-8";
-      case "zoom-in":
-        return "opacity-0 scale-90";
-      case "fade-up":
-      default:
-        return "opacity-0 translate-y-8 scale-95";
-    }
+  const hiddenStyles: Record<string, React.CSSProperties> = {
+    "fade-up":    { opacity: 0, transform: "translateY(36px) scale(0.96)" },
+    "fade-down":  { opacity: 0, transform: "translateY(-36px) scale(0.96)" },
+    "slide-left": { opacity: 0, transform: "translateX(36px)" },
+    "slide-right":{ opacity: 0, transform: "translateX(-36px)" },
+    "zoom-in":    { opacity: 0, transform: "scale(0.92)" },
   };
 
   return (
     <div
       ref={ref}
+      className={className}
       style={{
         transitionProperty: "opacity, transform",
-        transitionDuration: "1.5s",
-        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+        transitionDuration: "1.8s",
+        transitionTimingFunction: "cubic-bezier(0.25, 1, 0.5, 1)",
         transitionDelay: `${delay}ms`,
         willChange: "opacity, transform",
+        ...(isVisible ? { opacity: 1, transform: "none" } : hiddenStyles[variant || "fade-up"]),
       }}
-      className={`transform ${getVariantClasses()}`}
     >
       {children}
     </div>

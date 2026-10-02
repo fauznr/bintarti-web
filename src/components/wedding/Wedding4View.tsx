@@ -62,15 +62,14 @@ const ScrollReveal = ({
       return;
     }
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            observer.unobserve(entry.target);
-          }
-        });
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        } else if (entry.boundingClientRect.top > 0) {
+          setIsVisible(false);
+        }
       },
-      { threshold: 0.05, rootMargin: "0px 0px -30px 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -100px 0px" }
     );
     observer.observe(el);
     return () => {
@@ -81,16 +80,15 @@ const ScrollReveal = ({
   return (
     <div
       ref={domRef}
+      className={className}
       style={{
         transitionProperty: "opacity, transform",
-        transitionDuration: "1.5s",
-        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+        transitionDuration: "1.8s",
+        transitionTimingFunction: "cubic-bezier(0.25, 1, 0.5, 1)",
         transitionDelay: `${delay}ms`,
         willChange: "opacity, transform",
+        ...(isVisible ? { opacity: 1, transform: "translateY(0) scale(1)" } : { opacity: 0, transform: "translateY(36px) scale(0.96)" }),
       }}
-      className={`transform ${
-        isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
-      } ${className}`}
     >
       {children}
     </div>

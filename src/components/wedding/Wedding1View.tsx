@@ -75,7 +75,7 @@ const ScrollReveal = ({
           setIsVisible(false);
         }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -100px 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -100px 0px" }
     );
 
     observer.observe(el);
@@ -86,11 +86,11 @@ const ScrollReveal = ({
   }, []);
 
   const hiddenStyles: Record<string, React.CSSProperties> = {
-    "fade-up":    { opacity: 0, transform: "translateY(32px)" },
-    "slide-left": { opacity: 0, transform: "translateX(-36px)" },
-    "slide-right":{ opacity: 0, transform: "translateX(36px)" },
-    "zoom-in":    { opacity: 0, transform: "scale(0.9)" },
-    "drop":       { opacity: 0, transform: "translateY(-32px)" },
+    "fade-up":    { opacity: 0, transform: "translateY(36px)" },
+    "slide-left": { opacity: 0, transform: "translateX(-40px)" },
+    "slide-right":{ opacity: 0, transform: "translateX(40px)" },
+    "zoom-in":    { opacity: 0, transform: "scale(0.92)" },
+    "drop":       { opacity: 0, transform: "translateY(-36px)" },
   };
 
   return (
@@ -99,8 +99,8 @@ const ScrollReveal = ({
       className={className}
       style={{
         transitionProperty: "opacity, transform",
-        transitionDuration: "1.3s",
-        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+        transitionDuration: "1.8s",
+        transitionTimingFunction: "cubic-bezier(0.25, 1, 0.5, 1)",
         transitionDelay: `${delay}ms`,
         willChange: "opacity, transform",
         ...(isVisible ? { opacity: 1, transform: "none" } : hiddenStyles[variant || "fade-up"]),

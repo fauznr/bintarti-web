@@ -43,11 +43,13 @@ interface Wedding3ViewProps {
 function ScrollReveal({
   children,
   delay = 0,
-  variant = "fade-up"
+  variant = "fade-up",
+  className = ""
 }: {
   children: React.ReactNode;
   delay?: number;
-  variant?: "fade-up" | "slide-left" | "slide-right" | "float-up" | "spin-fade" | "drop"; className?: string;
+  variant?: "fade-up" | "slide-left" | "slide-right" | "float-up" | "spin-fade" | "drop";
+  className?: string;
 }) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -63,10 +65,11 @@ function ScrollReveal({
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(entry.target);
+        } else if (entry.boundingClientRect.top > 0) {
+          setIsVisible(false);
         }
       },
-      { threshold: 0.05, rootMargin: "0px 0px -30px 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -100px 0px" }
     );
     observer.observe(el);
     return () => {
@@ -75,22 +78,24 @@ function ScrollReveal({
   }, []);
 
   const hiddenStyle: React.CSSProperties = {
-    "fade-up":    { opacity: 0, transform: "translateY(24px)" },
-    "slide-left": { opacity: 0, transform: "translateX(-24px)" },
-    "slide-right":{ opacity: 0, transform: "translateX(24px)" },
-    "float-up":   { opacity: 0, transform: "translateY(32px) scale(0.98)" },
-    "spin-fade":  { opacity: 0, transform: "rotate(-3deg) scale(0.96)" },
-    "drop":       { opacity: 0, transform: "translateY(-24px)" },
+    "fade-up":    { opacity: 0, transform: "translateY(36px)" },
+    "slide-left": { opacity: 0, transform: "translateX(-36px)" },
+    "slide-right":{ opacity: 0, transform: "translateX(36px)" },
+    "float-up":   { opacity: 0, transform: "translateY(40px) scale(0.96)" },
+    "spin-fade":  { opacity: 0, transform: "rotate(-3deg) scale(0.94)" },
+    "drop":       { opacity: 0, transform: "translateY(-36px)" },
   }[variant || "fade-up"];
 
   return (
     <div
       ref={ref}
+      className={className}
       style={{
         transitionProperty: "opacity, transform",
-        transitionDuration: "1.5s",
-        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+        transitionDuration: "1.8s",
+        transitionTimingFunction: "cubic-bezier(0.25, 1, 0.5, 1)",
         transitionDelay: `${delay}ms`,
+        willChange: "opacity, transform",
         ...(isVisible ? { opacity: 1, transform: "none" } : hiddenStyle),
       }}
     >

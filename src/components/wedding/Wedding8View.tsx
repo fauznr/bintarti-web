@@ -118,10 +118,11 @@ function useScrollReveal(delay: number = 0) {
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
-          obs.unobserve(entry.target);
+        } else if (entry.boundingClientRect.top > 0) {
+          setVisible(false);
         }
       },
-      { threshold: 0.05, rootMargin: "0px 0px -30px 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -100px 0px" }
     );
     obs.observe(el);
     return () => {
@@ -147,8 +148,9 @@ function Reveal({
       className={className}
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0) scale(1)" : "translateY(20px) scale(0.98)",
-        transition: `opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, transform 1.5s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms`,
+        transform: visible ? "translateY(0) scale(1)" : "translateY(36px) scale(0.96)",
+        transition: `opacity 1.8s cubic-bezier(0.25, 1, 0.5, 1) ${delay}ms, transform 1.8s cubic-bezier(0.25, 1, 0.5, 1) ${delay}ms`,
+        willChange: "opacity, transform",
       }}
     >
       {children}
