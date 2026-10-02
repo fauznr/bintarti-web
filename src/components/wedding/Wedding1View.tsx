@@ -70,10 +70,12 @@ const ScrollReveal = ({
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(entry.target);
+        } else if (entry.boundingClientRect.top > 0) {
+          // Hanya sembunyikan jika elemen berada di bawah viewport (agar saat di-scroll ke bawah muncul animasi)
+          setIsVisible(false);
         }
       },
-      { threshold: 0.05, rootMargin: "0px 0px -30px 0px" }
+      { threshold: 0.15, rootMargin: "0px 0px -100px 0px" }
     );
 
     observer.observe(el);
@@ -97,7 +99,7 @@ const ScrollReveal = ({
       className={className}
       style={{
         transitionProperty: "opacity, transform",
-        transitionDuration: "1.5s",
+        transitionDuration: "1.3s",
         transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
         transitionDelay: `${delay}ms`,
         willChange: "opacity, transform",
