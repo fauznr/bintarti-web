@@ -71,8 +71,8 @@ function ScrollReveal({
       ref={ref}
       style={{
         transitionProperty: "opacity, transform",
-        transitionDuration: "0.7s",
-        transitionTimingFunction: "cubic-bezier(0.34, 1.56, 0.64, 1)",
+        transitionDuration: "1.5s",
+        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
         transitionDelay: `${delay}ms`,
         ...(isVisible ? { opacity: 1, transform: "none" } : hiddenStyle),
       }}

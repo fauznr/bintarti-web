@@ -97,7 +97,7 @@ const ScrollReveal = ({
       className={className}
       style={{
         transitionProperty: "opacity, transform",
-        transitionDuration: "0.85s",
+        transitionDuration: "1.5s",
         transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
         transitionDelay: `${delay}ms`,
         willChange: "opacity, transform",

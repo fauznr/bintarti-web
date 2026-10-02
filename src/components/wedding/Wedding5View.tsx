@@ -57,9 +57,15 @@ function ScrollReveal({ children, delay = 0, className = '' }: { children: React
   return (
     <div
       ref={ref}
-      style={{ transitionDelay: `${delay}ms` }}
-      className={`transition-all duration-700 ease-out transform ${
-        isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-6 scale-95"
+      style={{
+        transitionProperty: "opacity, transform",
+        transitionDuration: "1.5s",
+        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+        transitionDelay: `${delay}ms`,
+        willChange: "opacity, transform",
+      }}
+      className={`transform ${
+        isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
       } ${className}`}
     >
       {children}

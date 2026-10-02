@@ -108,8 +108,14 @@ function ScrollReveal({
   return (
     <div
       ref={ref}
-      style={{ transitionDelay: `${delay}ms` }}
-      className={`transition-all duration-700 ease-out transform ${getVariantClasses()}`}
+      style={{
+        transitionProperty: "opacity, transform",
+        transitionDuration: "1.5s",
+        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+        transitionDelay: `${delay}ms`,
+        willChange: "opacity, transform",
+      }}
+      className={`transform ${getVariantClasses()}`}
     >
       {children}
     </div>
