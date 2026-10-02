@@ -635,7 +635,7 @@ export default function KelolaUndangan() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-3xl mx-auto px-6 py-12">
+      <main className="max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-12">
         {/* Navigation link */}
         <Link href="/cek-undangan" className="inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-primary transition-colors mb-6 group cursor-pointer">
           <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" /> Kembali ke Pencarian
@@ -793,15 +793,72 @@ export default function KelolaUndangan() {
 
             {/* Kelola Penerima Undangan Dashboard */}
             {result.status.toLowerCase() === 'selesai' && result.linkTamu && (
-              <div className="p-5 rounded-3xl bg-emerald-50/30 border border-emerald-100/80 shadow-xl shadow-slate-100/30 space-y-5">
+              <div className="p-3 sm:p-5 rounded-2xl sm:rounded-3xl bg-emerald-50/30 border border-emerald-100/80 shadow-xl shadow-slate-100/30 space-y-5">
 
                 {/* Tab Navigation */}
-                <div className="flex overflow-x-auto gap-2 pb-2 mb-4 scrollbar-hide [&::-webkit-scrollbar]:hidden">
-                  <button type="button" onClick={() => setActiveTab("kelola")} className={`px-4 py-2.5 rounded-xl font-bold text-xs whitespace-nowrap transition-all duration-300 ${activeTab === 'kelola' ? 'bg-emerald-500 text-white shadow-md' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}>📨 Kelola Penerima Undangan</button>
-                  <button type="button" onClick={() => setActiveTab("ucapan")} className={`px-4 py-2.5 rounded-xl font-bold text-xs whitespace-nowrap transition-all duration-300 ${activeTab === 'ucapan' ? 'bg-blue-500 text-white shadow-md' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}>💬 Ucapan, Doa & RSVP</button>
-                  <button type="button" onClick={() => setActiveTab("scanner")} className={`px-4 py-2.5 rounded-xl font-bold text-xs whitespace-nowrap transition-all duration-300 ${activeTab === 'scanner' ? 'bg-indigo-500 text-white shadow-md' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}>📱 Buku Tamu QR Code</button>
-                  <button type="button" onClick={() => setActiveTab("statistik")} className={`px-4 py-2.5 rounded-xl font-bold text-xs whitespace-nowrap transition-all duration-300 ${activeTab === 'statistik' ? 'bg-purple-500 text-white shadow-md' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}>📊 Statistik & Kehadiran</button>
-                  <button type="button" onClick={() => setActiveTab("log")} className={`px-4 py-2.5 rounded-xl font-bold text-xs whitespace-nowrap transition-all duration-300 ${activeTab === 'log' ? 'bg-emerald-600 text-white shadow-md' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}>👥 Log Kehadiran</button>
+                <div className="bg-white/90 backdrop-blur-md p-1.5 rounded-2xl border border-slate-200/80 shadow-sm mb-2 sticky top-2 z-20">
+                  <div className="flex overflow-x-auto gap-1.5 pb-0.5 no-scrollbar touch-pan-x" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+                    <button
+                      type="button"
+                      onClick={() => setActiveTab("kelola")}
+                      className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl font-bold text-xs whitespace-nowrap transition-all duration-200 shrink-0 ${
+                        activeTab === 'kelola'
+                          ? 'bg-emerald-600 text-white shadow-sm ring-2 ring-emerald-600/20'
+                          : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
+                      }`}
+                    >
+                      <span className="text-sm">📨</span>
+                      <span>Kelola Tamu</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setActiveTab("ucapan")}
+                      className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl font-bold text-xs whitespace-nowrap transition-all duration-200 shrink-0 ${
+                        activeTab === 'ucapan'
+                          ? 'bg-blue-600 text-white shadow-sm ring-2 ring-blue-600/20'
+                          : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
+                      }`}
+                    >
+                      <span className="text-sm">💬</span>
+                      <span>Ucapan & RSVP</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setActiveTab("scanner")}
+                      className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl font-bold text-xs whitespace-nowrap transition-all duration-200 shrink-0 ${
+                        activeTab === 'scanner'
+                          ? 'bg-indigo-600 text-white shadow-sm ring-2 ring-indigo-600/20'
+                          : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
+                      }`}
+                    >
+                      <span className="text-sm">📱</span>
+                      <span>QR Scanner</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setActiveTab("statistik")}
+                      className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl font-bold text-xs whitespace-nowrap transition-all duration-200 shrink-0 ${
+                        activeTab === 'statistik'
+                          ? 'bg-purple-600 text-white shadow-sm ring-2 ring-purple-600/20'
+                          : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
+                      }`}
+                    >
+                      <span className="text-sm">📊</span>
+                      <span>Statistik</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setActiveTab("log")}
+                      className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl font-bold text-xs whitespace-nowrap transition-all duration-200 shrink-0 ${
+                        activeTab === 'log'
+                          ? 'bg-teal-600 text-white shadow-sm ring-2 ring-teal-600/20'
+                          : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
+                      }`}
+                    >
+                      <span className="text-sm">👥</span>
+                      <span>Log Hadir</span>
+                    </button>
+                  </div>
                 </div>
 
                 {/* TAB_KELOLA_START */}
