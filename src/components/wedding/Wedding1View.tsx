@@ -18,7 +18,6 @@ import {
   Send, 
   ExternalLink,
   ChevronDown,
-  Sparkles,
   Gift, 
   Video, 
   Camera,
@@ -485,8 +484,7 @@ export default function Wedding1View({
           {/* Content */}
           <div className="relative z-10 my-auto flex flex-col items-center justify-center text-center space-y-6 max-w-sm px-4 w-full mx-auto">
             <div className="w-full flex justify-center text-center">
-              <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-zinc-950/70 backdrop-blur-md border border-zinc-700 backdrop-blur-md mx-auto shadow-lg">
-                <Sparkles className="w-3.5 h-3.5 text-zinc-300" />
+              <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-zinc-950/70 backdrop-blur-md border border-zinc-700 mx-auto shadow-lg">
                 <span className="text-[10px] font-sans font-extrabold tracking-[0.3em] text-zinc-200 uppercase text-center">The Wedding of</span>
               </div>
             </div>

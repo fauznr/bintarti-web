@@ -937,13 +937,10 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
                 <div className="relative z-10 space-y-3">
                   <div className="flex items-center justify-between">
                     <div
-                      className="inline-flex items-center gap-1 px-2.5 py-1 border rounded-sm text-[9px] font-black tracking-widest uppercase"
+                      className="inline-flex items-center px-2.5 py-1 border rounded-sm text-[9px] font-black tracking-widest uppercase"
                       style={{ borderColor: "#8B4513", color: "#8B4513" }}
                     >
-                      <Stamp className="w-2.5 h-2.5" /> Akad Nikah
-                    </div>
-                    <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: "#3D1F08" }}>
-                      <Pen className="w-3.5 h-3.5 text-amber-200" />
+                      Akad Nikah
                     </div>
                   </div>
                   <div className="space-y-1.5">
@@ -988,13 +985,10 @@ export default function Wedding8View({ invitationData, guestName, themeId = "wed
                 <div className="relative z-10 space-y-3">
                   <div className="flex items-center justify-between">
                     <div
-                      className="inline-flex items-center gap-1 px-2.5 py-1 border rounded-sm text-[9px] font-black tracking-widest uppercase"
+                      className="inline-flex items-center px-2.5 py-1 border rounded-sm text-[9px] font-black tracking-widest uppercase"
                       style={{ borderColor: "#8B4513", color: "#8B4513" }}
                     >
-                      <Stamp className="w-2.5 h-2.5" /> Resepsi
-                    </div>
-                    <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: "#3D1F08" }}>
-                      <Heart className="w-3.5 h-3.5 fill-amber-200 text-amber-200" />
+                      Resepsi
                     </div>
                   </div>
                   <div className="space-y-1.5">

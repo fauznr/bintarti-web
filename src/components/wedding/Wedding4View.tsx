@@ -14,7 +14,7 @@ import {
   Music, 
   MessageCircle, 
   Send, 
-  Sparkles, 
+  
   Gift, 
   Video, 
   ChevronDown,
@@ -442,10 +442,8 @@ export default function Wedding4View({
           <div className="relative z-10 my-auto flex flex-col items-center justify-center text-center space-y-6 max-w-sm px-4 w-full mx-auto">
             {/* Gen Z Badge */}
             <div className="w-full flex justify-center text-center">
-              <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-white/90 text-slate-800 border border-slate-200/90 shadow-md backdrop-blur-md">
-                <Sparkles className="w-3.5 h-3.5 text-amber-500 animate-pulse" />
-                <span className="text-[10px] font-extrabold tracking-[0.25em] text-slate-800 uppercase">THE WEDDING ERA</span>
-                <span className="bg-slate-900 text-white text-[9px] px-2 py-0.5 rounded-full font-bold">2026</span>
+              <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-white/90 text-slate-800 border border-slate-200/90 shadow-md backdrop-blur-md">
+                <span className="text-[10px] font-extrabold tracking-[0.25em] text-slate-800 uppercase">THE WEDDING OF</span>
               </div>
             </div>
 
@@ -471,7 +469,7 @@ export default function Wedding4View({
                   {guestName}
                 </span>
                 <span className="text-[10px] text-slate-500 font-medium block mt-0.5">
-                  You are warmly invited to join our vibe! ✨
+                  You are warmly invited to celebrate with us.
                 </span>
               </div>
             </div>
@@ -545,12 +543,9 @@ export default function Wedding4View({
           {/* 1. HERO HEADER SECTION (PURE WHITE & DYNAMIC SLIDESHOW) */}
           <section className="w-full min-h-[92dvh] flex flex-col items-center justify-between p-6 relative z-10">
             {/* Top Pill */}
-            <div className="relative z-10 pt-4 flex items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/90 border border-slate-200 text-slate-800 text-[10px] font-extrabold tracking-widest uppercase shadow-sm backdrop-blur-md">
-                <Zap className="w-3.5 h-3.5 text-amber-500 fill-amber-500" /> CHAPTER 01: THE WEDDING
-              </span>
-              <span className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-slate-900 text-white text-[9px] font-black tracking-widest uppercase shadow-sm">
-                SLIDE {currentBgIndex + 1}/4
+            <div className="relative z-10 pt-4 flex items-center justify-center">
+              <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/90 border border-slate-200 text-slate-800 text-[10px] font-extrabold tracking-widest uppercase shadow-sm backdrop-blur-md">
+                THE WEDDING OF
               </span>
             </div>
 
@@ -565,9 +560,7 @@ export default function Wedding4View({
                     fill
                     className="object-cover object-center"
                   />
-                  <div className="absolute top-2 right-2 bg-slate-900/80 backdrop-blur-sm text-white text-[9px] font-black px-2 py-0.5 rounded-full">
-                    MATCHED 100% 💖
-                  </div>
+                  
                 </div>
                 <h2 className="text-3xl font-adea-forum font-bold text-slate-900 tracking-wider uppercase">
                   {groomName} <span className="font-serif italic font-normal text-slate-400">&amp;</span> {brideName}
@@ -590,7 +583,7 @@ export default function Wedding4View({
             <ScrollReveal>
               <div className="bg-slate-50 p-6 rounded-3xl border border-slate-200/80 shadow-md space-y-3 relative overflow-hidden">
                 <div className="absolute -top-3 -right-3 bg-amber-100 text-amber-800 text-[10px] font-black px-3 py-1.5 rounded-full rotate-12 shadow-sm border border-amber-200">
-                  OUR VOWS ✨
+                  OUR VOWS
                 </div>
                 <span className="text-xl font-serif text-slate-800 block font-bold">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</span>
                 <p className="text-xs font-adea-lora text-slate-700 leading-relaxed italic">
@@ -616,7 +609,7 @@ export default function Wedding4View({
             <ScrollReveal delay={150}>
               <div className="bg-white rounded-3xl p-5 border border-slate-200 shadow-xl flex flex-col items-center space-y-4 relative">
                 <div className="absolute top-4 right-4 bg-slate-100 text-slate-800 text-[9px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">
-                  GROOM 🤵
+                  GROOM
                 </div>
                 <div className="relative w-44 h-52 rounded-2xl overflow-hidden border-2 border-slate-100 shadow-md">
                   <Image 
@@ -654,7 +647,7 @@ export default function Wedding4View({
             <ScrollReveal delay={350}>
               <div className="bg-white rounded-3xl p-5 border border-slate-200 shadow-xl flex flex-col items-center space-y-4 relative">
                 <div className="absolute top-4 right-4 bg-amber-50 text-amber-800 border border-amber-200 text-[9px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">
-                  BRIDE 👰
+                  BRIDE
                 </div>
                 <div className="relative w-44 h-52 rounded-2xl overflow-hidden border-2 border-slate-100 shadow-md">
                   <Image 
@@ -685,16 +678,16 @@ export default function Wedding4View({
             <ScrollReveal>
               <div className="space-y-1">
                 <span className="text-[10px] font-bold text-slate-400 tracking-[0.25em] uppercase">HOW IT STARTED</span>
-                <h2 className="text-3xl font-adea-forum text-slate-900 tracking-widest uppercase font-bold">Our Love Story 💖</h2>
+                <h2 className="text-3xl font-adea-forum text-slate-900 tracking-widest uppercase font-bold">Our Love Story</h2>
               </div>
             </ScrollReveal>
 
             <div className="space-y-3.5 text-left">
               {(loveStoryItems.length > 0 ? loveStoryItems : [
-                { year: "2022", badge: "FIRST EYE CONTACT ☕", title: "Tak Sengaja Ketemu", desc: "Pertama kali ketemu di coffee shop aesthetic di Senopati, saling lirik lalu tukeran Instagram." },
-                { year: "2023", badge: "OFFICIALLY DATING ⚡", title: "Resmi Pacaran", desc: "Satu tahun nongkrong bareng, baru sadar kita klop banget. Akhirnya jadian di akhir tahun!" },
-                { year: "2025", badge: "SHE SAID YES! 💍", title: "Momen Lamaran", desc: "Dimas kejutan lamaran pas sunset trip di Bali. She said YES tanpa ragu!" },
-                { year: "2026", badge: "THE BIG DAY 💒", title: "Menikah!", desc: "Momen spesial mengikat janji suci dan memulai perjalanan keluarga kecil bahagia kami." }
+                { year: "2022", badge: "FIRST MEETING", title: "Tak Sengaja Ketemu", desc: "Pertama kali ketemu di coffee shop aesthetic di Senopati, saling lirik lalu tukeran Instagram." },
+                { year: "2023", badge: "OFFICIALLY DATING", title: "Resmi Pacaran", desc: "Satu tahun nongkrong bareng, baru sadar kita klop banget. Akhirnya jadian di akhir tahun!" },
+                { year: "2025", badge: "SHE SAID YES", title: "Momen Lamaran", desc: "Dimas kejutan lamaran pas sunset trip di Bali. She said YES tanpa ragu!" },
+                { year: "2026", badge: "THE WEDDING DAY", title: "Menikah!", desc: "Momen spesial mengikat janji suci dan memulai perjalanan keluarga kecil bahagia kami." }
               ]).map((item: any, idx: number) => (
                 <ScrollReveal key={idx} delay={idx * 120}>
                   <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200/90 shadow-sm space-y-1.5 hover:shadow-md transition-shadow">
@@ -727,7 +720,7 @@ export default function Wedding4View({
             <ScrollReveal delay={150}>
               <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-xl space-y-4 text-center relative overflow-hidden">
                 <div className="inline-block px-4 py-1 rounded-full bg-slate-900 text-white text-xs font-black tracking-wider uppercase">
-                  AKAD NIKAH 🕌
+                  AKAD NIKAH
                 </div>
 
                 <div className="space-y-2">
@@ -872,7 +865,7 @@ export default function Wedding4View({
             <ScrollReveal>
               <div className="space-y-1">
                 <span className="text-[10px] font-bold text-slate-400 tracking-[0.25em] uppercase">GALLERY ERA</span>
-                <h2 className="text-3xl font-adea-forum text-slate-900 tracking-widest uppercase font-bold">Our Gallery 📸</h2>
+                <h2 className="text-3xl font-adea-forum text-slate-900 tracking-widest uppercase font-bold">Our Gallery</h2>
               </div>
             </ScrollReveal>
 
@@ -918,7 +911,7 @@ export default function Wedding4View({
                       />
                       <div className="absolute inset-0 bg-slate-900/30 group-hover:bg-slate-900/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                         <span className="text-[10px] font-bold text-slate-900 bg-white/90 px-3 py-1 rounded-full border border-slate-200 shadow-[2px_2px_0px_0px_rgba(15,23,42,1)] backdrop-blur-sm">
-                          🔍 Perbesar
+                          Perbesar Foto
                         </span>
                       </div>
                     </div>
@@ -975,7 +968,7 @@ export default function Wedding4View({
             <ScrollReveal>
               <div className="space-y-1">
                 <span className="text-[10px] font-bold text-slate-400 tracking-[0.25em] uppercase">DIGITAL GIFT</span>
-                <h2 className="text-3xl font-adea-forum text-slate-900 tracking-widest uppercase font-bold">Wedding Gift 🎁</h2>
+                <h2 className="text-3xl font-adea-forum text-slate-900 tracking-widest uppercase font-bold">Wedding Gift</h2>
               </div>
             </ScrollReveal>
 
@@ -1061,7 +1054,7 @@ export default function Wedding4View({
                         checked={rsvpStatus === "Hadir"} 
                         onChange={() => setRsvpStatus("Hadir")} 
                         className="accent-slate-900" 
-                      /> Hadir ✨
+                      /> Hadir
                     </label>
                     <label className="flex items-center gap-2 text-xs font-bold text-slate-800 cursor-pointer">
                       <input 
@@ -1071,7 +1064,7 @@ export default function Wedding4View({
                         checked={rsvpStatus === "Tidak Hadir"} 
                         onChange={() => setRsvpStatus("Tidak Hadir")} 
                         className="accent-slate-900" 
-                      /> Halangan / Absen 😔
+                      /> Berhalangan Hadir
                     </label>
                   </div>
                 </div>
@@ -1099,7 +1092,7 @@ export default function Wedding4View({
 
                 {submitSuccess && (
                   <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-800 text-xs text-center font-bold">
-                    Terima kasih! Pesan dan konfirmasi kehadiran kamu udah tersimpan ✨
+                    Terima kasih! Pesan dan konfirmasi kehadiran Anda telah tersimpan.
                   </div>
                 )}
               </form>

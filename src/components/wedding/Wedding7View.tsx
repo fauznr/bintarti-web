@@ -575,9 +575,8 @@ const fallbackHero = "/indo_prewed_simple_1_1785092558852.jpg";
             {/* Buka Undangan Button */}
             <button
               onClick={handleOpenInvitation}
-              className="w-full py-3.5 px-6 rounded-full bg-[#6a8f7f] hover:bg-[#587a6d] text-white font-cinzel text-xs font-bold tracking-[0.2em] uppercase transition-all shadow-[0_10px_25px_rgba(106,143,127,0.3)] hover:scale-102 cursor-pointer flex items-center justify-center gap-2"
+              className="w-full py-3.5 px-6 rounded-full bg-[#6a8f7f] hover:bg-[#587a6d] text-white font-cinzel text-xs font-bold tracking-[0.2em] uppercase transition-all shadow-[0_10px_25px_rgba(106,143,127,0.3)] hover:scale-102 cursor-pointer flex items-center justify-center"
             >
-              <Sparkles className="w-4 h-4 text-white animate-spin duration-3000" />
               <span>BUKA UNDANGAN</span>
             </button>
           </div>
@@ -1115,16 +1114,7 @@ const fallbackHero = "/indo_prewed_simple_1_1785092558852.jpg";
                 </p>
               </div>
 
-              {/* Health Protocol Reminder */}
-              <div className="p-6 rounded-3xl bg-white border border-[#6a8f7f]/30 shadow-md space-y-3 text-[#1A202C] mt-6">
-                <ShieldCheck className="w-6 h-6 text-[#6a8f7f] mx-auto" />
-                <h3 className="font-cinzel text-xs font-bold text-[#1A202C] tracking-widest uppercase">
-                  REMINDER HEALTH PROTOCOL
-                </h3>
-                <p className="font-montserrat text-[11px] text-[#718096] leading-relaxed font-light">
-                  Demi keamanan dan kenyamanan bersama, kami menghimbau agar Tamu Undangan tetap menerapkan Protokol Kesehatan.
-                </p>
-              </div>
+
             </div>
           </ScrollReveal>
         </section>

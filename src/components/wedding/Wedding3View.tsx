@@ -520,10 +520,6 @@ export default function Wedding3View({
         <section className="py-16 px-6 text-center border-b border-[#2C1A14]/15 bg-white text-[#2C1A14] relative">
           <ScrollReveal>
             <div className="max-w-xs mx-auto space-y-5">
-              <div className="w-9 h-9 mx-auto rounded-full border border-[#2C1A14]/30 bg-[#2C1A14]/10 flex items-center justify-center text-[#2C1A14]">
-                <Heart className="w-4 h-4 fill-[#2C1A14]" />
-              </div>
-
               <blockquote className="font-ovo text-sm sm:text-base text-[#2C1A14]/90 italic leading-relaxed font-light">
                 "Demikianlah tinggal ketiga hal ini, yaitu iman, pengharapan dan kasih, dan yang paling besar di antaranya ialah kasih."
               </blockquote>
@@ -572,7 +568,7 @@ export default function Wedding3View({
                 rel="noreferrer"
                 className="inline-flex items-center gap-1.5 px-3.5 py-1.5 border border-white bg-black/40 backdrop-blur-md hover:bg-white hover:text-black text-white text-[9px] font-tenor tracking-widest rounded-none transition-all shadow-md"
               >
-                <Camera className="w-3 h-3" />
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                 <span>INSTAGRAM</span>
               </a>
             </div>
@@ -623,7 +619,7 @@ export default function Wedding3View({
                 rel="noreferrer"
                 className="inline-flex items-center gap-1.5 px-3.5 py-1.5 border border-white bg-black/40 backdrop-blur-md hover:bg-white hover:text-black text-white text-[9px] font-tenor tracking-widest rounded-none transition-all shadow-md"
               >
-                <Camera className="w-3 h-3" />
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                 <span>INSTAGRAM</span>
               </a>
             </div>
@@ -675,10 +671,6 @@ export default function Wedding3View({
           {/* PEMBERKATAN */}
           <ScrollReveal>
             <div className="space-y-4 max-w-sm mx-auto pb-8 border-b border-[#2C1A14]/20">
-              <div className="w-9 h-9 mx-auto rounded-full border border-[#2C1A14]/30 bg-[#2C1A14]/10 flex items-center justify-center text-[#2C1A14]">
-                <Sparkles className="w-4 h-4" />
-              </div>
-
               <h2 className="font-tenor text-base text-[#2C1A14] font-bold tracking-[0.2em]">
                 {eventTypeLabel.toUpperCase()}
               </h2>
@@ -711,10 +703,6 @@ export default function Wedding3View({
           {/* RESEPSI */}
           <ScrollReveal delay={200} variant="drop">
             <div className="space-y-4 max-w-sm mx-auto">
-              <div className="w-9 h-9 mx-auto rounded-full border border-[#2C1A14]/30 bg-[#2C1A14]/10 flex items-center justify-center text-[#2C1A14]">
-                <Heart className="w-4 h-4 fill-[#2C1A14]" />
-              </div>
-
               <h2 className="font-tenor text-base text-[#2C1A14] font-bold tracking-[0.2em]">
                 RESEPSI
               </h2>

@@ -524,10 +524,6 @@ export default function Wedding6View({
 
           <ScrollReveal variant="zoom-in">
             <div className="max-w-sm mx-auto space-y-4 flex flex-col items-center justify-center z-10 relative">
-              <div className="w-12 h-12 mx-auto rounded-full border border-white/30 bg-black/70 backdrop-blur-md flex items-center justify-center text-white shadow-xl">
-                <Sparkles className="w-5 h-5" />
-              </div>
-
               <div className="space-y-3 px-2">
                 <blockquote className="font-lora text-xs sm:text-sm text-white/95 italic leading-relaxed font-light">
                   "I never feel like I'm wasting time with you. We could sit in silence for hours and it would still feel so full and good and necessary. I'm so thankful for you."
@@ -770,9 +766,6 @@ export default function Wedding6View({
             {/* HOLY MATRIMONY */}
             <ScrollReveal delay={150} variant="slide-left">
               <div className="max-w-sm mx-auto space-y-4 text-center z-10 relative">
-                <div className="w-10 h-10 mx-auto rounded-full border border-white/30 bg-black/70 backdrop-blur-md flex items-center justify-center text-white">
-                  <Sparkles className="w-5 h-5" />
-                </div>
                 <h3 className="font-cinzel text-base text-white font-bold tracking-widest">
                   {akadTitle}
                 </h3>
@@ -802,9 +795,6 @@ export default function Wedding6View({
             {/* RECEPTION */}
             <ScrollReveal delay={300} variant="slide-right">
               <div className="max-w-sm mx-auto space-y-4 text-center z-10 relative">
-                <div className="w-10 h-10 mx-auto rounded-full border border-white/30 bg-black/70 backdrop-blur-md flex items-center justify-center text-white">
-                  <Heart className="w-5 h-5 fill-white" />
-                </div>
                 <h3 className="font-cinzel text-base text-white font-bold tracking-widest">
                   {resepsiTitle}
                 </h3>
@@ -923,8 +913,8 @@ export default function Wedding6View({
                   ))}
 
                   <div className="absolute top-3 left-3 z-10">
-                    <span className="px-3 py-1 bg-black/60 backdrop-blur-md border border-white/30 rounded-full text-[9px] font-cinzel tracking-widest text-white uppercase font-bold flex items-center gap-1.5 shadow-lg">
-                      <Sparkles className="w-3 h-3 text-amber-300 animate-pulse" /> HIGHLIGHT #0{currentSlide + 1}
+                    <span className="px-3 py-1 bg-black/60 backdrop-blur-md border border-white/30 rounded-full text-[9px] font-cinzel tracking-widest text-white uppercase font-bold flex items-center shadow-lg">
+                      HIGHLIGHT #0{currentSlide + 1}
                     </span>
                   </div>
 

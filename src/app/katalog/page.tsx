@@ -5,8 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { 
-  Palette, 
-  Sparkles, 
   ArrowLeft,
   ArrowRight,
   ExternalLink,
@@ -123,8 +121,7 @@ export default function Katalog() {
       {/* Hero Section */}
       <section className="py-12 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-blue-700 font-accent text-xs font-semibold mb-4 tracking-wider uppercase">
-            <Palette className="w-3.5 h-3.5" />
+          <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-blue-700 font-accent text-xs font-semibold mb-4 tracking-wider uppercase">
             Koleksi Premium
           </span>
           <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4 font-accent">
@@ -175,9 +172,11 @@ export default function Katalog() {
         {/* Templates Grid or Coming Soon message */}
         {activeTab === "Aqiqah" ? (
           <div className="w-full flex flex-col items-center justify-center py-20 px-6 border border-dashed border-slate-300 rounded-[32px] bg-slate-50/50">
-            <span className="p-4 bg-primary/10 rounded-full text-primary mb-6">
-              <Sparkles className="w-10 h-10 text-blue-600 animate-pulse" />
-            </span>
+            <div className="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-200/80 text-primary flex items-center justify-center mb-6 shadow-xs">
+              <svg className="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
             <h2 className="text-2xl md:text-3xl font-extrabold text-slate-800 font-accent text-center mb-3">
               Tema {activeTab}: Coming Soon!
             </h2>
@@ -286,7 +285,9 @@ export default function Katalog() {
             {/* Empty state when no search matches */}
             {filteredTemplates.length === 0 && (
               <div className="text-center py-16">
-                <span className="text-4xl">🔍</span>
+                <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center mx-auto text-slate-400 mb-2">
+                  <Search className="w-6 h-6" />
+                </div>
                 <h3 className="text-lg font-bold text-slate-700 mt-4">Tema tidak ditemukan</h3>
                 <p className="text-slate-500 mt-1">Coba gunakan kata kunci pencarian yang lain.</p>
               </div>

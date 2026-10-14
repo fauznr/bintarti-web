@@ -464,12 +464,9 @@ export default function Wedding5View({
           {/* 1. HERO SECTION (HIGH CONTRAST COKLAT TUA TEXT) */}
           <section className="w-full min-h-[90dvh] flex flex-col items-center justify-between p-6 relative z-10">
             {/* Top Badge Pill */}
-            <div className="relative z-10 pt-4 flex items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/70 backdrop-blur-xl text-[#3E2312] border border-[#5C3A21]/60 text-[9px] font-black tracking-widest uppercase shadow-md">
-                <Sparkles className="w-3 h-3 text-[#5C3A21]" /> PAWIWAHAN AGENG {akadDate ? akadDate.split("-")[0] : "2026"}
-              </span>
-              <span className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-white/70 backdrop-blur-xl text-[#3E2312] border border-[#5C3A21]/60 text-[9px] font-black tracking-widest uppercase shadow-md">
-                SLIDE {currentBgIndex + 1}/4
+            <div className="relative z-10 pt-4 flex items-center justify-center">
+              <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/70 backdrop-blur-xl text-[#3E2312] border border-[#5C3A21]/60 text-[9px] font-black tracking-widest uppercase shadow-md">
+                PAWIWAHAN AGENG {akadDate ? akadDate.split("-")[0] : "2026"}
               </span>
             </div>
 
